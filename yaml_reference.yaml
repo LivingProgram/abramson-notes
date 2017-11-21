@@ -1,0 +1,12 @@
+title1: primary titles
+title2: secondary titles
+def: definition
+  "\b()": bold whatever is inside
+theorem: a theorem
+  name: theorem name
+  statement: statement of theorem
+  proof: proof of theorem
+    "\t ": line does not have $$ added to it (i.e. purely text, for proofs with text)
+    "\e ": explanation for the specific proof line
+p: normal text
+img: uploaded image
