@@ -1,5 +1,5 @@
 title1: Inverse Function Applications
-def: a function \(f(x)\) is monotonic on an interval if it is either increasing or decreasing on that interval
+def: a function \(f(x)\) is \b(monotonic) on an interval if it is either increasing or decreasing on that interval
 theorem: 
   name: inverse_theorem_1
   statement: If \(f(x)\) is increasing then so is \(f^{-1}(x)\)
