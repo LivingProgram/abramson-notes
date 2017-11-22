@@ -12,9 +12,9 @@ def convert_to_yaml(stream):
 def parse_key(key,value):
     if key == 'title1':
         return parse_title1(value)
-    if key == 'def':
+    elif key == 'def':
         return parse_def(value)
-    if key == 'theorem':
+    elif key == 'theorem':
         return parse_theorem(value)
 def parse_title1(value): # 'Inverse Function Applications'
     new_lines = []
@@ -28,8 +28,34 @@ def parse_def(value): # takes the first bolded only
     term = value[start_idx+3:end_idx-1]
     new_lines.append('      <p><a id="def_{}" href="#def_{}">Def:</a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
     return new_lines
-def parse_theorem(value):
-    return ['theorem']
+def parse_theorem(value): # assumes you give one name, statement, and proof
+    new_lines = []
+    for dict_1 in value: # unpacking dictionary values
+        assert len(dict_1) == 1
+        key, value_1 = list(dict_1.items())[0]
+        if key == 'name':
+            theorem_name = value_1
+        elif key == 'statement':
+            theorem_statement = value_1
+        elif key == 'proof':
+            proof_lines = value_1
+    new_lines.append('      <p><a id="{}" href="#{}">Theorem:</a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement))
+    new_lines.append('      <p>\n')
+    new_lines.append('        Proof:\n')
+    for line in proof_lines:
+        assert line.count('\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
+        if line.count('\e ') == 1:
+            line,line_explanation = line.split('\e ')
+        # here you can do something with the explanation for specific lines of the proof
+
+
+        if line[0:3] == '\t ': # append pure text proof lines
+            assert line.count('\t ') <= 1 # line should only have one of these special strings
+            new_lines.append(line.split('\t ')[0] + '\n')
+        else: # append math proof lines
+            new_lines.append('        $${}$$\n'.format(line))
+    new_lines.append('      </p>\n')
+    return new_lines
 
 if __name__ == '__main__':
     with open("./index_data.yaml", 'r') as stream:
@@ -51,6 +77,7 @@ if __name__ == '__main__':
                 break
 
     # create new lines
+    pprint(data)
     all_new_lines = []
     dict_0_keys_list = ['title1','def','theorem']
     for dict_0 in data: # 0 space indent dictionaries
@@ -65,7 +92,6 @@ if __name__ == '__main__':
     # insert new lines
     html_lines = html_lines[:div_start_idx+1] + all_new_lines + html_lines[div_end_idx:]
 
-    pprint(html_lines)
     # write the new list of lines to the file
     with open("./index.html", "w") as html_file:
         html_lines = "".join(html_lines)
