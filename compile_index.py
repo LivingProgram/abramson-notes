@@ -70,7 +70,7 @@ def parse_p(value):
     return new_lines
 
 if __name__ == '__main__':
-    with open("./index_data.yaml", 'r') as stream:
+    with open("./index_data.mybad", 'r') as stream:
         data = yaml.load(convert_to_yaml(stream))
 
     # open html file with all its lines
