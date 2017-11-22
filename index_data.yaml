@@ -11,3 +11,14 @@ theorem:
     \tilde{x} \geq \tilde{y} \implies f^{-1}(\tilde{x}) \geq f^{-1}(\tilde{y})
     \tilde{x} > \tilde{y} \implies f^{-1}(\tilde{x}) > f^{-1}(\tilde{y})
     f^{-1}(x)\ is\ increasing
+theorem: 
+  name: inverse_theorem_1
+  statement: If \(f(x)\) is increasing then so is \(f^{-1}(x)\)
+  proof: 
+    (f(x)\ is\ increasing) \implies (x < y \implies f(x) < f(y))\label{theorem_inverse_1.1}\tag{1} \e definition of increasing
+    f(x)\geq f(y) \implies x \geq y \e contrapositive of previous statement
+    Let\ (f(x)=\tilde{x})\land (f(y)=\tilde{y}) \e 1 to 1 property of inverse function
+    \implies (x=f^{-1}(\tilde{x})))\land (y=f^{-1}(\tilde{y}))
+    \tilde{x} \geq \tilde{y} \implies f^{-1}(\tilde{x}) \geq f^{-1}(\tilde{y})
+    \tilde{x} > \tilde{y} \implies f^{-1}(\tilde{x}) > f^{-1}(\tilde{y})
+    f^{-1}(x)\ is\ increasing
