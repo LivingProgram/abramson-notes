@@ -11,3 +11,8 @@ theorem:
     \tilde{x} \geq \tilde{y} \implies f^{-1}(\tilde{x}) \geq f^{-1}(\tilde{y})
     \tilde{x} > \tilde{y} \implies f^{-1}(\tilde{x}) > f^{-1}(\tilde{y})
     f^{-1}(x)\ is\ increasing
+theorem:
+  name: inverse_theorem_2
+  statement: If \(f(x)\) is continuous and increasing on \([a,b]\) then \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\)
+  proof:
+    \t Work in Progress
