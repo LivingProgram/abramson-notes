@@ -26,7 +26,7 @@ def parse_def(value): # takes the first bolded only
     start_idx = value.find('\\b(')
     end_idx = start_idx+3 + value.split('\\b(')[-1].find(')')+1
     term = value[start_idx+3:end_idx-1]
-    new_lines.append('      <p><a id="def_{}" href="#def_{}">Def:</a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
+    new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
     return new_lines
 def parse_theorem(value): # assumes you give one name, statement, and proof
     new_lines = []
@@ -39,19 +39,22 @@ def parse_theorem(value): # assumes you give one name, statement, and proof
             theorem_statement = value_1
         elif key == 'proof':
             proof_lines = value_1
-    new_lines.append('      <p><a id="{}" href="#{}">Theorem:</a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement))
+    new_lines.append('      <p><a id="{}" href="#{}"><strong>Theorem:</strong></a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement))
     new_lines.append('      <p>\n')
-    new_lines.append('        Proof:\n')
+    new_lines.append('        <strong>Proof:</strong>\n')
     for line in proof_lines:
-        assert line.count('\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
-        if line.count('\e ') == 1:
-            line,line_explanation = line.split('\e ')
+        assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
+        if line.count('\\e ') == 1:
+            line,line_explanation = line.split('\\e ')
+        else:
+            line_explanation = None # must make it none or else it will be the previous line's explanation
         # here you can do something with the explanation for specific lines of the proof
 
 
-        if line[0:3] == '\t ': # append pure text proof lines
-            assert line.count('\t ') <= 1 # line should only have one of these special strings
-            new_lines.append(line.split('\t ')[0] + '\n')
+        if line[0:3] == '\\t ': # append pure text proof lines
+            print('yes')
+            assert line.count('\\t ') <= 1 # line should only have one of these special strings
+            new_lines.append(line.split('\\t ')[1] + '\n')
         else: # append math proof lines
             new_lines.append('        $${}$$\n'.format(line))
     new_lines.append('      </p>\n')
@@ -77,7 +80,6 @@ if __name__ == '__main__':
                 break
 
     # create new lines
-    pprint(data)
     all_new_lines = []
     dict_0_keys_list = ['title1','def','theorem']
     for dict_0 in data: # 0 space indent dictionaries
@@ -88,7 +90,6 @@ if __name__ == '__main__':
             if key == key_type:
                 new_lines = parse_key(key,value)
         all_new_lines += new_lines
-    pprint(all_new_lines)
     # insert new lines
     html_lines = html_lines[:div_start_idx+1] + all_new_lines + html_lines[div_end_idx:]
 
