@@ -16,6 +16,8 @@ def parse_key(key,value):
         return parse_def(value)
     elif key == 'theorem':
         return parse_theorem(value)
+    elif key == 'p':
+        return parse_p(value)
 def parse_title1(value): # 'Inverse Function Applications'
     new_lines = []
     new_lines.append('      <h3><a id="{}" href="#{}">{}</a></h3>\n'.format(value.lower().replace(" ", "_"),value.lower().replace(" ", "_"),value))
@@ -59,6 +61,13 @@ def parse_theorem(value): # assumes you give one name, statement, and proof
             new_lines.append('        $${}$$\n'.format(line))
     new_lines.append('      </p>\n')
     return new_lines
+def parse_p(value):
+    new_lines = []
+    for line in value:
+        new_lines.append('      <p>\n')
+        new_lines.append('      ' + line + '\n')
+        new_lines.append('      </p>\n')
+    return new_lines
 
 if __name__ == '__main__':
     with open("./index_data.yaml", 'r') as stream:
@@ -81,7 +90,7 @@ if __name__ == '__main__':
 
     # create new lines
     all_new_lines = []
-    dict_0_keys_list = ['title1','def','theorem']
+    dict_0_keys_list = ['title1','def','theorem','p']
     for dict_0 in data: # 0 space indent dictionaries
         assert len(dict_0) == 1 # make sure there is only one key, value pair per dict_0
         key, value = list(dict_0.items())[0]
