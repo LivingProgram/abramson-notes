@@ -54,7 +54,6 @@ def parse_theorem(value): # assumes you give one name, statement, and proof
 
 
         if line[0:3] == '\\t ': # append pure text proof lines
-            print('yes')
             assert line.count('\\t ') <= 1 # line should only have one of these special strings
             new_lines.append(line.split('\\t ')[1] + '\n')
         else: # append math proof lines
