@@ -2,6 +2,17 @@ title1: Derivative Properties Summary
 def: the \b(tangent) to \(f(x)\) at \(x=a\) is equal to $$\lim_{x\to a} \frac{f(x)-f(a)}{x-a} = \lim_{h\to 0} \frac{f(a+h)-f(a)}{h}  = f'(a)$$
 def: \(f(x)\) is \b(diffrentiable) at \(x=a\) if \(f'(a)\) exists
 p:
+  Properties~
+  $$diffrentiability \implies continuity$$
+  $$\frac{d}{dx}(f(x)+g(x))=f'(x)+g'(x)$$
+  $$\frac{d}{dx}(kf(x))=kf'(x)$$
+  $$\frac{d}{dx}(c)=0$$
+  $$\frac{d}{dx}(x^n)=nx^{n-1}$$
+  $$\frac{d}{dx}(\sin{x})=\cos{x}$$
+  $$\frac{d}{dx}(\cos{x})=-\sin{x}$$
+  $$\frac{d}{dx}\left(\frac{1}{f(x)}\right)=-\frac{f'(x)}{(f(x))^2}$$
+  $$\frac{d}{dx}(f(x)g(x))=f'(x)g(x)+g'(x)f(x)$$
+  $$\frac{d}{dx}(f(g(x)))=f'(g(x))g'(x)$$
   Proof Generalizations~ if you need to prove any of the derivative properties using limits, 
   1) convert definition to any of the limit definitions listed above 
   2) multiply to cancel out denominators or apply synthetic division
@@ -10,19 +21,23 @@ title1: Important Theorems
 def: \(f(x)\) has a \b(critical point) at \(f(a)\) if \(f'(a)=0\) or \(f'(a) \  DNE\)
 theorem:
   name: Extreme Value Theorem
-  statement: Left \(f\) be continuous on \([a,b]\), then the maximum and minimum of \(f\) on \([a,b]\) are either at critical points or endpoints
+  statement: if \(f\) is continuous on \([a,b]\), then the maximum and minimum of \(f\) on \([a,b]\) are either at critical points or endpoints
   proof:
     \t missing
 theorem:
   name: Rolle's Theorem
   statement: if \(f\) is continuous on \([a,b]\) and diffrentiable on \((a,b)\) and \(f(a)=f(b)\), then \(\exists \ c \in (a,b) \ s.t. f'(c)=0\)
   proof:
-    \t missing
+    \t Case 1
+    f(a)=f(b)=max\ of\ f\ on\ [a,b]
+    \exists\ min \in [a,b] = c \implies f'(c)=0 \e by the
+    \t Case 2
+    f(a)=f(b)=min
 theorem:
   name: Mean Value Theorem
   statement: if \(f\) is continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists \ c \in (a,b) \ s.t. f'(c)=\frac{f(b)-f(a)}{b-a}\)
   proof:
-    \t missing
+    \t compiled old notes
 title1: Inverse Function Applications
 def: a function \(f(x)\) is \b(monotonic) on an interval if it is either increasing or decreasing on that interval
 theorem: 
