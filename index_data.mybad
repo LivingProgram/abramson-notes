@@ -30,14 +30,26 @@ theorem:
   proof:
     \t Case 1
     f(a)=f(b)=max\ of\ f\ on\ [a,b]
-    \exists\ min \in [a,b] = c \implies f'(c)=0 \e by the
+    \exists\ min \in [a,b] = c \implies f'(c)=0 \e by Hard Theorem III
     \t Case 2
     f(a)=f(b)=min
+    \exists\ max \in [a,b] = c \implies f'(c)=0 \e by Hard Theorem III
+    \t Case 3
+    f(a)=f(b)=min\land max
+    \forall c \in [a,b], f'(c)=0 \e the graph is a constant graph
 theorem:
   name: Mean Value Theorem
   statement: if \(f\) is continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists \ c \in (a,b) \ s.t. f'(c)=\frac{f(b)-f(a)}{b-a}\)
   proof:
-    \t compiled old notes
+    Let\ g(x)= f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)\e why do this? it will allow g(a)=g(b)=0 to apply rolle's, and more importantly diffrentiating it leads to something very close to Mean Value Theorem
+    \implies g(a)=0\land g(b)=0
+    \implies \exists a < c < b\ s.t.\ g'(c)=0 \e by Rolle's Theorem
+    g'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}
+    \implies g'(c)=f'(c)-\frac{f(b)-f(a)}{b-a}
+    \implies 0=f'(c)-\frac{f(b)-f(a)}{b-a} \e g'(c)=0 from previous line of proof
+    \implies f'(c)=\frac{f(b)-f(a)}{b-a}
+title1: Convexity
+def: A function \(f(x)\) is \b(convex) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph
 title1: Inverse Function Applications
 def: a function \(f(x)\) is \b(monotonic) on an interval if it is either increasing or decreasing on that interval
 theorem: 

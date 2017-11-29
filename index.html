@@ -75,13 +75,27 @@ missing
         <strong>Proof:</strong>
 Case 1
         $$f(a)=f(b)=max\ of\ f\ on\ [a,b]$$
-        $$\exists\ min \in [a,b] = c \implies f'(c)=0$$
+        $$\exists\ min \in [a,b] = c \implies f'(c)=0 $$
+Case 2
+        $$f(a)=f(b)=min$$
+        $$\exists\ max \in [a,b] = c \implies f'(c)=0 $$
+Case 3
+        $$f(a)=f(b)=min\land max$$
+        $$\forall c \in [a,b], f'(c)=0 $$
       </p>
       <p><a id="Mean Value Theorem" href="#Mean Value Theorem"><strong>Theorem:</strong></a> if \(f\) is continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists \ c \in (a,b) \ s.t. f'(c)=\frac{f(b)-f(a)}{b-a}\)</p>
       <p>
         <strong>Proof:</strong>
-compiled old notes
+        $$Let\ g(x)= f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)$$
+        $$\implies g(a)=0\land g(b)=0$$
+        $$\implies \exists a < c < b\ s.t.\ g'(c)=0 $$
+        $$g'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}$$
+        $$\implies g'(c)=f'(c)-\frac{f(b)-f(a)}{b-a}$$
+        $$\implies 0=f'(c)-\frac{f(b)-f(a)}{b-a} $$
+        $$\implies f'(c)=\frac{f(b)-f(a)}{b-a}$$
       </p>
+      <h3><a id="convexity" href="#convexity">Convexity</a></h3>
+      <p><a id="def_convex" href="#def_convex"><strong>Def:</strong></a> A function \(f(x)\) is <strong>convex</strong> on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph</p>
       <h3><a id="inverse_function_applications" href="#inverse_function_applications">Inverse Function Applications</a></h3>
       <p><a id="def_monotonic" href="#def_monotonic"><strong>Def:</strong></a> a function \(f(x)\) is <strong>monotonic</strong> on an interval if it is either increasing or decreasing on that interval</p>
       <p><a id="inverse_theorem_1" href="#inverse_theorem_1"><strong>Theorem:</strong></a> If \(f(x)\) is increasing then so is \(f^{-1}(x)\)</p>
