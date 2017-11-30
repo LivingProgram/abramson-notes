@@ -50,6 +50,47 @@ theorem:
     \implies f'(c)=\frac{f(b)-f(a)}{b-a}
 title1: Convexity
 def: A function \(f(x)\) is \b(convex) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph
+def: A function \(f(x)\) is \b(concave) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies under the graph (think mancave)
+p:
+   To derive symbolic definitions, draw a generic parabola and points a,b,\((c,f(c))\) inbetween the two points \((r,f(r))\) and \((s,f(s))\), then show that a generic point on the secant line \((c,?)\) is greater than the other point \((c,f(c))\). To prove any theorems concerning convexity, convert the convex definition into alternative form, and use the assumption and some generic points that utilize the assumption to eventually show the alternative form of the convex definition.
+title1: Derivative Tests
+def: \b(First Derivative Test) states that \(\forall a < c < b\ , f'(a) < 0 \land f'(b) > 0 \implies f(c)\) is a local min and \(\forall a < c < b\ , f'(a) > 0 \land f'(b) < 0 \implies f(c)\) is a local max
+def: \b(Second Derivative Test) states that \(f''(c) > 0 \implies f(c)\) is a local min and \(f''(c) < 0 \implies f(c)\) is a local max
+p:
+  Proof~
+  \(f''(c) > 0 \implies f'\) is increasing in a neighborhood of c 
+  \(\implies f'\) goes from negative to positive 
+  \(\implies f(c)\) is a local min by the First Derivative Test
+title1: Related Rates Problems
+p:
+  The strategy to solving problems is 
+  0) Draw, 
+  1) Given, 
+  2) Want, 
+  3) Relate (pythagorean thoerem,similar triangles,area / volume formulas,law of cosines ~ \(z^2=x^2+y^2-2xy\cos \theta \)),
+  4) Diffrentiate, 
+  5) Solve (plug in),
+  6) State Answer (express written answer with correct units)
+title1: Optimization Problems
+p:
+  The strategy to solving problems is 
+  0) Draw,
+  1) Given,
+  2) Want (minimize or maximize some expression),
+  3) Relate,
+  4) Diffrentiate (to find critical points),
+  5) Check (plug in endpoints, critical points, and find what you want, apply FDT or SDT on answer and confirm it is a min or max),
+  6) State answer (written answer with units)
+title1: Graphing Problems
+p:
+  1) Calculate x,y intercepts
+  2) Calculate asymptotes (find the \(\lim_{x\to -\infty} f(x)\), \(\lim_{x\to +\infty} f(x)\), and \(\lim_{x\to +-a} f(x)\ , \forall a\) where \(f(x)\) is undefined)
+  3) Calculate \(f'(x)\) and draw First Derivative Number Line
+  4) Calculate \(f''(x)\) and draw Second Derivative Number Line
+  5) Calculate \(f(x) \forall x\) that are critical points or Possible Points of Inflection  
+  6) Calculate scale of axis based on all important values of \(f(x)\)
+  7) Draw intercepts, critical points, PPOI
+  8) For each interval between critical points PPOI, draw the curve based on the positive or negative value of FDNL and SDNL
 title1: Inverse Function Applications
 def: a function \(f(x)\) is \b(monotonic) on an interval if it is either increasing or decreasing on that interval
 theorem: 

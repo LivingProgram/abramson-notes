@@ -96,6 +96,100 @@ Case 3
       </p>
       <h3><a id="convexity" href="#convexity">Convexity</a></h3>
       <p><a id="def_convex" href="#def_convex"><strong>Def:</strong></a> A function \(f(x)\) is <strong>convex</strong> on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph</p>
+      <p><a id="def_concave" href="#def_concave"><strong>Def:</strong></a> A function \(f(x)\) is <strong>concave</strong> on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies under the graph (think mancave)</p>
+      <p>
+      To derive symbolic definitions, draw a generic parabola and points a,b,\((c,f(c))\) inbetween the two points \((r,f(r))\) and \((s,f(s))\), then show that a generic point on the secant line \((c,?)\) is greater than the other point \((c,f(c))\). To prove any theorems concerning convexity, convert the convex definition into alternative form, and use the assumption and some generic points that utilize the assumption to eventually show the alternative form of the convex definition.
+      </p>
+      <h3><a id="derivative_tests" href="#derivative_tests">Derivative Tests</a></h3>
+      <p><a id="def_First Derivative Test" href="#def_First Derivative Test"><strong>Def:</strong></a> <strong>First Derivative Test</strong> states that \(\forall a < c < b\ , f'(a) < 0 \land f'(b) > 0 \implies f(c)\) is a local min and \(\forall a < c < b\ , f'(a) > 0 \land f'(b) < 0 \implies f(c)\) is a local max</p>
+      <p><a id="def_Second Derivative Test" href="#def_Second Derivative Test"><strong>Def:</strong></a> <strong>Second Derivative Test</strong> states that \(f''(c) > 0 \implies f(c)\) is a local min and \(f''(c) < 0 \implies f(c)\) is a local max</p>
+      <p>
+      Proof~
+      </p>
+      <p>
+      \(f''(c) > 0 \implies f'\) is increasing in a neighborhood of c
+      </p>
+      <p>
+      \(\implies f'\) goes from negative to positive
+      </p>
+      <p>
+      \(\implies f(c)\) is a local min by the First Derivative Test
+      </p>
+      <h3><a id="related_rates_problems" href="#related_rates_problems">Related Rates Problems</a></h3>
+      <p>
+      The strategy to solving problems is
+      </p>
+      <p>
+      0) Draw,
+      </p>
+      <p>
+      1) Given,
+      </p>
+      <p>
+      2) Want,
+      </p>
+      <p>
+      3) Relate (pythagorean thoerem,similar triangles,area / volume formulas,law of cosines ~ \(z^2=x^2+y^2-2xy\cos \theta \)),
+      </p>
+      <p>
+      4) Diffrentiate,
+      </p>
+      <p>
+      5) Solve (plug in),
+      </p>
+      <p>
+      6) State Answer (express written answer with correct units)
+      </p>
+      <h3><a id="optimization_problems" href="#optimization_problems">Optimization Problems</a></h3>
+      <p>
+      The strategy to solving problems is
+      </p>
+      <p>
+      0) Draw,
+      </p>
+      <p>
+      1) Given,
+      </p>
+      <p>
+      2) Want (minimize or maximize some expression),
+      </p>
+      <p>
+      3) Relate,
+      </p>
+      <p>
+      4) Diffrentiate (to find critical points),
+      </p>
+      <p>
+      5) Check (plug in endpoints, critical points, and find what you want, apply FDT or SDT on answer and confirm it is a min or max),
+      </p>
+      <p>
+      6) State answer (written answer with units)
+      </p>
+      <h3><a id="graphing_problems" href="#graphing_problems">Graphing Problems</a></h3>
+      <p>
+      1) Calculate x,y intercepts
+      </p>
+      <p>
+      2) Calculate asymptotes (find the \(\lim_{x\to -\infty} f(x)\), \(\lim_{x\to +\infty} f(x)\), and \(\lim_{x\to +-a} f(x)\ , \forall a\) where \(f(x)\) is undefined)
+      </p>
+      <p>
+      3) Calculate \(f'(x)\) and draw First Derivative Number Line
+      </p>
+      <p>
+      4) Calculate \(f''(x)\) and draw Second Derivative Number Line
+      </p>
+      <p>
+      5) Calculate \(f(x) \forall x\) that are critical points or Possible Points of Inflection
+      </p>
+      <p>
+      6) Calculate scale of axis based on all important values of \(f(x)\)
+      </p>
+      <p>
+      7) Draw intercepts, critical points, PPOI
+      </p>
+      <p>
+      8) For each interval between critical points PPOI, draw the curve based on the positive or negative value of FDNL and SDNL
+      </p>
       <h3><a id="inverse_function_applications" href="#inverse_function_applications">Inverse Function Applications</a></h3>
       <p><a id="def_monotonic" href="#def_monotonic"><strong>Def:</strong></a> a function \(f(x)\) is <strong>monotonic</strong> on an interval if it is either increasing or decreasing on that interval</p>
       <p><a id="inverse_theorem_1" href="#inverse_theorem_1"><strong>Theorem:</strong></a> If \(f(x)\) is increasing then so is \(f^{-1}(x)\)</p>
