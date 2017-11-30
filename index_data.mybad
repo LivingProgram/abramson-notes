@@ -48,6 +48,16 @@ theorem:
     \implies g'(c)=f'(c)-\frac{f(b)-f(a)}{b-a}
     \implies 0=f'(c)-\frac{f(b)-f(a)}{b-a} \e g'(c)=0 from previous line of proof
     \implies f'(c)=\frac{f(b)-f(a)}{b-a}
+theorem:
+  name: Cauchy Mean Value Theorem
+  statement: suppose \(f\) and \(g\) are continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists a < c < b\ s.t.\ \frac{g(b)-g(a)}{f(b)-f(a)}=\frac{g'(c)}{f'(c)}\)
+  proof:
+    \t The proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\), and the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem, and you diffrentiate \(h(x)\), plug in c and \(h'(c)=0\) and simplify to the statement of Cauchy Mean Value Theorem.
+theorem:
+  name: L Hopitals Rule
+  statement: suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)
+  proof:
+    \t Work in Progress
 title1: Convexity
 def: A function \(f(x)\) is \b(convex) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph
 def: A function \(f(x)\) is \b(concave) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies under the graph (think mancave)
@@ -97,7 +107,7 @@ p:
   $$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$
   this is true because we can cancel out denominators like fractions
   Sample Problem~ Find the equation of the normal (a line perpendicular) to the 4-petal rose, \(r=\sin 2\theta\) when \(\theta = \frac{\pi}{3}\)
-  Generalized Solution ~ Find the slope of the line, i.e. \(\frac{dy}{dx}\), by utilizing the property from before \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\), find a point that lies on the normal by plugging \(\theta\) into the equation and solving for r, use point-slope formula to derive equation of the normal
+  Generalized Solution ~ Find the slope of the line, i.e. \(\frac{dy}{dx}\), by first converting the polar equation to \(x=\) (something in terms of \(\theta\)) and \(y=\) (something in terms of \(\theta\)), utilizing the property from before \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\), find a point that lies on the normal by plugging \(\theta\) into the equation and solving for r, use point-slope formula to derive equation of the normal
 def: \b(implicit diffrentiation) is simply taking the derivative of both sides of an equation that relate one variable to another
 p:
   Example~ an equation that relates x and y would be \(x^2+y^2=1\) and implicit diffrentiation would be \(\frac{d}{dx}(x^2+y^2)=\frac{d}{dx}(1)\)
@@ -119,7 +129,7 @@ theorem:
   statement: If \(f(x)\) is continuous and increasing on \([a,b]\) then \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\)
   proof:
     \t Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition.
-    \t Take the \(f^{-1}\) of the expanded versioni of the hypothesis of the definition.
+    \t Take the \(f^{-1}\) of the expanded version of the hypothesis of the definition.
     \t Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties).
     \t Solve for \(\delta\) in the statement.
     \t State \(\delta \leq min\) of something and generate formal proof.

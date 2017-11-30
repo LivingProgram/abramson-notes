@@ -94,6 +94,16 @@ Case 3
         $$\implies 0=f'(c)-\frac{f(b)-f(a)}{b-a} $$
         $$\implies f'(c)=\frac{f(b)-f(a)}{b-a}$$
       </p>
+      <p><a id="Cauchy Mean Value Theorem" href="#Cauchy Mean Value Theorem"><strong>Theorem:</strong></a> suppose \(f\) and \(g\) are continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists a < c < b\ s.t.\ \frac{g(b)-g(a)}{f(b)-f(a)}=\frac{g'(c)}{f'(c)}\)</p>
+      <p>
+        <strong>Proof:</strong>
+The proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\), and the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem, and you diffrentiate \(h(x)\), plug in c and \(h'(c)=0\) and simplify to the statement of Cauchy Mean Value Theorem.
+      </p>
+      <p><a id="L Hopitals Rule" href="#L Hopitals Rule"><strong>Theorem:</strong></a> suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)</p>
+      <p>
+        <strong>Proof:</strong>
+Work in Progress
+      </p>
       <h3><a id="convexity" href="#convexity">Convexity</a></h3>
       <p><a id="def_convex" href="#def_convex"><strong>Def:</strong></a> A function \(f(x)\) is <strong>convex</strong> on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph</p>
       <p><a id="def_concave" href="#def_concave"><strong>Def:</strong></a> A function \(f(x)\) is <strong>concave</strong> on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies under the graph (think mancave)</p>
@@ -204,7 +214,7 @@ Case 3
       Sample Problem~ Find the equation of the normal (a line perpendicular) to the 4-petal rose, \(r=\sin 2\theta\) when \(\theta = \frac{\pi}{3}\)
       </p>
       <p>
-      Generalized Solution ~ Find the slope of the line, i.e. \(\frac{dy}{dx}\), by utilizing the property from before \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\), find a point that lies on the normal by plugging \(\theta\) into the equation and solving for r, use point-slope formula to derive equation of the normal
+      Generalized Solution ~ Find the slope of the line, i.e. \(\frac{dy}{dx}\), by first converting the polar equation to \(x=\) (something in terms of \(\theta\)) and \(y=\) (something in terms of \(\theta\)), utilizing the property from before \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\), find a point that lies on the normal by plugging \(\theta\) into the equation and solving for r, use point-slope formula to derive equation of the normal
       </p>
       <p><a id="def_implicit diffrentiation" href="#def_implicit diffrentiation"><strong>Def:</strong></a> <strong>implicit diffrentiation</strong> is simply taking the derivative of both sides of an equation that relate one variable to another</p>
       <p>
@@ -227,7 +237,7 @@ Case 3
       <p>
         <strong>Proof:</strong>
 Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition.
-Take the \(f^{-1}\) of the expanded versioni of the hypothesis of the definition.
+Take the \(f^{-1}\) of the expanded version of the hypothesis of the definition.
 Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties).
 Solve for \(\delta\) in the statement.
 State \(\delta \leq min\) of something and generate formal proof.
