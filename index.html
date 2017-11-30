@@ -190,6 +190,26 @@ Case 3
       <p>
       8) For each interval between critical points PPOI, draw the curve based on the positive or negative value of FDNL and SDNL
       </p>
+      <h3><a id="parametrics_and_implicit_diffrentiation" href="#parametrics_and_implicit_diffrentiation">Parametrics and Implicit Diffrentiation</a></h3>
+      <p>
+      Recall~ sometimes it is convenient to write \(x\) and \(y\) in terms of another variable, called a parameter (normally denoted \(t\))
+      </p>
+      <p>
+      $$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$
+      </p>
+      <p>
+      this is true because we can cancel out denominators like fractions
+      </p>
+      <p>
+      Sample Problem~ Find the equation of the normal (a line perpendicular) to the 4-petal rose, \(r=\sin 2\theta\) when \(\theta = \frac{\pi}{3}\)
+      </p>
+      <p>
+      Generalized Solution ~ Find the slope of the line, i.e. \(\frac{dy}{dx}\), by utilizing the property from before \(\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\), find a point that lies on the normal by plugging \(\theta\) into the equation and solving for r, use point-slope formula to derive equation of the normal
+      </p>
+      <p><a id="def_implicit diffrentiation" href="#def_implicit diffrentiation"><strong>Def:</strong></a> <strong>implicit diffrentiation</strong> is simply taking the derivative of both sides of an equation that relate one variable to another</p>
+      <p>
+      Example~ an equation that relates x and y would be \(x^2+y^2=1\) and implicit diffrentiation would be \(\frac{d}{dx}(x^2+y^2)=\frac{d}{dx}(1)\)
+      </p>
       <h3><a id="inverse_function_applications" href="#inverse_function_applications">Inverse Function Applications</a></h3>
       <p><a id="def_monotonic" href="#def_monotonic"><strong>Def:</strong></a> a function \(f(x)\) is <strong>monotonic</strong> on an interval if it is either increasing or decreasing on that interval</p>
       <p><a id="inverse_theorem_1" href="#inverse_theorem_1"><strong>Theorem:</strong></a> If \(f(x)\) is increasing then so is \(f^{-1}(x)\)</p>
@@ -206,7 +226,44 @@ Case 3
       <p><a id="inverse_theorem_2" href="#inverse_theorem_2"><strong>Theorem:</strong></a> If \(f(x)\) is continuous and increasing on \([a,b]\) then \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\)</p>
       <p>
         <strong>Proof:</strong>
-Work in Progress
+Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition.
+Take the \(f^{-1}\) of the expanded versioni of the hypothesis of the definition.
+Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties).
+Solve for \(\delta\) in the statement.
+State \(\delta \leq min\) of something and generate formal proof.
+      </p>
+      <p><a id="inverse_theorem_3" href="#inverse_theorem_3"><strong>Theorem:</strong></a> Assume \(f(x)\) is continuous and diffrentiable and monotonic, then \((f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}\)</p>
+      <p>
+        <strong>Proof:</strong>
+        $$Let\ (a,f(a))\ be\ a\ point\ on\ f(x)$$
+        $$\implies (f(a),a)\ is\ a\ point\ on\ f'(x)$$
+        $$\implies (b,f^{-1}(b))\ is\ a\ point\ on\ f'(x)$$
+        $$\implies f'(x)\ slope = (f^{-1})'(b) = \frac{1}{f(x)\ slope}=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}$$
+        $$\implies (f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}$$
+      </p>
+      <p><a id="inverse_theorem_4" href="#inverse_theorem_4"><strong>Theorem:</strong></a> Assume \(f\) is increasing and diffrentiable on \([a,b]\), then \(f^{-1}\) is diffrentiable at \(f(c)=d\) and \(f'(c) \neq 0\)</p>
+      <p>
+        <strong>Proof:</strong>
+Convert \((f^{-1})'(d)\) to h limit definition.
+Plug in alternative values for \(f^{-1}(d+h)\) , \(f^{-1}(d)\) and \(h\).
+Convert \(\lim_{h\to 0}\) into \(\lim_{\tilde{h}\to 0}\).
+Simplify, show diffrentiability exists.
+      </p>
+      <h3><a id="inverse_trig_functions" href="#inverse_trig_functions">Inverse Trig Functions</a></h3>
+      <p>
+      To find the domains and ranges of inverse trig functions, simply use the understanding of what part of the normal trig function is used to create the inverse trig function, then take the domain and range of the normal function for that piece, flip it, and use as the domains and ranges of inverse trig. (remember normal \(\sin\) passes through origin while normal \(\cos\) does not)
+      </p>
+      <p>
+      \(\sin^{-1}\)~ take the piece starting from \(-\frac{\pi}{2}\) to \(\frac{\pi}{2}\) (i.e. valley to peak)
+      </p>
+      <p>
+      \(\cos^{-1}\)~ take the piece starting from \(0\) to \(\pi\) (i.e. peak to valley)
+      </p>
+      <p>
+      \(\tan^{-1}\)~ take the piece starting from \(-\frac{\pi}{2}\) to \(\frac{\pi}{2}\) (i.e. one repeating part only)
+      </p>
+      <p>
+      To find an equation for the derivative of the inverse trig functions (such as \((\sin^{-1})'\)), set \(y =\ inverse\ trig\ function\), solve for \(x\), take \(\frac{d}{dx}\) of both sides, solve for \(\frac{dy}{dx}\), plug in \(y =\ inverse\ trig\ function\), simplify. Or you can simply use the formula derived before~ \((f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}\), and to simplify inverse trig, let \(\theta = \sin^{-1}(x) \implies x=\sin(\theta)\), then we have a triangle with hypotenuse length 1, side length \(x\) for the side across from \(\theta\) and \(\sqrt{1-x^2}\), and to find something like \(\cos(\sin^{-1}(x))\) it is simply \(\cos{\theta}\) which equals \(\frac{\sqrt{1-x^2}}{1}\).
       </p>
     </div>
   </body>
