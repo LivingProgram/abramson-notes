@@ -44,6 +44,7 @@ def parse_def(value): # takes the first bolded only
     return new_lines
 def parse_theorem(value): # assumes you give one name, statement, does not require proof, but strict order of name, statement, proofs
     new_lines = []
+    all_proof_lines = []
     for dict_1 in value: # unpacking dictionary values
         assert len(dict_1) == 1
         key, value_1 = list(dict_1.items())[0]
@@ -51,10 +52,9 @@ def parse_theorem(value): # assumes you give one name, statement, does not requi
             theorem_name = value_1
         elif key == 'statement':
             theorem_statement = value_1
-            new_lines.append('      <p><a id="{}" href="#{}"><strong>Theorem:</strong></a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement)) # create theorem name and statement
         elif key == 'proof': # creates proof, can support multiple proofs
-            new_lines.append('      <p>\n')
-            new_lines.append('        <strong>Proof:</strong>\n')
+            all_proof_lines.append('      <p>\n')
+            all_proof_lines.append('        <strong>Proof:</strong>\n')
             proof_lines = value_1
             for line in proof_lines:
                 assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
@@ -67,10 +67,19 @@ def parse_theorem(value): # assumes you give one name, statement, does not requi
 
                 if line[0:3] == '\\t ': # append pure text proof lines
                     assert line.count('\\t ') <= 1 # line should only have one of these special strings
-                    new_lines.append(line.split('\\t ')[1] + '\n')
+                    all_proof_lines.append(line.split('\\t ')[1] + '\n')
                 else: # append math proof lines
-                    new_lines.append('        $${}$$\n'.format(line))
-    new_lines.append('      </p>\n')
+                    all_proof_lines.append('        $${}$$\n'.format(line))
+            all_proof_lines.append('      </p>\n')
+    # if the name has a single capital letter it is a named theorem 
+    uppers = [l for l in theorem_name if l.isupper()]
+    if uppers != []:
+        simplified_name = theorem_name.replace(' ', '_').lower()
+        new_lines.append('      <p><a id="{}" href="#{}"><strong>{}:</strong></a> {}</p>\n'.format(simplified_name,simplified_name,theorem_name,theorem_statement))
+    else:
+        # add generic theorem tag
+        new_lines.append('      <p><a id="{}" href="#{}"><strong>Theorem:</strong></a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement)) 
+    new_lines += all_proof_lines
     return new_lines
 def parse_p(value):
     new_lines = []
