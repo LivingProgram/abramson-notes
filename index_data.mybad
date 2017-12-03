@@ -169,3 +169,14 @@ p:
   \(\cos^{-1}\)~ take the piece starting from \(0\) to \(\pi\) (i.e. peak to valley)
   \(\tan^{-1}\)~ take the piece starting from \(-\frac{\pi}{2}\) to \(\frac{\pi}{2}\) (i.e. one repeating part only)
   To find an equation for the derivative of the inverse trig functions (such as \((\sin^{-1})'\)), set \(y =\ inverse\ trig\ function\), solve for \(x\), take \(\frac{d}{dx}\) of both sides, solve for \(\frac{dy}{dx}\), plug in \(y =\ inverse\ trig\ function\), simplify. Or you can simply use the formula derived before~ \((f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}\), and to simplify inverse trig, let \(\theta = \sin^{-1}(x) \implies x=\sin(\theta)\), then we have a triangle with hypotenuse length 1, side length \(x\) for the side across from \(\theta\) and \(\sqrt{1-x^2}\), and to find something like \(\cos(\sin^{-1}(x))\) it is simply \(\cos{\theta}\) which equals \(\frac{\sqrt{1-x^2}}{1}\).
+title1: Introduction to Integrals
+def: a \b(partition) \(P\) of \([a,b]\) is a set of points \(a = x_0 < x_1 < x_2 < \ldots < x_n = b\)
+p:
+  Let \(f(x)\) be defined and bounded on \([a,b]\)
+def: \b(\(m_i\)) \(= \inf\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}\)
+def: \b(\(M_i\)) \(= \sup\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}\)
+def: \b(\(L(f,P)\)) \(= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})\)
+def: \b(\(U(f,P)\)) \(= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})\)
+p: 
+  The function \(L(f,P)\) stands for the lower sum of some function, \(f\), and partition, \(P\). Similarly the function \(U(f,P)\) stands for the upper sum.
+  Essentially partitions are the dividing lines along the x-axis of a graph, and \(m_{i}\) is the lowest value on a given section of the graph, thus \(L(f,P)\) is sum of the areas under the graph of a function \(f(x)\) along the lines of the partition. 
