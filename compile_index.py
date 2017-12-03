@@ -42,7 +42,7 @@ def parse_def(value): # takes the first bolded only
     term = value[start_idx+3:end_idx-1]
     new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
     return new_lines
-def parse_theorem(value): # assumes you give one name, statement, and proof
+def parse_theorem(value): # assumes you give one name, statement, does not require proof, but strict order of name, statement, proofs
     new_lines = []
     for dict_1 in value: # unpacking dictionary values
         assert len(dict_1) == 1
@@ -51,25 +51,25 @@ def parse_theorem(value): # assumes you give one name, statement, and proof
             theorem_name = value_1
         elif key == 'statement':
             theorem_statement = value_1
-        elif key == 'proof':
+            new_lines.append('      <p><a id="{}" href="#{}"><strong>Theorem:</strong></a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement)) # create theorem name and statement
+        elif key == 'proof': # creates proof, can support multiple proofs
+            new_lines.append('      <p>\n')
+            new_lines.append('        <strong>Proof:</strong>\n')
             proof_lines = value_1
-    new_lines.append('      <p><a id="{}" href="#{}"><strong>Theorem:</strong></a> {}</p>\n'.format(theorem_name,theorem_name,theorem_statement))
-    new_lines.append('      <p>\n')
-    new_lines.append('        <strong>Proof:</strong>\n')
-    for line in proof_lines:
-        assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
-        if line.count('\\e ') == 1:
-            line,line_explanation = line.split('\\e ')
-        else:
-            line_explanation = None # must make it none or else it will be the previous line's explanation
-        # here you can do something with the explanation for specific lines of the proof
+            for line in proof_lines:
+                assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
+                if line.count('\\e ') == 1:
+                    line,line_explanation = line.split('\\e ')
+                else:
+                    line_explanation = None # must make it none or else it will be the previous line's explanation
+                # here you can do something with the explanation for specific lines of the proof
 
 
-        if line[0:3] == '\\t ': # append pure text proof lines
-            assert line.count('\\t ') <= 1 # line should only have one of these special strings
-            new_lines.append(line.split('\\t ')[1] + '\n')
-        else: # append math proof lines
-            new_lines.append('        $${}$$\n'.format(line))
+                if line[0:3] == '\\t ': # append pure text proof lines
+                    assert line.count('\\t ') <= 1 # line should only have one of these special strings
+                    new_lines.append(line.split('\\t ')[1] + '\n')
+                else: # append math proof lines
+                    new_lines.append('        $${}$$\n'.format(line))
     new_lines.append('      </p>\n')
     return new_lines
 def parse_p(value):

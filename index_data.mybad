@@ -22,8 +22,6 @@ def: \(f(x)\) has a \b(critical point) at \(f(a)\) if \(f'(a)=0\) or \(f'(a) \  
 theorem:
   name: Extreme Value Theorem
   statement: if \(f\) is continuous on \([a,b]\), then the maximum and minimum of \(f\) on \([a,b]\) are either at critical points or endpoints
-  proof:
-    \t missing
 theorem:
   name: Rolle's Theorem
   statement: if \(f\) is continuous on \([a,b]\) and diffrentiable on \((a,b)\) and \(f(a)=f(b)\), then \(\exists \ c \in (a,b) \ s.t. f'(c)=0\)
@@ -56,20 +54,14 @@ theorem:
 theorem:
   name: L Hopitals Rule
   statement: suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)
-  proof:
-    \t missing
 p:
   Application~ Simplifying a complex limit such as $$\lim_{x\to 0}\frac{x-\sin x}{x^3}$$ by applying L Hopitals until the numerator or denomenator does not approach \(0\), thus $$\lim_{x\to 0}\frac{x-\sin x}{x^3}=\lim_{x\to 0}\frac{1-\cos x}{3x^2}=\lim_{x\to 0}\frac{1+\sin x}{6x}=\frac{1}{6}$$
 theorem:
   name: l_hopitals_rule_2
   statement: suppose \(\lim_{x\to \infty}f(x)=\lim_{x\to \infty}g(x)=0\) and \(\lim_{x\to \infty}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to \infty}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)
-  proof:
-    \t missing
 theorem:
   name: l_hopitals_rule_3
   statement: suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=\pm\infty\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)
-  proof:
-    \t missing
 title1: Convexity
 def: A function \(f(x)\) is \b(convex) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies over the graph
 def: A function \(f(x)\) is \b(concave) on \((a,b)\) if given \(a \leq r < s \leq b\), the secant line connecting \((r,f(r))\) to \((s,f(s))\) lies under the graph (think mancave)
