@@ -26,7 +26,19 @@ def parse_def(value): # takes the first bolded only
     new_lines = []
     assert value.find('\\b(') != -1 # make sure you have something bolded
     start_idx = value.find('\\b(')
-    end_idx = start_idx+3 + value.split('\\b(')[-1].find(')')+1
+    #end_p_idx = value.split('\\b(')[-1].find(')')
+    # grab everything after '\\b(' and iteratively look at each char, add 1 a counter if it is a '(' and subtract 1 from counter if it is a ')'
+    # every loop over char, check to make sure counter == -1, if it =-1 then that ')' has to be the idx of the close of the '\\b('
+    p_counter = 0
+    for idx, char in enumerate(value.split('\\b(')[-1]):
+        if char == '(':
+            p_counter+=1
+        if char == ')':
+            p_counter-=1
+        if p_counter == -1:
+            end_p_idx = idx
+            break
+    end_idx = start_idx+3 + end_p_idx +1
     term = value[start_idx+3:end_idx-1]
     new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
     return new_lines
