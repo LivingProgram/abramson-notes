@@ -93,10 +93,10 @@
       <p><a id="cauchy_mean_value_theorem" href="#cauchy_mean_value_theorem"><strong>Cauchy Mean Value Theorem:</strong></a> suppose \(f\) and \(g\) are continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists a < c < b\ s.t.\ \frac{g(b)-g(a)}{f(b)-f(a)}=\frac{g'(c)}{f'(c)}\)</p>
       <p><strong>Proof Summary:</strong></p>
       <ul>
-        <li>The proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\),</li>
-        <li>and the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem,</li>
-        <li>and you diffrentiate \(h(x)\), plug in c and \(h'(c)=0\)</li>
-        <li>and simplify to the statement of Cauchy Mean Value Theorem.</li>
+        <li>the proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\)</li>
+        <li>the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem</li>
+        <li>diffrentiate \(h(x)\), plug in c and \(h'(c)=0\)</li>
+        <li>simplify to the statement of Cauchy Mean Value Theorem</li>
       </ul>
       <p><a id="l_hopitals_rule" href="#l_hopitals_rule"><strong>L Hopitals Rule:</strong></a> suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)</p>
       <p>
@@ -234,14 +234,14 @@
         $$f^{-1}(x)\ is\ increasing$$
       </p>
       <p><a id="inverse_theorem_2" href="#inverse_theorem_2"><strong>Theorem:</strong></a> If \(f(x)\) is continuous and increasing on \([a,b]\) then \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\)</p>
-      <p>
-        <strong>Proof:</strong>
-        Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition.
-        Take the \(f^{-1}\) of the expanded version of the hypothesis of the definition.
-        Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties).
-        Solve for \(\delta\) in the statement.
-        State \(\delta \leq min\) of something and generate formal proof.
-      </p>
+      <p><strong>Proof Summary:</strong></p>
+      <ul>
+        <li>Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition</li>
+        <li>Take the \(f^{-1}\) of the expanded version of the hypothesis of the definition</li>
+        <li>Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties)</li>
+        <li>Solve for \(\delta\) in the statement</li>
+        <li>State \(\delta \leq min\) of something and generate formal proof</li>
+      </ul>
       <p><a id="inverse_theorem_3" href="#inverse_theorem_3"><strong>Theorem:</strong></a> Assume \(f(x)\) is continuous and diffrentiable and monotonic, then \((f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}\)</p>
       <p>
         <strong>Proof:</strong>
@@ -252,13 +252,13 @@
         $$\implies (f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}$$
       </p>
       <p><a id="inverse_theorem_4" href="#inverse_theorem_4"><strong>Theorem:</strong></a> Assume \(f\) is increasing and diffrentiable on \([a,b]\), then \(f^{-1}\) is diffrentiable at \(f(c)=d\) and \(f'(c) \neq 0\)</p>
-      <p>
-        <strong>Proof:</strong>
-        Convert \((f^{-1})'(d)\) to h limit definition.
-        Plug in alternative values for \(f^{-1}(d+h)\) , \(f^{-1}(d)\) and \(h\).
-        Convert \(\lim_{h\to 0}\) into \(\lim_{\tilde{h}\to 0}\).
-        Simplify, show diffrentiability exists.
-      </p>
+      <p><strong>Proof Summary:</strong></p>
+      <ul>
+        <li>Convert \((f^{-1})'(d)\) to h limit definition</li>
+        <li>Plug in alternative values for \(f^{-1}(d+h)\) , \(f^{-1}(d)\) and \(h\)</li>
+        <li>Convert \(\lim_{h\to 0}\) into \(\lim_{\tilde{h}\to 0}\)</li>
+        <li>Simplify, show diffrentiability exists</li>
+      </ul>
       <h3><a id="inverse_trig_functions" href="#inverse_trig_functions">Inverse Trig Functions</a></h3>
       <p>
       To find the domains and ranges of inverse trig functions, simply use the understanding of what part of the normal trig function is used to create the inverse trig function, then take the domain and range of the normal function for that piece, flip it, and use as the domains and ranges of inverse trig. (remember normal \(\sin\) passes through origin while normal \(\cos\) does not)
