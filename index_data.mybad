@@ -174,4 +174,25 @@ def: \b(\(L(f,P)\)) \(= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})\)
 def: \b(\(U(f,P)\)) \(= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})\)
 p: 
   The function \(L(f,P)\) stands for the lower sum of some function, \(f\), and partition, \(P\). Similarly the function \(U(f,P)\) stands for the upper sum.
-  Essentially partitions are the dividing lines along the x-axis of a graph, and \(m_{i}\) is the lowest value on a given section of the graph, thus \(L(f,P)\) is sum of the areas under the graph of a function \(f(x)\) along the lines of the partition. 
+  Essentially partitions are the dividing lines along the x-axis of a graph, and \(m_{i}\) is the lowest value on a given section of the graph, thus \(L(f,P)\) is sum of the areas under the graph of a function \(f(x)\) along the lines of the partition. Note that for every choice of \(L(f,P)\) and \(U(f,P)\), \(L(f,P) < area < U(f,P)\).
+  Now we need all the upper sums to be less than all the lower sums, but there are some extreme cases.
+  Extreme Case 1 ~ (when all lower sums = all upper sums) 
+  $$\text{Let } f(x)=1 \text{ on } [17,103]$$
+  $$\text{Let } P \text{ be a partition of } [17,103]$$
+  $$L(f,P) = \sum_{i=1}^{n}(1)(x_{i}-x_{i-1})=x_{n}-x_{0}=86$$
+  $$U(f,P) = \sum_{i=1}^{n}(1)(x_{i}-x_{i-1})=x_{n}-x_{0}=86$$
+  $$L(f,P) = U(f,P)$$
+  Extreme Case 2 ~ 
+  $$\text{Let } f(x)= \begin{cases} 1 & x= \mathbb{Q} \\ 0 & x \neq \mathbb{Q} \end{cases} \text{ on } [12,103]$$
+  $$\implies M_{i}=1 \land m_{i} = 0$$
+  $$L(f,P) = \sum_{i=1}^{n}(0)(x_{i}-x_{i-1})=0$$
+  $$U(f,P) = \sum_{i=1}^{n}(1)(x_{i}-x_{i-1})=x_{n}-x_{0}=86$$
+  $$L(f,P) \neq U(f,P)$$
+  In order to have a reasonable candidate for area, area should be unique, and that is why we want \(\inf(U)=\sup(L)\), thus Extreme Case 2 fails.
+def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then Q is said to be \b(finer) than \(P\)
+def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then P is said to be \b(coarser) than \(Q\)
+theorem:
+  name: integral_theorem_1
+  statement: Let \(f\) be bounded on \([a,b]\) and let \(P\), \(Q\) be two partitions of \([a,b]\), then \(L(f,P) \leq U(f,Q)\)
+  proof:
+    \underline(Lemma)~ If P \subset Q \text{ then } 
