@@ -49,8 +49,11 @@ theorem:
 theorem:
   name: Cauchy Mean Value Theorem
   statement: suppose \(f\) and \(g\) are continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists a < c < b\ s.t.\ \frac{g(b)-g(a)}{f(b)-f(a)}=\frac{g'(c)}{f'(c)}\)
-  proof:
-    \t The proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\), and the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem, and you diffrentiate \(h(x)\), plug in c and \(h'(c)=0\) and simplify to the statement of Cauchy Mean Value Theorem.
+  proofsum:
+    the proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\) 
+    the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem
+    diffrentiate \(h(x)\), plug in c and \(h'(c)=0\) 
+    simplify to the statement of Cauchy Mean Value Theorem
 theorem:
   name: L Hopitals Rule
   statement: suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)

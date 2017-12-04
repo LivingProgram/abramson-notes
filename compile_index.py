@@ -67,10 +67,16 @@ def parse_theorem(value): # assumes you give one name, statement, does not requi
 
                 if line[0:3] == '\\t ': # append pure text proof lines
                     assert line.count('\\t ') <= 1 # line should only have one of these special strings
-                    all_proof_lines.append(line.split('\\t ')[1] + '\n')
+                    all_proof_lines.append('        '+ line.split('\\t ')[1] + '\n')
                 else: # append math proof lines
                     all_proof_lines.append('        $${}$$\n'.format(line))
             all_proof_lines.append('      </p>\n')
+        elif key == 'proofsum': # add option for a proof summary
+            all_proof_lines.append('      <p><strong>Proof Summary:</strong></p>\n')
+            all_proof_lines.append('      <ul>\n')
+            for line in value_1:
+                all_proof_lines.append('        <li>{}</li>\n'.format(line))
+            all_proof_lines.append('      </ul>\n')
     # if the name has a single capital letter it is a named theorem 
     uppers = [l for l in theorem_name if l.isupper()]
     if uppers != []:

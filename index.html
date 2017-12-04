@@ -69,13 +69,13 @@
       <p><a id="rolle's_theorem" href="#rolle's_theorem"><strong>Rolle's Theorem:</strong></a> if \(f\) is continuous on \([a,b]\) and diffrentiable on \((a,b)\) and \(f(a)=f(b)\), then \(\exists \ c \in (a,b) \ s.t. f'(c)=0\)</p>
       <p>
         <strong>Proof:</strong>
-Case 1
+        Case 1
         $$f(a)=f(b)=max\ of\ f\ on\ [a,b]$$
         $$\exists\ min \in [a,b] = c \implies f'(c)=0 $$
-Case 2
+        Case 2
         $$f(a)=f(b)=min$$
         $$\exists\ max \in [a,b] = c \implies f'(c)=0 $$
-Case 3
+        Case 3
         $$f(a)=f(b)=min\land max$$
         $$\forall c \in [a,b], f'(c)=0 $$
       </p>
@@ -91,10 +91,13 @@ Case 3
         $$\implies f'(c)=\frac{f(b)-f(a)}{b-a}$$
       </p>
       <p><a id="cauchy_mean_value_theorem" href="#cauchy_mean_value_theorem"><strong>Cauchy Mean Value Theorem:</strong></a> suppose \(f\) and \(g\) are continuous on \([a,b]\) and diffrentiable on \((a,b)\), then \(\exists a < c < b\ s.t.\ \frac{g(b)-g(a)}{f(b)-f(a)}=\frac{g'(c)}{f'(c)}\)</p>
-      <p>
-        <strong>Proof:</strong>
-The proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\), and the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem, and you diffrentiate \(h(x)\), plug in c and \(h'(c)=0\) and simplify to the statement of Cauchy Mean Value Theorem.
-      </p>
+      <p><strong>Proof Summary:</strong></p>
+      <ul>
+        <li>The proof is very similar to the proof of the Mean Value Theorem in the sense that you create this function \(h(x)=(f(b)-f(a))g(x)-(g(b)-g(a)f(x))\),</li>
+        <li>and the function is created such that \(h(a)=h(b)\) which lets you apply Rolle's Theorem,</li>
+        <li>and you diffrentiate \(h(x)\), plug in c and \(h'(c)=0\)</li>
+        <li>and simplify to the statement of Cauchy Mean Value Theorem.</li>
+      </ul>
       <p><a id="l_hopitals_rule" href="#l_hopitals_rule"><strong>L Hopitals Rule:</strong></a> suppose \(\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0\) and \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\) exists, then \(\lim_{x\to a}\frac{f(x)}{g(x)}\) exists and equals \(\lim_{x\to a}\frac{f'(x)}{g'(x)}\)</p>
       <p>
       Application~ Simplifying a complex limit such as $$\lim_{x\to 0}\frac{x-\sin x}{x^3}$$ by applying L Hopitals until the numerator or denomenator does not approach \(0\), thus $$\lim_{x\to 0}\frac{x-\sin x}{x^3}=\lim_{x\to 0}\frac{1-\cos x}{3x^2}=\lim_{x\to 0}\frac{1+\sin x}{6x}=\frac{1}{6}$$
@@ -233,11 +236,11 @@ The proof is very similar to the proof of the Mean Value Theorem in the sense th
       <p><a id="inverse_theorem_2" href="#inverse_theorem_2"><strong>Theorem:</strong></a> If \(f(x)\) is continuous and increasing on \([a,b]\) then \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\)</p>
       <p>
         <strong>Proof:</strong>
-Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition.
-Take the \(f^{-1}\) of the expanded version of the hypothesis of the definition.
-Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties).
-Solve for \(\delta\) in the statement.
-State \(\delta \leq min\) of something and generate formal proof.
+        Convert \(f^{-1}(x)\) is continuous on \([f(a),f(b)]\) to \(\epsilon,\delta\) definition.
+        Take the \(f^{-1}\) of the expanded version of the hypothesis of the definition.
+        Take the new conditional statement, and convert into something \(\subseteq\) of another thing (by subset and conditional statement properties).
+        Solve for \(\delta\) in the statement.
+        State \(\delta \leq min\) of something and generate formal proof.
       </p>
       <p><a id="inverse_theorem_3" href="#inverse_theorem_3"><strong>Theorem:</strong></a> Assume \(f(x)\) is continuous and diffrentiable and monotonic, then \((f^{-1})'(b)=\frac{1}{f'(f^{-1}(b))}\)</p>
       <p>
@@ -251,10 +254,10 @@ State \(\delta \leq min\) of something and generate formal proof.
       <p><a id="inverse_theorem_4" href="#inverse_theorem_4"><strong>Theorem:</strong></a> Assume \(f\) is increasing and diffrentiable on \([a,b]\), then \(f^{-1}\) is diffrentiable at \(f(c)=d\) and \(f'(c) \neq 0\)</p>
       <p>
         <strong>Proof:</strong>
-Convert \((f^{-1})'(d)\) to h limit definition.
-Plug in alternative values for \(f^{-1}(d+h)\) , \(f^{-1}(d)\) and \(h\).
-Convert \(\lim_{h\to 0}\) into \(\lim_{\tilde{h}\to 0}\).
-Simplify, show diffrentiability exists.
+        Convert \((f^{-1})'(d)\) to h limit definition.
+        Plug in alternative values for \(f^{-1}(d+h)\) , \(f^{-1}(d)\) and \(h\).
+        Convert \(\lim_{h\to 0}\) into \(\lim_{\tilde{h}\to 0}\).
+        Simplify, show diffrentiability exists.
       </p>
       <h3><a id="inverse_trig_functions" href="#inverse_trig_functions">Inverse Trig Functions</a></h3>
       <p>
