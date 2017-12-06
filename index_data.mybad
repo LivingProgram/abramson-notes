@@ -8,8 +8,11 @@ def: \b(\(L(f,P)\)) \(= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})\)
 def: \b(\(U(f,P)\)) \(= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})\)
 p: 
   The function \(L(f,P)\) stands for the lower sum of some function, \(f\), and partition, \(P\). Similarly the function \(U(f,P)\) stands for the upper sum.
-  Essentially partitions are the dividing lines along the x-axis of a graph, and \(m_{i}\) is the lowest value on a given section of the graph, thus \(L(f,P)\) is sum of the areas under the graph of a function \(f(x)\) along the lines of the partition. Note that for every choice of \(L(f,P)\) and \(U(f,P)\), \(L(f,P) < area < U(f,P)\).
-  Now we need all the upper sums to be less than all the lower sums, but there are some extreme cases.
+img: 
+  src: ./images/intro_integrals_area_diagram.jpg
+  explanation: Essentially partitions are the dividing lines along the x-axis of a graph. Every \(m_{i}\) is the pink line in the image, and the lowest value of \(f(x)\) for a specific partition of the graph. Whereas every \(M_{i}\) is the orange line in the image, and the highest value of \(f(x)\) for a specific partition of the graph. Thus \(L(f,P)\) is sum of the areas below the \(m_{i}\) lines, and \(U(f,P)\) is sum of the areas below the \(M_{i}\) lines. 
+p:
+  Note that for every choice of \(L(f,P)\) and \(U(f,P)\), we want \(L(f,P) < area < U(f,P)\). Thus we need all the upper sums to be less than all the lower sums, but there are some extreme cases.
   Extreme Case 1 ~ (when all lower sums = all upper sums) 
   $$\text{Let } f(x)=1 \text{ on } [17,103]$$
   $$\text{Let } P \text{ be a partition of } [17,103]$$
