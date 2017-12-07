@@ -1,11 +1,11 @@
 title1: Introduction to Integrals
-def: a \b(partition) \(P\) of \([a,b]\) is a set of points \(a = x_0 < x_1 < x_2 < \ldots < x_n = b\)
+def: a \b{partition} \(P\) of \([a,b]\) is a set of points \(a = x_0 < x_1 < x_2 < \ldots < x_n = b\)
 p:
   Let \(f(x)\) be defined and bounded on \([a,b]\)
-def: \b(\(m_i\)) \(= \inf\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}\)
-def: \b(\(M_i\)) \(= \sup\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}\)
-def: \b(\(L(f,P)\)) \(= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})\)\e{The function \(L(f,P)\) stands for the lower sum of some function, \(f\), and partition, \(P\).}
-def: \b(\(U(f,P)\)) \(= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})\)\e{The function \(U(f,P)\) stands for the upper sum of some function, \(f\), and partition, \(P\).}
+def: \b{\(m_i\)} \(= \inf\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}\)
+def: \b{\(M_i\)} \(= \sup\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}\)
+def: \b{\(L(f,P)\)} \(= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})\)\e{The function \(L(f,P)\) stands for the lower sum of some function, \(f\), and partition, \(P\).}
+def: \b{\(U(f,P)\)} \(= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})\)\e{The function \(U(f,P)\) stands for the upper sum of some function, \(f\), and partition, \(P\).}
 img: 
   src: ./images/intro_integrals_area_diagram.jpg
   explanation: Essentially partitions are the dividing lines along the x-axis of a graph. Every \(m_{i}\) is the pink line in the image, and the lowest value of \(f(x)\) for a specific partition of the graph. Whereas every \(M_{i}\) is the orange line in the image, and the highest value of \(f(x)\) for a specific partition of the graph. Thus \(L(f,P)\) is sum of the areas below the \(m_{i}\) lines, and \(U(f,P)\) is sum of the areas below the \(M_{i}\) lines. 
@@ -24,5 +24,5 @@ p:
   $$U(f,P) = \sum_{i=1}^{n}(1)(x_{i}-x_{i-1})=x_{n}-x_{0}=86$$
   $$L(f,P) \neq U(f,P)$$
   In order to have a reasonable candidate for area, area should be unique, and that is why we want \(\inf(U)=\sup(L)\), thus Extreme Case 2 fails.
-def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then Q is said to be \b(finer) than \(P\)
-def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then P is said to be \b(coarser) than \(Q\)\e{Think about how rocks are more coarse than sand, and sand is more fine. Since \(P\subset Q\), \(P\) has larger chunks of area versus \(Q\), so \(P\) is like the large coarse rocks (with more empty space inbetween) versus \(Q\), the fine sand.}
+def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then Q is said to be \b{finer} than \(P\)
+def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then P is said to be \b{coarser} than \(Q\)\e{Think about how rocks are more coarse than sand, and sand is more fine. Since \(P\subset Q\), \(P\) has larger chunks of area versus \(Q\), so \(P\) is like the large coarse rocks (with more empty space inbetween) versus \(Q\), the fine sand.}

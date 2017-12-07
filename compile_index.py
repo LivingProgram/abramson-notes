@@ -47,18 +47,15 @@ def parse_title1(value): # 'Inverse Function Applications'
     return new_lines
 def parse_def(value): # takes the first bolded only
     new_lines = []
-    # craft function to check for unique datatypes, \b{} and \e{}, and return the value between {} and return everything else
-    assert value.find('\\b(') != -1 # make sure you have something bolded
-    start_idx = value.find('\\b(')
-    # grab everything after '\\b(' and iteratively look at each char, add 1 a counter if it is a '(' and subtract 1 from counter if it is a ')'
-    # every loop over char, check to make sure counter == -1, if it =-1 then that ')' has to be the idx of the close of the '\\b('
+    assert value.find('\\b{') != -1 # make sure you have something bolded
+    start_idx = value.find('\\b{')
+    # grab everything after '\\b{' and iteratively look at each char, add 1 a counter if it is a '(' and subtract 1 from counter if it is a ')'
+    # every loop over char, check to make sure counter == -1, if it =-1 then that ')' has to be the idx of the close of the '\\b{'
     p_counter = 0
-    #print(value)
-    #print(value.find('\\b('))
-    for idx, char in enumerate(value.split('\\b(')[-1]):
-        if char == '(':
+    for idx, char in enumerate(value.split('\\b{')[-1]):
+        if char == '{':
             p_counter+=1
-        if char == ')':
+        if char == '}':
             p_counter-=1
         if p_counter == -1:
             end_p_idx = idx
