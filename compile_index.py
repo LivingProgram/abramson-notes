@@ -18,6 +18,8 @@ def parse_key(key,value):
         return parse_theorem(value)
     elif key == 'p':
         return parse_p(value)
+    elif key == 'img':
+        return parse_img(value)
 def parse_title1(value): # 'Inverse Function Applications'
     new_lines = []
     new_lines.append('      <h3><a id="{}" href="#{}">{}</a></h3>\n'.format(value.lower().replace(" ", "_"),value.lower().replace(" ", "_"),value))
@@ -91,8 +93,19 @@ def parse_p(value):
     new_lines = []
     for line in value:
         new_lines.append('      <p>\n')
-        new_lines.append('      ' + line + '\n')
+        new_lines.append('        ' + line + '\n')
         new_lines.append('      </p>\n')
+    return new_lines
+def parse_img(value): # add image stored in github and image explanation
+    new_lines = []
+    for dict_1 in value:
+        key, value_1 = list(dict_1.items())[0]
+        if key == 'src':
+            new_lines.append('      <img src="{}">\n'.format(value_1))
+        elif key == 'explanation':
+            new_lines.append('      <p>\n')
+            new_lines.append('        <strong>Image Explanation: </strong>{}\n'.format(value_1))
+            new_lines.append('      </p>\n')
     return new_lines
 
 if __name__ == '__main__':
@@ -116,7 +129,7 @@ if __name__ == '__main__':
 
     # create new lines
     all_new_lines = []
-    dict_0_keys_list = ['title1','def','theorem','p']
+    dict_0_keys_list = ['title1','def','theorem','p','img']
     for dict_0 in data: # 0 space indent dictionaries
         assert len(dict_0) == 1 # make sure there is only one key, value pair per dict_0
         key, value = list(dict_0.items())[0]
