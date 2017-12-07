@@ -20,18 +20,41 @@ def parse_key(key,value):
         return parse_p(value)
     elif key == 'img':
         return parse_img(value)
+def extract_special_command(data, command_name): # commands must always use {} and start with backslash, and be unique
+    if data.count('\\{}{{'.format(command_name)) == 1:
+        start_idx = data.find('\\{}{{'.format(command_name))
+        counter = 0
+        for idx, char in enumerate(data.split('\\{}{{'.format(command_name))[-1]):
+            if char == '{':
+                counter+=1
+            if char == '}':
+                counter-=1
+            if counter == -1:
+                end_b_idx = idx
+                break
+        end_idx = start_idx+2+len(command_name) + end_b_idx +1 # start to end yields \\b{aasdfasd}
+        unstripped = data[start_idx:end_idx]
+        data = data.replace(unstripped, '')
+        value = unstripped[2+len(command_name):len(unstripped)-1]
+        return data, value # return data stripped of specified command's value 
+    else:
+        assert data.count('\\{}{{'.format(command_name)) <= 1 # commands can only be used once
+        return None, None 
+    
 def parse_title1(value): # 'Inverse Function Applications'
     new_lines = []
     new_lines.append('      <h3><a id="{}" href="#{}">{}</a></h3>\n'.format(value.lower().replace(" ", "_"),value.lower().replace(" ", "_"),value))
     return new_lines
 def parse_def(value): # takes the first bolded only
     new_lines = []
+    # craft function to check for unique datatypes, \b{} and \e{}, and return the value between {} and return everything else
     assert value.find('\\b(') != -1 # make sure you have something bolded
     start_idx = value.find('\\b(')
-    #end_p_idx = value.split('\\b(')[-1].find(')')
     # grab everything after '\\b(' and iteratively look at each char, add 1 a counter if it is a '(' and subtract 1 from counter if it is a ')'
     # every loop over char, check to make sure counter == -1, if it =-1 then that ')' has to be the idx of the close of the '\\b('
     p_counter = 0
+    #print(value)
+    #print(value.find('\\b('))
     for idx, char in enumerate(value.split('\\b(')[-1]):
         if char == '(':
             p_counter+=1
@@ -42,7 +65,14 @@ def parse_def(value): # takes the first bolded only
             break
     end_idx = start_idx+3 + end_p_idx +1
     term = value[start_idx+3:end_idx-1]
-    new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
+    data, explanation = extract_special_command(value,'e')
+    if data != None: # only if explanation exists append it
+        new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,data[:start_idx]+'<strong>'+term+'</strong>'+data[end_idx:]))
+        new_lines.append('      <p>\n')
+        new_lines.append('        ' + explanation + '\n')
+        new_lines.append('      </p>\n')
+    else:
+        new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,value[:start_idx]+'<strong>'+term+'</strong>'+value[end_idx:]))
     return new_lines
 def parse_theorem(value): # assumes you give one name, statement, does not require proof, but strict order of name, statement, proofs
     new_lines = []
