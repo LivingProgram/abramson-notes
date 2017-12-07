@@ -1,7 +1,6 @@
 title1: primary titles
-title2: secondary titles
 def: definition
-  "\b()": bold whatever is inside
+  "\b()": bold whatever is inside, also the term of the definition
 theorem: a theorem
   name: theorem name
   statement: statement of theorem
@@ -10,3 +9,5 @@ theorem: a theorem
     "\e ": explanation for the specific proof line
 p: normal text
 img: uploaded image
+  src: image filepath
+  explanation: explanation that goes along with image
