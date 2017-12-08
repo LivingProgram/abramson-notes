@@ -73,13 +73,8 @@ def parse_global_proof(value): # creates proof, can support multiple proofs
                 # global_key parse for images within proofs
                 new_lines += parse_global_key(key, value_1)
         else:
-            assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
-            if line.count('\\e ') == 1:
-                line,line_explanation = line.split('\\e ')
-            else:
-                line_explanation = None # must make it none or else it will be the previous line's explanation
+            line, explanation = extract_special_command(line,'e')
             # here you can do something with the explanation for specific lines of the proof
-
 
             if line[0:3] == '\\t ': # append pure text proof lines
                 assert line.count('\\t ') <= 1 # line should only have one of these special strings
