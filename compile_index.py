@@ -47,7 +47,7 @@ def extract_special_command(data, command_name): # commands must always use {} a
         return data, value # return data stripped of specified command's value 
     else:
         assert data.count('\\{}{{'.format(command_name)) <= 1 # commands can only be used once
-        return None, None 
+        return data, None 
 
 def parse_global_proof(value): # creates proof, can support multiple proofs
     new_lines = []
@@ -75,7 +75,10 @@ def parse_global_proof(value): # creates proof, can support multiple proofs
         else:
             line, explanation = extract_special_command(line,'e')
             # here you can do something with the explanation for specific lines of the proof
-
+            
+            line, motivation = extract_special_command(line,'m')
+            # here you can do something with the motivation for specific lines of the proof
+            
             if line[0:3] == '\\t ': # append pure text proof lines
                 assert line.count('\\t ') <= 1 # line should only have one of these special strings
                 new_lines.append('        '+ line.split('\\t ')[1] + '\n')
@@ -114,7 +117,7 @@ def parse_def(value): # takes the first bolded only
     end_idx = start_idx+3 + end_p_idx +1
     term = value[start_idx+3:end_idx-1]
     data, explanation = extract_special_command(value,'e')
-    if data != None: # only if explanation exists append it
+    if explanation != None: # only if explanation exists append it
         new_lines.append('      <p><a id="def_{}" href="#def_{}"><strong>Def:</strong></a> {}</p>\n'.format(term,term,data[:start_idx]+'<strong>'+term+'</strong>'+data[end_idx:]))
         new_lines.append('      <p>\n')
         new_lines.append('        ' + explanation + '\n')
