@@ -52,21 +52,40 @@ def extract_special_command(data, command_name): # commands must always use {} a
 def parse_global_proof(value): # creates proof, can support multiple proofs
     new_lines = []
     new_lines.append('      <p>\n')
-    new_lines.append('        <strong>Proof:</strong>\n')
+    new_lines.append('        <strong>Theorem Proof:</strong>\n')
     for line in value:
-        assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
-        if line.count('\\e ') == 1:
-            line,line_explanation = line.split('\\e ')
+        if isinstance(line, dict):
+            key, value_1 = list(line.items())[0]
+            if key == 'lemma': # very similar to parse_theorem code
+                for dict_1 in value_1:
+                    key_1, value_2 = list(dict_1.items())[0]
+                    if key_1 == 'statement':
+                        lemma_statement = value_2
+                        global lemma_counter # refer to global lemma_counter variable
+                        new_lines.append('      <p><a id="lemma_{}" href="#lemma_{}"><strong>Lemma:</strong></a> {}</p>\n'.format(lemma_counter,lemma_counter,lemma_statement))
+                        lemma_counter += 1 # id for keeping track of all lemmas on entire page
+                    else:
+                        lemma_proof_lines = parse_global_key(key_1, value_2) # return lines of lemma proof
+                        lemma_proof_lines = [line.replace('Theorem Proof:','Lemma Proof:') for line in lemma_proof_lines] # start lemma proofs with 'Lemma Proof:'
+                        new_lines += lemma_proof_lines
+                        new_lines.insert(len(new_lines)-1,'        <strong>Theorem Proof Continued:</strong>\n')
+            else:
+                # global_key parse for images within proofs
+                new_lines += parse_global_key(key, value_1)
         else:
-            line_explanation = None # must make it none or else it will be the previous line's explanation
-        # here you can do something with the explanation for specific lines of the proof
+            assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
+            if line.count('\\e ') == 1:
+                line,line_explanation = line.split('\\e ')
+            else:
+                line_explanation = None # must make it none or else it will be the previous line's explanation
+            # here you can do something with the explanation for specific lines of the proof
 
 
-        if line[0:3] == '\\t ': # append pure text proof lines
-            assert line.count('\\t ') <= 1 # line should only have one of these special strings
-            new_lines.append('        '+ line.split('\\t ')[1] + '\n')
-        else: # append math proof lines
-            new_lines.append('        $${}$$\n'.format(line))
+            if line[0:3] == '\\t ': # append pure text proof lines
+                assert line.count('\\t ') <= 1 # line should only have one of these special strings
+                new_lines.append('        '+ line.split('\\t ')[1] + '\n')
+            else: # append math proof lines
+                new_lines.append('        $${}$$\n'.format(line))
     new_lines.append('      </p>\n')
     return new_lines
 def parse_global_proofsum(value): # add option for a proof summary
@@ -172,6 +191,8 @@ if __name__ == '__main__':
     # create new lines
     all_new_lines = []
     dict_0_keys_list = ['title1','def','theorem','p','img']
+    global lemma_counter # create counter to give lemmas unique ids
+    lemma_counter = 0
     for dict_0 in data: # 0 space indent dictionaries
         assert len(dict_0) == 1 # make sure there is only one key, value pair per dict_0
         key, value = list(dict_0.items())[0]
