@@ -20,6 +20,14 @@ def parse_key(key,value):
         return parse_p(value)
     elif key == 'img':
         return parse_img(value)
+def parse_global_key(key, value):
+    if key == 'proof':
+        return parse_global_proof(value)
+    elif key == 'proofsum':
+        return parse_global_proofsum(value)
+    else:
+        raise ValueError('global key not recognized')
+
 def extract_special_command(data, command_name): # commands must always use {} and start with backslash, and be unique
     if data.count('\\{}{{'.format(command_name)) == 1:
         start_idx = data.find('\\{}{{'.format(command_name))
@@ -40,7 +48,36 @@ def extract_special_command(data, command_name): # commands must always use {} a
     else:
         assert data.count('\\{}{{'.format(command_name)) <= 1 # commands can only be used once
         return None, None 
-    
+
+def parse_global_proof(value): # creates proof, can support multiple proofs
+    new_lines = []
+    new_lines.append('      <p>\n')
+    new_lines.append('        <strong>Proof:</strong>\n')
+    for line in value:
+        assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
+        if line.count('\\e ') == 1:
+            line,line_explanation = line.split('\\e ')
+        else:
+            line_explanation = None # must make it none or else it will be the previous line's explanation
+        # here you can do something with the explanation for specific lines of the proof
+
+
+        if line[0:3] == '\\t ': # append pure text proof lines
+            assert line.count('\\t ') <= 1 # line should only have one of these special strings
+            new_lines.append('        '+ line.split('\\t ')[1] + '\n')
+        else: # append math proof lines
+            new_lines.append('        $${}$$\n'.format(line))
+    new_lines.append('      </p>\n')
+    return new_lines
+def parse_global_proofsum(value): # add option for a proof summary
+    new_lines = []
+    new_lines.append('      <p><strong>Proof Summary:</strong></p>\n')
+    new_lines.append('      <ul>\n')
+    for line in value:
+        new_lines.append('        <li>{}</li>\n'.format(line))
+    new_lines.append('      </ul>\n')
+    return new_lines
+
 def parse_title1(value): # 'Inverse Function Applications'
     new_lines = []
     new_lines.append('      <h3><a id="{}" href="#{}">{}</a></h3>\n'.format(value.lower().replace(" ", "_"),value.lower().replace(" ", "_"),value))
@@ -81,31 +118,9 @@ def parse_theorem(value): # assumes you give one name, statement, does not requi
             theorem_name = value_1
         elif key == 'statement':
             theorem_statement = value_1
-        elif key == 'proof': # creates proof, can support multiple proofs
-            all_proof_lines.append('      <p>\n')
-            all_proof_lines.append('        <strong>Proof:</strong>\n')
-            proof_lines = value_1
-            for line in proof_lines:
-                assert line.count('\\e ') <= 1 # line can have at most one explanation, i.e. a single '\e '
-                if line.count('\\e ') == 1:
-                    line,line_explanation = line.split('\\e ')
-                else:
-                    line_explanation = None # must make it none or else it will be the previous line's explanation
-                # here you can do something with the explanation for specific lines of the proof
-
-
-                if line[0:3] == '\\t ': # append pure text proof lines
-                    assert line.count('\\t ') <= 1 # line should only have one of these special strings
-                    all_proof_lines.append('        '+ line.split('\\t ')[1] + '\n')
-                else: # append math proof lines
-                    all_proof_lines.append('        $${}$$\n'.format(line))
-            all_proof_lines.append('      </p>\n')
-        elif key == 'proofsum': # add option for a proof summary
-            all_proof_lines.append('      <p><strong>Proof Summary:</strong></p>\n')
-            all_proof_lines.append('      <ul>\n')
-            for line in value_1:
-                all_proof_lines.append('        <li>{}</li>\n'.format(line))
-            all_proof_lines.append('      </ul>\n')
+        else:
+            all_proof_lines += parse_global_key(key, value_1)
+            
     # if the name has a single capital letter it is a named theorem 
     uppers = [l for l in theorem_name if l.isupper()]
     if uppers != []:
