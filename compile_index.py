@@ -69,8 +69,10 @@ def parse_global_proof(value): # creates proof, can support multiple proofs
                     else:
                         lemma_proof_lines = parse_global_key(key_1, value_2) # return lines of lemma proof
                         lemma_proof_lines = [line.replace('Theorem Proof:','Lemma Proof:') for line in lemma_proof_lines] # start lemma proofs with 'Lemma Proof:'
+                        lemma_proof_lines = [line.replace('Theorem Proof Summary:','Lemma Proof Summary:') for line in lemma_proof_lines]
                         new_lines += lemma_proof_lines
-                        new_lines.insert(len(new_lines)-1,'        <strong>Theorem Proof Continued:</strong>\n')
+                        if '        <p><strong>Theorem Proof Continued:</strong></p>\n' in new_lines: new_lines.remove('        <p><strong>Theorem Proof Continued:</strong></p>\n')
+                        new_lines.insert(len(new_lines),'        <p><strong>Theorem Proof Continued:</strong></p>\n')
             else:
                 # global_key parse for images within proofs
                 new_lines += parse_global_key(key, value_1)
@@ -90,7 +92,7 @@ def parse_global_proof(value): # creates proof, can support multiple proofs
     return new_lines
 def parse_global_proofsum(value): # add option for a proof summary
     new_lines = []
-    new_lines.append('      <p><strong>Proof Summary:</strong></p>\n')
+    new_lines.append('      <p><strong>Theorem Proof Summary:</strong></p>\n')
     new_lines.append('      <ul>\n')
     for line in value:
         new_lines.append('        <li>{}</li>\n'.format(line))
