@@ -26,3 +26,30 @@ p:
   In order to have a reasonable candidate for area, area should be unique, and that is why we want \(\inf(U)=\sup(L)\), thus Extreme Case 2 fails.
 def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then Q is said to be \b{finer} than \(P\)
 def: Let \(P\) and \(Q\) be partitions with \(P\subset Q\), then P is said to be \b{coarser} than \(Q\)\e{Think about how rocks are more coarse than sand, and sand is more fine. Since \(P\subset Q\), \(P\) has larger chunks of area versus \(Q\), so \(P\) is like the large coarse rocks (with more empty space inbetween) versus \(Q\), the fine sand.}
+theorem:
+  name: integral_theorem_1
+  statement: Let \(f\) be bounded on \([a,b]\) and let \(P\), \(Q\) be two partitions of \([a,b]\) s.t. \(P \subset Q\), then \(L(f,P) \leq U(f,Q)\)
+  proof:
+    lemma:
+      statement: If \(P \subset Q\) then \((L(f,P) \leq L(f,Q))\land(U(f,P)\geq U(f,Q))\)
+      proof:
+        \text{Consider the special case where } Q \text{ contains one more point, }\tilde{x} \text{, than } P
+        img:
+          src: ./images/lemma_finer_partitions_diagram.jpg
+          explanation: The pink area represents \(L(f,P)\), and orange area represents \(L(f,Q)\). After adding an extra point, \(\tilde{x}\), it is clear that there should be more area overall (i.e. the bolded orange part of image). The value of \(L(f,Q)\) can be obtained by adding the areas for 4 parts, \(x_{0} \to x_{j-2}\), \(x_{j-1} \to \tilde{x}\), \(\tilde{x} \to x_{j}\) and \(x_{j+1} \to x_{n}\).
+        \text{Suppose } P=\left\{x_{0},\ldots,x_{n}\right\}
+        \text{Suppose } Q=\left\{x_{0},\ldots,x_{j-1},\tilde{x},x_{j},\ldots,x_{n}\right\}
+        \text{where } a = x_{0} < x_{1} < \ldots < x_{j-1} < \tilde{x} < x_{j} < \ldots < x_{n} = b
+        \text{Let } m_{j} = \inf\left\{f(x)\mid x_{j-1} \leq x \leq x_{j}\right\}
+        \text{Let } m_{j}^{*} = \inf\left\{f(x)\mid x_{j-1} \leq x \leq \tilde{x} \right\}
+        \text{Let } m_{j}^{**} = \inf\left\{f(x)\mid \tilde{x} \leq x \leq x_{j}\right\}
+        L(f,P) = \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})
+        L(f,Q) = \sum_{i=1}^{j-1}m_{i}(x_{i}-x_{i-1})+m_j^{*}(\tilde{x}-x_{j-1})+m_j^{**}(x_{j}-\tilde{x})+\sum_{i=j+1}^{n}m_{i}(x_{i}-x_{i-1})\e{Essentially the sum of 4 parts of area, refer to previous image}
+        \text{Let } T = \sum_{i=1}^{j-1}m_{i}(x_{i}-x_{i-1})+\sum_{i=j+1}^{n}m_{i}(x_{i}-x_{i-1})
+        L(f,P) = T+m_j(x_{j}-x_{j-1})=T+m_j(\tilde{x}-x_{j-1})+m_j(x_{j}-\tilde{x})\e{\(L(f,P)=\sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})=\sum_{i=1}^{j-1}m_{i}(x_{i}-x_{i-1})+m_j(x_{j}-x_{j-1})+\sum_{i=j+1}^{n}m_{i}(x_{i}-x_{i-1})\)}
+        L(f,Q) = T + m_j^{*}(\tilde{x}-x_{j-1})+m_j^{**}(x_{j}-\tilde{x})
+        m_{j}^{*} \geq m_{j} \implies m_{j}^{*}(\tilde{x}-x_{j-1}) \geq m_{j}(\tilde{x}-x_{j-1})
+        m_{j}^{**} \geq m_{j} \implies m_{j}^{**}(x_{j}-\tilde{x}) \geq m_{j}(x_{j}-\tilde{x})
+        \implies m_{j}^{*}(\tilde{x}-x_{j-1}) + m_{j}^{**}(x_{j}-\tilde{x}) \geq m_{j}(\tilde{x}-x_{j-1}) + m_{j}(x_{j}-\tilde{x})\e{sum of previous two inequalities}
+        \implies T + m_{j}^{*}(\tilde{x}-x_{j-1}) + m_{j}^{**}(x_{j}-\tilde{x}) \geq T + m_{j}(\tilde{x}-x_{j-1}) + m_{j}(x_{j}-\tilde{x})
+        \implies L(f,Q) \geq L(f,P)\{follows from what we found \(L(f,Q)\) and \(L(f,P)\) to be equal to}
