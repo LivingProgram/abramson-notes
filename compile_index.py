@@ -19,12 +19,14 @@ def parse_key(key,value):
     elif key == 'p':
         return parse_p(value)
     elif key == 'img':
-        return parse_img(value)
+        return parse_global_img(value)
 def parse_global_key(key, value):
     if key == 'proof':
         return parse_global_proof(value)
     elif key == 'proofsum':
         return parse_global_proofsum(value)
+    elif key == 'img':
+        return parse_global_img(value)
     else:
         raise ValueError('global key not recognized')
 
@@ -94,6 +96,17 @@ def parse_global_proofsum(value): # add option for a proof summary
         new_lines.append('        <li>{}</li>\n'.format(line))
     new_lines.append('      </ul>\n')
     return new_lines
+def parse_global_img(value): # add image stored in github and image explanation
+    new_lines = []
+    for dict_1 in value:
+        key, value_1 = list(dict_1.items())[0]
+        if key == 'src':
+            new_lines.append('      <img src="{}">\n'.format(value_1))
+        elif key == 'explanation':
+            new_lines.append('      <p>\n')
+            new_lines.append('        <strong>Image Explanation: </strong>{}\n'.format(value_1))
+            new_lines.append('      </p>\n')
+    return new_lines
 
 def parse_title1(value): # 'Inverse Function Applications'
     new_lines = []
@@ -154,17 +167,6 @@ def parse_p(value):
         new_lines.append('      <p>\n')
         new_lines.append('        ' + line + '\n')
         new_lines.append('      </p>\n')
-    return new_lines
-def parse_img(value): # add image stored in github and image explanation
-    new_lines = []
-    for dict_1 in value:
-        key, value_1 = list(dict_1.items())[0]
-        if key == 'src':
-            new_lines.append('      <img src="{}">\n'.format(value_1))
-        elif key == 'explanation':
-            new_lines.append('      <p>\n')
-            new_lines.append('        <strong>Image Explanation: </strong>{}\n'.format(value_1))
-            new_lines.append('      </p>\n')
     return new_lines
 
 if __name__ == '__main__':
