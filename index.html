@@ -109,9 +109,31 @@
         $$\implies m_{j}^{*}(\tilde{x}-x_{j-1}) + m_{j}^{**}(x_{j}-\tilde{x}) \geq m_{j}(\tilde{x}-x_{j-1}) + m_{j}(x_{j}-\tilde{x})$$
         $$\implies T + m_{j}^{*}(\tilde{x}-x_{j-1}) + m_{j}^{**}(x_{j}-\tilde{x}) \geq T + m_{j}(\tilde{x}-x_{j-1}) + m_{j}(x_{j}-\tilde{x})$$
         $$\implies L(f,Q) \geq L(f,P)$$
-        <strong>Theorem Proof Continued:</strong>
+        $$\text{By a similar proof } U(f,P)\geq U(f,Q) \text{ is true}$$
+        $$\text{This proves for the special case where Q contains one more point than P, }$$
+        $$\text{for the general case, Q can be obtained by adding one point at a time to P}$$
+        $$P = P_{1},P_{1},\ldots,P_{\alpha}=Q \text{ s.t. } P_{j+1} \text{ contains one more point than } P_{j}$$
+        $$\implies L(f,P)=L(f,P_{1}) \leq L(f,P_{2}) \leq \ldots \leq L(f,P_{\alpha}) = L(f,Q)$$
+        $$\implies U(f,P)=U(f,P_{1}) \geq U(f,P_{2}) \geq \ldots \geq U(f,P_{\alpha}) = U(f,Q)$$
       </p>
+      <p><strong>Lemma Proof Summary:</strong></p>
+      <ul>
+        <li>draw diagram of special case where \(Q\) has one more point, \(\tilde{x}\), than \(P\)</li>
+        <li>use visual depiction of area to calculate values of \(L(f,P)\) and \(L(f,Q)\)</li>
+        <li>note the relationship between areas to find alternative values of \(L(f,P)\) and \(L(f,Q)\)</li>
+        <li>note the properties of infs on the interval with \tilde{x}</li>
+        <li>prove that lower sums of Q \(\geq\) P</li>
+      </ul>
+        <p><strong>Theorem Proof Continued:</strong></p>
+        $$L(f,P) \leq L(f,P\cup Q)$$
+        $$L(f,P\cup Q) \leq U(f,P\cup Q)$$
+        $$U(f,P\cup Q) \leq U(f,Q) $$
+        $$\implies L(f,P) \leq U(f,Q)$$
       </p>
+      <p><strong>Theorem Proof Summary:</strong></p>
+      <ul>
+        <li>the theorem follows directly from lemma and sup and inf properties</li>
+      </ul>
     </div>
   </body>
 </html>
