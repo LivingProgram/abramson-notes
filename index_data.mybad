@@ -69,3 +69,22 @@ theorem:
     L(f,P\cup Q) \leq U(f,P\cup Q)\e{all infs must be less than all sups by sup and inf properties}
     U(f,P\cup Q) \leq U(f,Q) \e{follows directly from the lemma}
     \implies L(f,P) \leq U(f,Q)
+def: Let \(f\) be bounded on \([a,b]\) then \(f\) is \b{integrable} on \([a,b]\) if \(\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}\)
+def: The \b{integral} of \(f\) on \([a,b]\) is equal to \(\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}\), and will temporarily be written as \(\int_{a}^{b}f\)\e{The set \(\left\{L(f,P)\mid P \subset [a,b]\right\}\) is essentially all possible values of lower sums for all possible partitions on \([a,b]\), including the partition where the x values are so close together that the lower sums value is equal to the area under the graph. This definition connects integrals closely with area under the graph of a function.}
+theorem:
+  name: integral_theorem_2
+  statement: If \(f\) is bounded on \([a,b]\), then \(f\) is integrable on \([a,b] \iff \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon\) 
+  proof:
+    \text{Assume } \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon \m{first prove in the \(\impliedby\) direction}
+    \text{By definition } \sup\left\{L(f,P)\mid P \subset [a,b]\right\} \geq L(f,P)\e{The sup of the set of all lower sums has to be greater than any given lower sum}
+    \inf\left\{U(f,P)\mid P \subset [a,b]\right\} \leq U(f,P)
+    U(f,P)-L(f,P) < \epsilon \implies \inf\left\{U(f,P)\mid P \subset [a,b]\right\} - \sup\left\{L(f,P)\mid P \subset [a,b]\right\} < \epsilon
+    \implies \inf\left\{U(f,P)\mid P \subset [a,b]\right\} = \sup\left\{L(f,P)\mid P \subset [a,b]\right\} \e{since the previous statement was true \(\forall\epsilon\)}
+    \implies f \text{ is integrable}\e{definition of integrable}
+    \text{Assume } f \text{ is integrable} \e{now prove in the \(\implies\) direction}
+    \implies\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}
+    \implies\forall\epsilon > 0, \exists\ P',P'' \text{ s.t. } U(f,P'') - L(f,P') < \epsilon \e{by sups and infs properties}
+    \text{Let } P' \subset P \land P'' \subset P
+    \implies U(f,P)\leq U(f,P'') \e{by previous lemma}
+    \implies L(f,P)\geq L(f,P')
+    \implies U(f,P)-L(f,P)\leq U(f,P'')-L(f,P') < \epsilon \e{sum of two previous inequalities, and all of it is \(< \epsilon\)}

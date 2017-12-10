@@ -130,10 +130,28 @@
         $$U(f,P\cup Q) \leq U(f,Q) $$
         $$\implies L(f,P) \leq U(f,Q)$$
       </p>
-      <p><strong>Theorem Proof Summary:</strong></p>
-      <ul>
-        <li>the theorem follows directly from lemma and sup and inf properties</li>
-      </ul>
+      <p><a id="def_integrable" href="#def_integrable"><strong>Def:</strong></a> Let \(f\) be bounded on \([a,b]\) then \(f\) is <strong>integrable</strong> on \([a,b]\) if \(\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}\)</p>
+      <p><a id="def_integral" href="#def_integral"><strong>Def:</strong></a> The <strong>integral</strong> of \(f\) on \([a,b]\) is equal to \(\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}\), and will temporarily be written as \(\int_{a}^{b}f\)</p>
+      <p>
+        The set \(\left\{L(f,P)\mid P \subset [a,b]\right\}\) is essentially all possible values of lower sums for all possible partitions on \([a,b]\), including the partition where the x values are so close together that the lower sums value is equal to the area under the graph. This definition connects integrals closely with area under the graph of a function.
+      </p>
+      <p><a id="integral_theorem_2" href="#integral_theorem_2"><strong>Theorem:</strong></a> If \(f\) is bounded on \([a,b]\), then \(f\) is integrable on \([a,b] \iff \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon\)</p>
+      <p>
+        <strong>Theorem Proof:</strong>
+        $$\text{Assume } \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon $$
+        $$\text{By definition } \sup\left\{L(f,P)\mid P \subset [a,b]\right\} \geq L(f,P)$$
+        $$\inf\left\{U(f,P)\mid P \subset [a,b]\right\} \leq U(f,P)$$
+        $$U(f,P)-L(f,P) < \epsilon \implies \inf\left\{U(f,P)\mid P \subset [a,b]\right\} - \sup\left\{L(f,P)\mid P \subset [a,b]\right\} < \epsilon$$
+        $$\implies \inf\left\{U(f,P)\mid P \subset [a,b]\right\} = \sup\left\{L(f,P)\mid P \subset [a,b]\right\} $$
+        $$\implies f \text{ is integrable}$$
+        $$\text{Assume } f \text{ is integrable} $$
+        $$\implies\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}$$
+        $$\implies\forall\epsilon > 0, \exists\ P',P'' \text{ s.t. } U(f,P'') - L(f,P') < \epsilon $$
+        $$\text{Let } P' \subset P \land P'' \subset P$$
+        $$\implies U(f,P)\leq U(f,P'') $$
+        $$\implies L(f,P)\geq L(f,P')$$
+        $$\implies U(f,P)-L(f,P)\leq U(f,P'')-L(f,P') < \epsilon $$
+      </p>
     </div>
   </body>
 </html>
