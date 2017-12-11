@@ -88,3 +88,6 @@ theorem:
     \implies U(f,P)\leq U(f,P'') \e{by previous lemma}
     \implies L(f,P)\geq L(f,P')
     \implies U(f,P)-L(f,P)\leq U(f,P'')-L(f,P') < \epsilon \e{sum of two previous inequalities, and all of it is \(< \epsilon\)}
+  proofsum:
+    to prove in \(\impliedby\) direction, use sup inf properties, substitute into \(\epsilon\) definition, and simplify using \(\epsilon\) properties
+    to prove in \(\implies\) direction, use sup inf properties to get \(\epsilon\) definition, simplify using previous lemma
