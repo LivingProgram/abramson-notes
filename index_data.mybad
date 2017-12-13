@@ -1,4 +1,6 @@
-title1: Introduction to Integrals
+title1: Partitions, Lower and Upper Sums
+p:
+  Chapter Summary~ Introducing partitions, lower sums, upper sums which will allow us to come up with a formal definition for integrals.
 def: a \b{partition} \(P\) of \([a,b]\) is a set of points \(a = x_0 < x_1 < x_2 < \ldots < x_n = b\)
 p:
   Let \(f(x)\) be defined and bounded on \([a,b]\)
@@ -69,11 +71,14 @@ theorem:
     L(f,P\cup Q) \leq U(f,P\cup Q)\e{all infs must be less than all sups by sup and inf properties}
     U(f,P\cup Q) \leq U(f,Q) \e{follows directly from the lemma}
     \implies L(f,P) \leq U(f,Q)
+title1: Integrals, Integral Properties
+p:
+  Chapter Summary~ define integrals using upper and lower sums; \(\epsilon\) definition allows us to restate integral definition without sups and infs which are hard to work with; 
 def: Let \(f\) be bounded on \([a,b]\) then \(f\) is \b{integrable} on \([a,b]\) if \(\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}\)
 def: The \b{integral} of \(f\) on \([a,b]\) is equal to \(\sup\left\{L(f,P)\mid P \subset [a,b]\right\}=\inf\left\{U(f,P)\mid P \subset [a,b]\right\}\), and will temporarily be written as \(\int_{a}^{b}f\)\e{The set \(\left\{L(f,P)\mid P \subset [a,b]\right\}\) is essentially all possible values of lower sums for all possible partitions on \([a,b]\), including the partition where the x values are so close together that the lower sums value is equal to the area under the graph. This definition connects integrals closely with area under the graph of a function.}
 theorem:
   name: integral_theorem_2
-  statement: If \(f\) is bounded on \([a,b]\), then \(f\) is integrable on \([a,b] \iff \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon\) 
+  statement: If \(f\) is bounded on \([a,b]\), then \(f\) is integrable on \([a,b] \iff \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon\)
   proof:
     \text{Assume } \forall \epsilon > 0\text{, } \exists\ P\subset [a,b] \text{ s.t. } U(f,P)-L(f,P) < \epsilon \m{first prove in the \(\impliedby\) direction}
     \text{By definition } \sup\left\{L(f,P)\mid P \subset [a,b]\right\} \geq L(f,P)\e{The sup of the set of all lower sums has to be greater than any given lower sum}
@@ -91,3 +96,55 @@ theorem:
   proofsum:
     to prove in \(\impliedby\) direction, use sup inf properties, substitute into \(\epsilon\) definition, and simplify using \(\epsilon\) properties
     to prove in \(\implies\) direction, use sup inf properties to get \(\epsilon\) definition, simplify using previous lemma
+theorem:
+  name: integral_theorem_3
+  statement: If \(f\) is monotonic on \([a,b]\), then \(f\) is integrable on \([a,b]\)
+  proof:
+    \text{Assume } f \text{ is increasing}
+    \text{Let } n \in \mathbb{Z}^{+}
+    \text{Let } P_{n} \text{ be an evenly spaced partition with } a = x_{0},x_{1},x_{2},\ldots,x_{n}=b \m{they need to be evenly spaced to make the proof easier}
+    \text{For a given interval } [x_{i-1},x_{i}], x_{i}-x_{i-1}=\frac{b-a}{n} \e{since the interval is evenly spaced every part has to have equal length}
+    \implies m_{i} = \inf\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\} = f(x_{i-1})
+    \implies M_{i} = \sup\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\} = f(x_{i}) \e{by our assumption that \(f\) is increasing the greatest \(x\) on the interval, \(x_{i}\) has to be the greatest value of \(f\) and by the same logic, \(x_{i-1}\) has to be the least value of \(f\)}
+    L(f,P_{n})= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})=\sum_{i=1}^{n}f(x_{i-1})(\frac{b-a}{n})
+    U(f,P_{n})= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})=\sum_{i=1}^{n}f(x_{i})(\frac{b-a}{n})
+    \implies U(f,P_{n})-L(f,P_{n})=\sum_{i=1}^{n}f(x_{i})(\frac{b-a}{n})-\sum_{i=1}^{n}f(x_{i-1})(\frac{b-a}{n})=(f(x_{n})-f(x_{0}))(\frac{b-a}{n}) \e{a whole lot of cancellation in the sums gives you this}
+    \text{We want } U(f,P_{n})-L(f,P_{n}) = \frac{(f(x_{n})-f(x_{0}))(b-a)}{n} < \epsilon 
+    \text{Choose an } n \text{ that is large enough so } \frac{(f(x_{n})-f(x_{0}))(b-a)}{n} < \epsilon \text{, WAD}
+    \text{By a similar proof we can show this is true when } f \text{ is decreasing}
+  proofsum:
+    first write down the definitions of \(L(f,P_{n})\) and \(U(f,P_{n})\)
+    use increasing assumption to find function values for \(m_{i}\) and \(M_{i}\)
+    use evenly spaced interval to simplify \(x_{i}-x_{i-1}\)
+    plug \(L(f,P_{n})\) and \(U(f,P_{n})\) into \(\epsilon\) definition of integrable and show it must be true
+p:
+  Note that the notation for integral defined earlier was \(\int_{a}^{b}f\), but this notation suffers from lack of convenient way to name functions defined by formulas. Therefore the new notation will be \(\int_{a}^{b}f(x) dx\). Notice that the symbol \(x\) within the notation can be replaced by any other letter so \(\int_{a}^{b}f(x) dx = \int_{a}^{b}f(t) dt = \int_{a}^{b}f(\alpha) d\alpha = \ldots\)
+theorem:
+  name: sup_theorem_1
+  statement: Suppose \(f(x)\) is increasing and \(\lim_{x\to \infty}f(x)=L\) then \(\sup\left\{ f(x) \mid x \in \mathbb{R} \right\}=L\)
+p:
+  Let \(f(x)\) be increasing, and let \(n\in \mathbb{Z}^{+}\), and \(0=x_{0} < x_{1} < x_{2} < \ldots < x_{n} = b\) be a partition, \(P_{n}\), with equally spaced intervals. Write an expression for \(L(f,P_{n})\).
+  $$L(f,P_{n})= \sum_{i=1}^{n}m_{i}(x_{i}-x_{i-1})$$
+  $$f(x) \text{ is increasing } \implies m_i = \inf\left\{ f(x) \mid x_{i-1} < x < x_{i} \right\}=f(x_{i-1})$$
+  $$\implies L(f,P_{n})= \sum_{i=1}^{n}f(x_{i-1})(x_{i}-x_{i-1})$$
+  $$P_{n} \text{ is evenly spaced } \implies x_{i}-x_{i-1}=\frac{b-0}{n}=\frac{b}{n}$$
+  $$\implies L(f,P_{n})= \sum_{i=1}^{n}f(x_{i-1})\frac{b}{n}=\frac{b}{n}\sum_{i=1}^{n}f(x_{i-1})$$
+  $$(0=x_{0} < x_{1} < x_{2} < \ldots < x_{n} = b) \implies x_{i-1}=(i-1)\frac{b}{n}$$
+  $$\implies L(f,P_{n})= \frac{b}{n}\sum_{i=1}^{n}f\left((i-1)\frac{b}{n}\right)$$
+  By a similar method, we can find \(U(f,P_{n})\).
+  $$U(f,P_{n})= \sum_{i=1}^{n}M_{i}(x_{i}-x_{i-1})=\frac{b}{n}\sum_{i=1}^{n}M_{i}=\frac{b}{n}\sum_{i=1}^{n}f(x_{i})=\frac{b}{n}\sum_{i=1}^{n}f\left((i)\frac{b}{n}\right)$$
+  We already know that  \(\int_{0}^{b}1 dx= b\). Utilizing the formulas above, calculate \(\int_{0}^{b}x dx\), given that \(b > 0\). 
+  $$L(f,P_{n})=\frac{b}{n}\sum_{i=1}^{n}f\left((i-1)\frac{b}{n}\right)=\frac{b^{2}}{n^{2}}(0+1+2+\ldots+(n-1))$$
+  $$=\frac{b^{2}}{n^{2}}\left(\frac{n(n-1)}{2}\right)=\frac{b^{2}}{2}\left(1-\frac{1}{n}\right)$$
+  $$\text{By previous theorem, we know } \sup\left\{ f(x) \mid x \in \mathbb{R} \right\}=L=\lim_{x\to \infty}f(x)$$
+  $$\implies \sup\left\{L(f,P_{n})\right\}=\lim_{x\to \infty}\frac{b^{2}}{2}\left(1-\frac{1}{n}\right)=\frac{b^{2}}{2}$$
+  $$\text{Similarly } U(f,P_{n})= \frac{b}{n}\sum_{i=1}^{n}f\left((i)\frac{b}{n}\right)=\frac{b^{2}}{n^{2}}(1+2+\ldots+n)$$
+  $$=\frac{b^{2}}{n^{2}}\left(\frac{n(n+1)}{2}\right)=\frac{b^{2}}{2}\left(1+\frac{1}{n}\right)$$
+  $$\implies \inf\left\{U(f,P_{n})\right\}=\lim_{x\to \infty}\frac{b^{2}}{2}\left(1+\frac{1}{n}\right)=\frac{b^{2}}{2}$$
+  $$\implies \int_{0}^{b}x dx = \sup\left\{L(f,P_{n})\right\} = \inf\left\{U(f,P_{n})\right\} = \frac{b^{2}}{2}$$
+  Now if we follow the same steps, we will find that \(\int_{0}^{b}x^{2} dx=\frac{b^{3}}{3}\). And from this we realize \(\int_{0}^{b}x^{n} dx=\frac{b^{n+1}}{n+1}\).
+theorem:
+  name: integral_theorem_5
+  statement: If \(f\) is continuous on \([a,b]\), then \(f\) is integrable on \([a,b]\)
+  proof:
+    \text{textbook 266 and notes last page}
