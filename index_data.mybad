@@ -143,8 +143,21 @@ p:
   $$\implies \inf\left\{U(f,P_{n})\right\}=\lim_{x\to \infty}\frac{b^{2}}{2}\left(1+\frac{1}{n}\right)=\frac{b^{2}}{2}$$
   $$\implies \int_{0}^{b}x dx = \sup\left\{L(f,P_{n})\right\} = \inf\left\{U(f,P_{n})\right\} = \frac{b^{2}}{2}$$
   Now if we follow the same steps, we will find that \(\int_{0}^{b}x^{2} dx=\frac{b^{3}}{3}\). And from this we realize \(\int_{0}^{b}x^{n} dx=\frac{b^{n+1}}{n+1}\).
+def: \b{mesh} is the size of the greatest subinterval of a given partition
 theorem:
   name: integral_theorem_5
   statement: If \(f\) is continuous on \([a,b]\), then \(f\) is integrable on \([a,b]\)
   proof:
-    \text{textbook 266 and notes last page}
+    f \text{ is continuous } \implies f \text{ is uniformly continuous } \e{by previous continuity proofs}
+    \implies \forall\ \epsilon > 0, \exists\ \delta > 0 \text{ s.t. } \forall\ x,y \in [a,b], \left|x-y\right| < \delta \implies \left|f(x)-f(y)\right| < \frac{\epsilon}{2(b-a)}\e{the definition of uniform continuity with a slight modification to the \(\epsilon\) part}\m{the \(\frac{1}{(b-a)}\) is necessary to later cancel out with the \(b-a\) from summation, and the \(\frac{1}{2}\) is necessary for \(M_{i} - m_{i}\) to be less than \(\frac{\epsilon}{b-a}\)}
+    \text{Let } P \text{ be a partition } =\left\{x_{0},\ldots,x_{n}\right\}, \text{ s.t. } \forall\ x_{i},x_{i-1} \in P, \left|x_{i}-x_{i-1}\right| < \delta
+    \text{Which is the same as letting } P \text{ be a partition with mesh } < \delta
+    \implies \forall\ \epsilon > 0, \exists\ \delta > 0 \text{ s.t. } \forall x,y \in [x_{i-1},x_{i}], \left|x-y\right| < \delta\e{previous definition of P, and putting into uniform continuity definition}
+    \implies \forall x,y \in [x_{i-1},x_{i}], \left|f(x)-f(y)\right| < \frac{\epsilon}{2(b-a)}\e{since \(f\) is uniformly continuous}
+    \implies M_{i} - m_{i} \leq \frac{\epsilon}{2(b-a)} < \frac{\epsilon}{b-a} \e{this has to be true due to previous statement, that all \(f\) value differences have to be less than \(\frac{\epsilon}{2(b-a)}\)}
+    U(f,P)-L(f,P) = \sum_{i=1}^{n}(M_{i}-m_{i})(x_{i}-x_{i-1}) < \frac{\epsilon}{b-a}\sum_{i=1}^{n}(x_{i}-x_{i-1})=\frac{\epsilon}{b-a}(b-a)=\epsilon
+    \implies U(f,P)-L(f,P) < \epsilon
+    \implies f \text{ is integrable } on [a,b]
+  proofsum:
+    set up the partition, \(P\), such that by uniform continuity the difference \(M_{i}-m_{i}\) will be \(< \frac{\epsilon}{(b-a)}\)
+    take \(U(f,P)-L(f,P)\), simplify it using knowledge that \(M_{i}-m_{i} < \frac{\epsilon}{(b-a)}\), and the summation \(= b-a\)

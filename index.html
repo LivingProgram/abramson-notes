@@ -251,11 +251,26 @@
       <p>
         Now if we follow the same steps, we will find that \(\int_{0}^{b}x^{2} dx=\frac{b^{3}}{3}\). And from this we realize \(\int_{0}^{b}x^{n} dx=\frac{b^{n+1}}{n+1}\).
       </p>
+      <p><a id="def_mesh" href="#def_mesh"><strong>Def:</strong></a> <strong>mesh</strong> is the size of the greatest subinterval of a given partition</p>
       <p><a id="integral_theorem_5" href="#integral_theorem_5"><strong>Theorem:</strong></a> If \(f\) is continuous on \([a,b]\), then \(f\) is integrable on \([a,b]\)</p>
       <p>
         <strong>Theorem Proof:</strong>
-        $$\text{textbook 266 and notes last page}$$
+        $$f \text{ is continuous } \implies f \text{ is uniformly continuous } $$
+        $$\implies \forall\ \epsilon > 0, \exists\ \delta > 0 \text{ s.t. } \forall\ x,y \in [a,b], \left|x-y\right| < \delta \implies \left|f(x)-f(y)\right| < \frac{\epsilon}{2(b-a)}$$
+        $$\text{Let } P \text{ be a partition } =\left\{x_{0},\ldots,x_{n}\right\}, \text{ s.t. } \forall\ x_{i},x_{i-1} \in P, \left|x_{i}-x_{i-1}\right| < \delta$$
+        $$\text{Which is the same as letting } P \text{ be a partition with mesh } < \delta$$
+        $$\implies \forall\ \epsilon > 0, \exists\ \delta > 0 \text{ s.t. } \forall x,y \in [x_{i-1},x_{i}], \left|x-y\right| < \delta$$
+        $$\implies \forall x,y \in [x_{i-1},x_{i}], \left|f(x)-f(y)\right| < \frac{\epsilon}{2(b-a)}$$
+        $$\implies M_{i} - m_{i} \leq \frac{\epsilon}{2(b-a)} < \frac{\epsilon}{b-a} $$
+        $$U(f,P)-L(f,P) = \sum_{i=1}^{n}(M_{i}-m_{i})(x_{i}-x_{i-1}) < \frac{\epsilon}{b-a}\sum_{i=1}^{n}(x_{i}-x_{i-1})=\frac{\epsilon}{b-a}(b-a)=\epsilon$$
+        $$\implies U(f,P)-L(f,P) < \epsilon$$
+        $$\implies f \text{ is integrable } on [a,b]$$
       </p>
+      <p><strong>Theorem Proof Summary:</strong></p>
+      <ul>
+        <li>set up the partition, \(P\), such that by uniform continuity the difference \(M_{i}-m_{i}\) will be \(< \frac{\epsilon}{(b-a)}\)</li>
+        <li>take \(U(f,P)-L(f,P)\), simplify it using knowledge that \(M_{i}-m_{i} < \frac{\epsilon}{(b-a)}\), and the summation \(= b-a\)</li>
+      </ul>
     </div>
   </body>
 </html>
