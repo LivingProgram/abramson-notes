@@ -161,3 +161,60 @@ theorem:
   proofsum:
     set up the partition, \(P\), such that by uniform continuity the difference \(M_{i}-m_{i}\) will be \(< \frac{\epsilon}{(b-a)}\)
     take \(U(f,P)-L(f,P)\), simplify it using knowledge that \(M_{i}-m_{i} < \frac{\epsilon}{(b-a)}\), and the summation \(= b-a\)
+theorem:
+  name: integral_theorem_6
+  statement: Let \(a < c < b\). If \(f\) is integrable on \([a,b]\), then \(f\) is integrable on \([a,c]\) and \([c,b]\). Conversely, if \(f\) is integrable on \([a,c]\) and \([c,b]\), then \(f\) is integrable on \([a,b]\). Finally if \(f\) is integrable on \([a,b]\), then \(\int_{a}^{b}f =\int_{a}^{c}f + \int_{c}^{b}f\).
+  proof:
+    \text{located in textbook pg 267, in notes pg 1}
+p:
+  Earlier the integral \(\int_{a}^{b}f\) was only defined for \(a < b\), but due to previous theorem we have some minor notational conventions. 
+def: \b{\(\int_{a}^{a}f=0\)}
+def: \b{\(\int_{a}^{b}f=-\int_{b}^{a}f\)} if \(a > b\)
+p:
+  From this, \(\int_{a}^{b}f =\int_{a}^{c}f + \int_{c}^{b}f\) holds for all \(a,c,b\) even if \(a < c < b\) is not true. This makes the computation of integrals easier.
+  $$\int_{2}^{5}x^2 dx =\int_{0}^{5}x^2 dx + \int_{2}^{0}x^2 dx = \int_{0}^{5}x^2 dx - \int_{0}^{2}x^2 dx = \frac{5^{3}}{3} - \frac{2^{3}}{3}=39$$
+theorem:
+  name: integral_theorem_7
+  statement: If \(f\) and \(g\) are integrable on \([a,b]\), then \(f+g\) is integrable on \([a,b]\) and \(\int_{a}^{b}(f + g)=\int_{a}^{b}f + \int_{a}^{b}g\)
+theorem:
+  name: integral_theorem_8
+  statement: If \(f\) is integrable on \([a,b]\), then for any number \(c\), the function \(cf\) is integrable on \([a,b]\) and \(\int_{a}^{b}cf = c\int_{a}^{b}f\)
+theorem:
+  name: integral_theorem_9
+  statement: \(\int_{a}^{b}f(x) dx = \int_{a+r}^{b+r}f(x-r) dx\)
+theorem:
+  name: integral_theorem_10
+  statement: \(\int_{a}^{b}f(x) dx = \frac{1}{k}\int_{ak}^{bk}f(\frac{x}{k}) dx\)
+theorem:
+  name: integral_theorem_11
+  statement: If \(f\) is even, then \(\int_{-a}^{a}f(x) dx = 2\int_{0}^{a}f(x) dx\). If \(f\) is odd, then \(\int_{-a}^{a}f(x) dx = 0\)
+  proofsum:
+    essentially when \(f\) is even, you have two areas that are combined and are similar over the y-axis
+    with odd function, the two areas end up canceling out and leaving \(0\)
+theorem:
+  name: integral_theorem_12
+  statement: Suppose \(f\) is integrable on \([a,b]\) and that \(\forall\ x \in [a,b], m \leq f(x) \leq M\), then \(m(b-a) \leq \int_{a}^{b}f \leq M(b-a)\). 
+theorem:
+  name: integral_theorem_13
+  statement: If \(f\) is integrable on \([a,b]\) and \(F\) is defined on \([a,b]\) by \(F(x)=\int_{a}^{x}f\), then \(F\) is continuous on \([a,b]\). 
+  proof:
+    \text{in textbook on pg 270, in notes on pg 2.5-3}
+p:
+  Now a motivating example for the fundamental theorem of calculus. (Refer to notes pg 3). 
+theorem:
+  name: The First Fundamental Theorem of Calculus
+  statement: Let \(f\) be integrable on \([a,b]\) and define \(F\) on \([a,b]\) by \(F(x)=\int_{a}^{x}f\). If \(f\) is continuous at \(c \in [a,b]\), then \(F\) is diffrentiable at \(c\) and \(F'(c) = f(c)\). (If \(c=a\) or \(b\), then \(F'(c)\) is understodd to mean the right- or left-hand derivative of \(F\))
+theorem:
+  name: The Second Fundamental Theorem of Calculus
+  statement: If \(f\) is integrable on \([a,b]\) and \(f = g'\) for some function \(g\), then \(\int_{a}^{b}f = g(b)-g(a)\)
+def: Anything whose derivative is \(f\), the class next door will call antiderivative, and we will call a \b{primative} (any two primitives defer by a constant). Thus if \(g\) is a primative for \(f\), we can write \(\int_{a}^{b}f(t) dt = g(t)\big|_{a}^{b}=g(b)-g(a)\).  
+p:
+  Application~
+  Be careful and remember that \(\frac{d}{dx}(\sin x) = \cos x\) and \(\frac{d}{dx}(\cos x) = -\sin x\)
+  $$\int_{-1}^{2}3x^{2} dx = x^{3}\big|_{-1}^{2} = 2^{3}-(-1)^{3} = 9$$
+  $$\int_{0}^{\pi}\cos x dx = \sin x \big|_{0}^{\pi}=\sin \pi - \sin 0 = 0$$
+  $$\int_{0}^{\pi}\sin x dx = -\cos x \big|_{0}^{\pi}= (-\cos \pi) - (-\cos 0) = 2$$
+  The above are all definite integrals as they yield numerical solutions, whereas indefinite integrals give many functions such as
+  $$\int x^{n} dx = \frac{x^{n+1}}{n+1} + C,\ \forall\ n \neq -1 \land n \in \mathbb{Q}$$
+  Also suppose \(0 < f(x) \leq g(x)\) on \([a,b]\) and both are integrable, then the area between the graphs of \(y=f(x)\) and \(y = g(x)\) between \(x=a\) and \(x=b\) is
+  $$\int_{a}^{b}g(x) dx - \int_{a}^{b}f(x) dx = \int_{a}^{b}(g(x)-f(x)) dx$$

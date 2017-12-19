@@ -271,6 +271,71 @@
         <li>set up the partition, \(P\), such that by uniform continuity the difference \(M_{i}-m_{i}\) will be \(< \frac{\epsilon}{(b-a)}\)</li>
         <li>take \(U(f,P)-L(f,P)\), simplify it using knowledge that \(M_{i}-m_{i} < \frac{\epsilon}{(b-a)}\), and the summation \(= b-a\)</li>
       </ul>
+      <p><a id="integral_theorem_6" href="#integral_theorem_6"><strong>Theorem:</strong></a> Let \(a < c < b\). If \(f\) is integrable on \([a,b]\), then \(f\) is integrable on \([a,c]\) and \([c,b]\). Conversely, if \(f\) is integrable on \([a,c]\) and \([c,b]\), then \(f\) is integrable on \([a,b]\). Finally if \(f\) is integrable on \([a,b]\), then \(\int_{a}^{b}f =\int_{a}^{c}f + \int_{c}^{b}f\).</p>
+      <p>
+        <strong>Theorem Proof:</strong>
+        $$\text{located in textbook pg 267, in notes pg 1}$$
+      </p>
+      <p>
+        Earlier the integral \(\int_{a}^{b}f\) was only defined for \(a < b\), but due to previous theorem we have some minor notational conventions.
+      </p>
+      <p><a id="def_\(\int_{a}^{a}f=0\)" href="#def_\(\int_{a}^{a}f=0\)"><strong>Def:</strong></a> <strong>\(\int_{a}^{a}f=0\)</strong></p>
+      <p><a id="def_\(\int_{a}^{b}f=-\int_{b}^{a}f\)" href="#def_\(\int_{a}^{b}f=-\int_{b}^{a}f\)"><strong>Def:</strong></a> <strong>\(\int_{a}^{b}f=-\int_{b}^{a}f\)</strong> if \(a > b\)</p>
+      <p>
+        From this, \(\int_{a}^{b}f =\int_{a}^{c}f + \int_{c}^{b}f\) holds for all \(a,c,b\) even if \(a < c < b\) is not true. This makes the computation of integrals easier.
+      </p>
+      <p>
+        $$\int_{2}^{5}x^2 dx =\int_{0}^{5}x^2 dx + \int_{2}^{0}x^2 dx = \int_{0}^{5}x^2 dx - \int_{0}^{2}x^2 dx = \frac{5^{3}}{3} - \frac{2^{3}}{3}=39$$
+      </p>
+      <p><a id="integral_theorem_7" href="#integral_theorem_7"><strong>Theorem:</strong></a> If \(f\) and \(g\) are integrable on \([a,b]\), then \(f+g\) is integrable on \([a,b]\) and \(\int_{a}^{b}(f + g)=\int_{a}^{b}f + \int_{a}^{b}g\)</p>
+      <p><a id="integral_theorem_8" href="#integral_theorem_8"><strong>Theorem:</strong></a> If \(f\) is integrable on \([a,b]\), then for any number \(c\), the function \(cf\) is integrable on \([a,b]\) and \(\int_{a}^{b}cf = c\int_{a}^{b}f\)</p>
+      <p><a id="integral_theorem_9" href="#integral_theorem_9"><strong>Theorem:</strong></a> \(\int_{a}^{b}f(x) dx = \int_{a+r}^{b+r}f(x-r) dx\)</p>
+      <p><a id="integral_theorem_10" href="#integral_theorem_10"><strong>Theorem:</strong></a> \(\int_{a}^{b}f(x) dx = \frac{1}{k}\int_{ak}^{bk}f(\frac{x}{k}) dx\)</p>
+      <p><a id="integral_theorem_11" href="#integral_theorem_11"><strong>Theorem:</strong></a> If \(f\) is even, then \(\int_{-a}^{a}f(x) dx = 2\int_{0}^{a}f(x) dx\). If \(f\) is odd, then \(\int_{-a}^{a}f(x) dx = 0\)</p>
+      <p><strong>Theorem Proof Summary:</strong></p>
+      <ul>
+        <li>essentially when \(f\) is even, you have two areas that are combined and are similar over the y-axis</li>
+        <li>with odd function, the two areas end up canceling out and leaving \(0\)</li>
+      </ul>
+      <p><a id="integral_theorem_12" href="#integral_theorem_12"><strong>Theorem:</strong></a> Suppose \(f\) is integrable on \([a,b]\) and that \(\forall\ x \in [a,b], m \leq f(x) \leq M\), then \(m(b-a) \leq \int_{a}^{b}f \leq M(b-a)\).</p>
+      <p><a id="integral_theorem_13" href="#integral_theorem_13"><strong>Theorem:</strong></a> If \(f\) is integrable on \([a,b]\) and \(F\) is defined on \([a,b]\) by \(F(x)=\int_{a}^{x}f\), then \(F\) is continuous on \([a,b]\).</p>
+      <p>
+        <strong>Theorem Proof:</strong>
+        $$\text{in textbook on pg 270, in notes on pg 2.5-3}$$
+      </p>
+      <p>
+        Now a motivating example for the fundamental theorem of calculus. (Refer to notes pg 3).
+      </p>
+      <p><a id="the_first_fundamental_theorem_of_calculus" href="#the_first_fundamental_theorem_of_calculus"><strong>The First Fundamental Theorem of Calculus:</strong></a> Let \(f\) be integrable on \([a,b]\) and define \(F\) on \([a,b]\) by \(F(x)=\int_{a}^{x}f\). If \(f\) is continuous at \(c \in [a,b]\), then \(F\) is diffrentiable at \(c\) and \(F'(c) = f(c)\). (If \(c=a\) or \(b\), then \(F'(c)\) is understodd to mean the right- or left-hand derivative of \(F\))</p>
+      <p><a id="the_second_fundamental_theorem_of_calculus" href="#the_second_fundamental_theorem_of_calculus"><strong>The Second Fundamental Theorem of Calculus:</strong></a> If \(f\) is integrable on \([a,b]\) and \(f = g'\) for some function \(g\), then \(\int_{a}^{b}f = g(b)-g(a)\)</p>
+      <p><a id="def_primative" href="#def_primative"><strong>Def:</strong></a> Anything whose derivative is \(f\), the class next door will call antiderivative, and we will call a <strong>primative</strong> (any two primitives defer by a constant). Thus if \(g\) is a primative for \(f\), we can write \(\int_{a}^{b}f(t) dt = g(t)\big|_{a}^{b}=g(b)-g(a)\).</p>
+      <p>
+        Application~
+      </p>
+      <p>
+        Be careful and remember that \(\frac{d}{dx}(\sin x) = \cos x\) and \(\frac{d}{dx}(\cos x) = -\sin x\)
+      </p>
+      <p>
+        $$\int_{-1}^{2}3x^{2} dx = x^{3}\big|_{-1}^{2} = 2^{3}-(-1)^{3} = 9$$
+      </p>
+      <p>
+        $$\int_{0}^{\pi}\cos x dx = \sin x \big|_{0}^{\pi}=\sin \pi - \sin 0 = 0$$
+      </p>
+      <p>
+        $$\int_{0}^{\pi}\sin x dx = -\cos x \big|_{0}^{\pi}= (-\cos \pi) - (-\cos 0) = 2$$
+      </p>
+      <p>
+        The above are all definite integrals as they yield numerical solutions, whereas indefinite integrals give many functions such as
+      </p>
+      <p>
+        $$\int x^{n} dx = \frac{x^{n+1}}{n+1} + C,\ \forall\ n \neq -1 \land n \in \mathbb{Q}$$
+      </p>
+      <p>
+        Also suppose \(0 < f(x) \leq g(x)\) on \([a,b]\) and both are integrable, then the area between the graphs of \(y=f(x)\) and \(y = g(x)\) between \(x=a\) and \(x=b\) is
+      </p>
+      <p>
+        $$\int_{a}^{b}g(x) dx - \int_{a}^{b}f(x) dx = \int_{a}^{b}(g(x)-f(x)) dx$$
+      </p>
     </div>
   </body>
 </html>
