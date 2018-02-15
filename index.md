@@ -77,3 +77,14 @@ f(t)&=tf(t-1)\\\\
 \implies f(0)=1,f(1)=1,&f(2)=2,f(3)=6,f(4)=24\\
 \implies \forall t\in\mathbb{Z}^+ &\cup\{0\},\ f(t)=t!
 \end{align}$$
+
+# Gamma Function
+
+$$\begin{align}
+\Gamma(t)&=\int_0^\infty x^{t-1}e^{-x}dx\\
+&=f(t-1)\\
+\implies \Gamma(1)=1,\ \Gamma(2)&=1,\ \Gamma(3)=2,\ \Gamma(4)=6\\
+\implies t\Gamma(t)&=\Gamma(t+1)\end{align}$$
+
+## Applications
+1. $$\left(\frac{1}{2}\right)!=\int_0^\infty \sqrt{x}e^{-x}dx\\\\\implies \text{Can compute any fractional factorial as long as you can compute the integral}$$
