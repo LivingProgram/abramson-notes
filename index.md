@@ -88,3 +88,30 @@ $$\begin{align}
 
 ## Applications
 1. $$\left(\frac{1}{2}\right)!=\int_0^\infty \sqrt{x}e^{-x}dx\\\\\implies \text{Can compute any fractional factorial as long as you can compute the integral}$$
+
+# Calculating Area Under Bell Curve
+
+$$\begin{align}
+\text{Bell Curve: }& e^{-x^2}\\
+\text{Area Under Half: }& \int_0^\infty e^{-x^2}dx=\frac{\sqrt{\pi}}{2}
+\end{align}$$
+
+**Proof.**
+
+Calculate Reduction Formulas for:
+
+$$\begin{align}
+\int&(1-x^2)^ndx\\
+u&=(1-x^2)^n\\du&=n(1-x^2)^{n-1}(-2x)dx\\dv&=1dx\\v&=x\\
+\int(1-x^2)^ndx &= x(1-x^2)^n+2n\int x^2(1-x^2)^{n-1}dx\\
+&=x(1-x^2)^n+2n\int(1-(1-x^2))(1-x^2)^{n-1}dx\\
+\int(1-x^2)^ndx &= x(1-x^2)^n+2n\int(1-x^2)^{n-1}dx-2n\int(1-x^2)^ndx\\
+(2n+1)\int(1-x^2)^ndx&=x(1-x^2)^n+2n\int(1-x^2)^{n-1}dx\\
+\int(1-x^2)^ndx&=\frac{x(1-x^2)^n}{2n+1}+\frac{2n}{2n+1}\int(1-x^2)^{n-1}dx\\\\
+f(n)&=\int_0^1(1-x^2)^ndx\\
+&=\left(\frac{x(1-x^2)^n}{2n+1}\right)\Big|_0^1+\frac{2n}{2n+1}\int_0^1(1-x^2)^{n-1}dx\\
+&=0+\frac{2n}{2n+1}\int_0^1(1-x^2)^{n-1}dx\\
+&=\frac{2n}{2n+1}\int_0^1(1-x^2)^{n-1}dx\\
+f(n)&=\frac{2n}{2n+1}f(n-1)\\\\\end{align}$$
+
+$$\begin{align}\end{align}$$
