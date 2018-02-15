@@ -1,3 +1,5 @@
+# Abramson Notes
+
 # Sine Reduction Formula
 
 $$\int \sin^{n}x dx=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx$$
