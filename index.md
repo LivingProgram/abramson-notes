@@ -60,3 +60,20 @@ $$\frac \pi 2 (1)\geq \frac \pi 2 \left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\tim
 \frac \pi 2 \geq \lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) \geq \frac \pi 2\\\\$$
 
 $$\text{By Squeeze Theorem: }\lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) = \frac \pi 2\ \ \ \ \blacksquare$$
+
+# Factorial Function
+
+$$f(t)=\int_{0}^{\infty}x^t e^{-x}dx=tf(t-1)$$
+
+**Proof.**
+
+$$\begin{align}
+\int x^t& e^{-x}dx\\
+u&=x^t\\du&=tx^{t-1}dx\\dv&=e^{-x}dx\\v&=-e^{-x}\\
+\int x^t e^{-x}dx &=-x^t e^{-x}\Big|^{\infty}_0+t\int_0^{\infty}x^{t-1}e^{-x}dx\\
+&=0+t\int_0^{\infty}x^{t-1}e^{-x}dx&&\left(\lim_{x\to\infty}e^{-x}=0\right)\\
+&=tf(t-1)\\
+f(t)&=tf(t-1)\\\\
+\implies f(0)=1,f(1)=1,&f(2)=2,f(3)=6,f(4)=24\\
+\implies \forall t\in\mathbb{Z}^+ &\cup\{0\},\ f(t)=t!
+\end{align}$$
