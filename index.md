@@ -80,6 +80,13 @@ f(t)&=tf(t-1)\\\\
 \implies \forall t\in\mathbb{Z}^+ &\cup\{0\},\ f(t)=t!\ \ \ \ \blacksquare
 \end{align}$$
 
+## Applications
+* 1.) Find $$\left(\frac{1}{2}\right)!$$
+  * Use Factorial Function
+  * Answer: $$\int_0^\infty \sqrt{x}e^{-x}dx$$
+* 2.) Can you compute fractional factorials?
+  * Answer: You can compute any fractional factorial as long as you can compute the integral from plugging in the fraction into the Factorial Function. 
+
 # Gamma Function
 
 $$\begin{align}
@@ -87,9 +94,6 @@ $$\begin{align}
 &=f(t-1)\\
 \implies \Gamma(1)=1,\ \Gamma(2)&=1,\ \Gamma(3)=2,\ \Gamma(4)=6\\
 \implies t\Gamma(t)&=\Gamma(t+1)\end{align}$$
-
-## Applications
-1. $$\left(\frac{1}{2}\right)!=\int_0^\infty \sqrt{x}e^{-x}dx\\\\\implies \text{Can compute any fractional factorial as long as you can compute the integral}$$
 
 # Calculating Area Under Bell Curve
 
