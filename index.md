@@ -77,7 +77,7 @@ u&=x^t\\du&=tx^{t-1}dx\\dv&=e^{-x}dx\\v&=-e^{-x}\\
 &=tf(t-1)\\
 f(t)&=tf(t-1)\\\\
 \implies f(0)=1,f(1)=1,&f(2)=2,f(3)=6,f(4)=24\\
-\implies \forall t\in\mathbb{Z}^+ &\cup\{0\},\ f(t)=t!
+\implies \forall t\in\mathbb{Z}^+ &\cup\{0\},\ f(t)=t!\ \ \ \ \blacksquare
 \end{align}$$
 
 # Gamma Function
@@ -190,7 +190,7 @@ $$\begin{align}
 &\lim_{n\to\infty}\frac{1}{k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}=\frac{1}{\sqrt{\pi}}\times 1\times\frac{\pi}{2}=\frac{\sqrt{\pi}}{2}\\
 \implies \frac{\sqrt{\pi}}{2}\leq &\lim_{n\to\infty}\int_0^\sqrt{n} e^{-x^2}dx\leq \frac{\sqrt{\pi}}{2}\\
 \implies \lim_{n\to\infty}&\int_0^\sqrt{n} e^{-x^2}dx = \frac{\sqrt{\pi}}{2}\\
-\implies &\int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2}
+\implies &\int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2}\ \ \ \ \blacksquare
 \end{align}$$
 
 # Wallis's Applied to Coin Flip
@@ -211,7 +211,7 @@ $$\begin{align}
 &=\left(\frac{2^2\times 4^2\times\ldots\times 2n^2}{1\times 3\times \ldots\times (2n-1)\times2\times 4\times\ldots\times 2n}\times\frac{1}{\sqrt{n}}\right)\\
 &=\frac{2^{2n}(n!)^2}{(2n)!}\approx \sqrt{\pi}\times\sqrt{n}=\sqrt{\pi n}\\
 &\frac{(2n)!}{2^{2n}(n!)^2}\approx\frac{1}{\sqrt{\pi n}}\\
-&\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}
+&\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}\ \ \ \ \blacksquare
 \end{align}$$
 
 # Approximating $$\pi$$ Using Wallis's
@@ -243,7 +243,7 @@ $$\frac{a^{2n+3}}{2n+3}\leq z$$
 
 $$a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}$$
 
-* Approximation should be within $$z$$ of actual value of $$\tan^{-1}a$$
+* To check answer, approximation should be within $$z$$ of actual value of $$\tan^{-1}a$$
 
 **Proof.**
 
@@ -312,5 +312,15 @@ E_n(a)&=(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
 &\implies\tan^{-1}a =\lim_{n\to\infty}\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +0\\
 &\implies\tan^{-1}a\ \ \text{can be approximated to }\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)\\
 |a|>1&\implies\lim_{n\to\infty}|E_n(a)|\ \ \text{diverges}\\
-&\implies\tan^{-1}a \ \ \text{cannot be approximated}
+&\implies\tan^{-1}a \ \ \text{cannot be approximated}\ \ \ \ \blacksquare
 \end{align}$$
+
+## Applications
+* 1.) $$\tan^{-1}\left(\frac 1 2\right)$$ approximated to $$10^{-3}$$
+  * Find $$n$$ such that:
+  * $$\begin{align}\frac{\left(\frac 1 2\right)^{2n+3}}{2n+3}&\leq 10^{-3}\\n&=2\end{align}$$
+  * Find approximation by plugging $$n=2$$ and $$a=\frac 1 2$$ into:
+  * $$a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\\=\frac 1 2 -\frac{\left(\frac 1 2 \right)^3}{3}+\frac{\left(\frac 1 2 \right)^5}{5}\\=0.46458\bar{3}$$
+  * To check answer, approximation should be within $$10^{-3}$$ of actual value of $$\tan^{-1}\left(\frac 1 2\right)$$:
+  * $$\begin{align}\text{Approximated }\tan^{-1}\left(\frac 1 2\right) &= 0.46458\bar{3}\\\text{Actual }\tan^{-1}\left(\frac 1 2\right) &= 0.463647609\ldots\\\text{Difference between Actual and Approx.} &= 0.00093572433\ldots\\0.00093572433\ldots &< 10^{-3}\end{align}$$
+  * Answer: $$0.46458\bar{3}$$
