@@ -213,3 +213,21 @@ $$\begin{align}
 &\frac{(2n)!}{2^{2n}(n!)^2}\approx\frac{1}{\sqrt{\pi n}}\\
 &\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}
 \end{align}$$
+
+# Approximating $$\pi$$ Using Wallis's
+According to Wallis's Theorem:
+
+$$\begin{align}
+&\lim_{n\to\infty}\frac 2 1 \times \frac 2 3 \times \frac 4 3 \times \frac 4 5 \times \times\ldots\times\frac{2n}{2n-1}\times\frac{2n}{2n+1}=\frac{\pi}{2}\\
+&\implies \pi = 2\times \lim_{n\to\infty}\frac 2 1 \times \frac 2 3 \times \frac 4 3 \times \frac 4 5 \times \times\ldots\times\frac{2n}{2n-1}\times\frac{2n}{2n+1}
+\end{align}$$
+
+To get better and better approximations of $$\pi$$, multiply more of these products together:
+
+$$\begin{align}
+&\pi\approx2\times\frac 2 1 = 4\\
+&\pi\approx2\times\frac 2 1\times \frac 2 3 = 2.\bar{6}\\
+&\pi\approx2\times\frac 2 1\times \frac 2 3 \times \frac 4 3 = 3.\bar{5}\\
+&\pi\approx2\times\frac 2 1\times \frac 2 3 \times \frac 4 3 \times \frac 4 5 = 2.8\bar{4}\\
+&\pi\approx\ldots
+\end{align}$$
