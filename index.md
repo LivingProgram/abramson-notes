@@ -142,3 +142,14 @@ $$\begin{align}
 \text{Let}\ k(n) &= \frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\\
 &\implies\lim_{n\to\infty}k(n)=\sqrt{\pi}
 \end{align}$$
+
+$$\begin{align}
+\text{From before:}&\\
+f(n)=\int_0^1(1-x^2)^ndx&=\frac{2n}{2n+1}f(n-1)\\
+&=\frac{2n}{2n+1}\times\frac{2n-2}{2n-1}\times\ldots\times\frac 4 5 \times \frac 2 3\\
+&=\frac{1}{2n+1}\times\sqrt{n}\times k(n)&&\text{(plug in $k(n)$ to verify)}\\
+g(n)=\int_0^\infty\frac{1}{(1+x^2)^n}dx&=\frac{2n-3}{2n-2}g(n-1)\\
+&=\frac{2n-3}{2n-2}\times\frac{2n-5}{2n-4}\times\ldots\times\frac 1 2 \times\int_0^\infty\frac{1}{(1+x^2)^1}dx\\
+&=\frac{2n-3}{2n-2}\times\frac{2n-5}{2n-4}\times\ldots\times\frac 1 2 \times\frac{\pi}{2}&&\text{($\lim_{x\to\infty}\tan^{-1}x=\frac{\pi}{2}$)}\\
+&=\frac{1}{\sqrt{n}\times k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}&&\text{(plug in $k(n)$ to verify)}\\
+\end{align}$$
