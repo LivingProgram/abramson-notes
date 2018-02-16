@@ -174,5 +174,21 @@ y &= x\sqrt{n},\ dy=\sqrt{n}dx\\
 y &= x\sqrt{n},\ dy=\sqrt{n}dx\\
 \int_0^\infty e^{-nx^2}dx&=\frac{1}{\sqrt{n}}\int_0^\infty e^{-y^2}dy&&\text{($x=\infty\implies y=\infty$)}\\
 &=\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx&&\text{(change $y$ to $x$)}\\\\
-\frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx&\leq\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx&&\text{(area of $\int_0^\infty >$ area of $\int_0^\sqrt{n}$)}
+\frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx&\leq\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx&&\text{(area of $\int_0^\infty >$ area of $\int_0^\sqrt{n}$)}\\\\
+\end{align}$$
+
+$$\begin{align}
+\text{Using all} &\text{ previous results:}\\
+(1-x^2)^n\leq &e^{-nx^2}\leq\frac{1}{(1+x^2)^n}\\
+\implies\int_0^1(1-x^2)^ndx\leq&\int_0^1 e^{-nx^2}dx = \frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx\\
+&\leq\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx=\int_0^\infty e^{-nx^2}dx\leq\int_0^\infty\frac{1}{(1+x^2)^n}dx\\
+\implies\int_0^1(1-x^2)^ndx\leq&\frac{1}{\sqrt{n}}\int_0^\sqrt{n} e^{-x^2}dx\leq\int_0^\infty\frac{1}{(1+x^2)^n}dx\\
+\implies\frac{1}{2n+1}\times\sqrt{n}\times k(n)\leq&\frac{1}{\sqrt{n}}\int_0^\sqrt{n} e^{-x^2}dx\leq\frac{1}{\sqrt{n}\times k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}\\
+\implies\frac{n}{2n+1}\times k(n)\leq&\int_0^\sqrt{n} e^{-x^2}dx\leq\frac{1}{k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}\\
+\implies\lim_{n\to\infty}\frac{n}{2n+1}\times k(n)\leq&\lim_{n\to\infty}\int_0^\sqrt{n} e^{-x^2}dx\leq\lim_{n\to\infty}\frac{1}{k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}\\
+&\lim_{n\to\infty}\frac{n}{2n+1}\times k(n)=\frac 1 2 \times \sqrt{\pi}=\frac{\sqrt{\pi}}{2}\\
+&\lim_{n\to\infty}\frac{1}{k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}=\frac{1}{\sqrt{\pi}}\times 1\times\frac{\pi}{2}=\frac{\sqrt{\pi}}{2}\\
+\implies \frac{\sqrt{\pi}}{2}\leq &\lim_{n\to\infty}\int_0^\sqrt{n} e^{-x^2}dx\leq \frac{\sqrt{\pi}}{2}\\
+\implies \lim_{n\to\infty}&\int_0^\sqrt{n} e^{-x^2}dx = \frac{\sqrt{\pi}}{2}\\
+\implies &\int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2}
 \end{align}$$
