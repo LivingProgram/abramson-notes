@@ -163,3 +163,16 @@ $$\begin{align}
 &\implies (1-x^2)\leq e^{-x^2}\leq\frac{1}{1+x^2}&&\text{(combine previous)}\\
 &\implies(1-x^2)^n\leq e^{-nx^2}\leq\frac{1}{(1+x^2)^n}\\
 \end{align}$$
+
+$$\begin{align}
+\text{Proving some} &\text{ intermediate results:}\\
+&\int_0^1 e^{-nx^2}dx\\
+y &= x\sqrt{n},\ dy=\sqrt{n}dx\\
+\int_0^1 e^{-nx^2}dx&=\frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-y^2}dy&&\text{($x=1\implies y=\sqrt{n}$)}\\
+&=\frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx&&\text{(change $y$ to $x$)}\\\\
+&\int_0^\infty e^{-nx^2}dx\\
+y &= x\sqrt{n},\ dy=\sqrt{n}dx\\
+\int_0^\infty e^{-nx^2}dx&=\frac{1}{\sqrt{n}}\int_0^\infty e^{-y^2}dy&&\text{($x=\infty\implies y=\infty$)}\\
+&=\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx&&\text{(change $y$ to $x$)}\\\\
+\frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx&\leq\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx&&\text{(area of $\int_0^\infty >$ area of $\int_0^\sqrt{n}$)}
+\end{align}$$
