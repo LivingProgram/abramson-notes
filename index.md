@@ -4,7 +4,7 @@
 
 $$\int \sin^{n}x dx=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx$$
 
-**Proof.**
+## Proof.
 $$\begin{align}\text{Let }n\in\mathbb{Z}^{+},\ \text{Given }\int \sin^{n}x dx \\
 u&=\sin^{n-1}x\\
 du&=(n-1)\sin^{n-2}x\cos xdx\\
@@ -22,7 +22,7 @@ v&=-\cos x\\
 
 $$\prod_{n \mathop = 1}^\infty \frac {2 n} {2 n - 1} \cdot \frac {2 n} {2 n + 1} = \frac 2 1 \cdot \frac 2 3 \cdot \frac 4 3 \cdot \frac 4 5 \cdot \frac 6 5 \cdot \frac 6 7 \cdot \frac 8 7 \cdot \frac 8 9 \cdots = \frac \pi 2$$
 
-**Proof.**
+## Proof.
 $$\begin{align}\text{Sine Reduction Formula: } \\
 \int \sin^{n}x dx&=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx\\
 \int_b^a \sin^{n}x dx&=\left(-\frac{1}{n}\sin^{n-1}x\cos x\right)\Big|_b^a+\left(\frac{n-1}{n}\right)\int_b^a\sin^{n-2}x dx\\
@@ -67,7 +67,7 @@ $$\text{By Squeeze Theorem: }\lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2
 
 $$f(t)=\int_{0}^{\infty}x^t e^{-x}dx=tf(t-1)$$
 
-**Proof.**
+## Proof.
 
 $$\begin{align}
 \int x^t& e^{-x}dx\\
@@ -85,7 +85,7 @@ f(t)&=tf(t-1)\\\\
   * Use Factorial Function
   * Answer: $$\int_0^\infty \sqrt{x}e^{-x}dx$$
 * 2.) Can you compute fractional factorials?
-  * Answer: You can compute any fractional factorial as long as you can compute the integral from plugging in the fraction into the Factorial Function. 
+  * Answer: You can compute any fractional factorial as long as you can compute the integral from plugging in the fraction into the Factorial Function.
 
 # Gamma Function
 
@@ -102,7 +102,7 @@ $$\begin{align}
 \text{Area Under Half: }& \int_0^\infty e^{-x^2}dx=\frac{\sqrt{\pi}}{2}
 \end{align}$$
 
-**Proof.**
+## Proof.
 
 $$\begin{align}
 \text{Calculate reduction formula:}&\\
@@ -202,7 +202,7 @@ Probability when flipping $$2n$$ coins and getting $$n$$ heads and $$n$$ tails:
 
 $$=\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}$$
 
-**Proof.**
+## Proof.
 
 $$\begin{align}
 &\text{Using Wallis's Theorem:}\\\\
@@ -249,7 +249,7 @@ $$a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}
 
 * To check answer, approximation should be within $$z$$ of actual value of $$\tan^{-1}a$$
 
-**Proof.**
+## Proof.
 
 $$\begin{align}
 \tan^{-1}a&=\int_0^a\frac{1}{1+x^2}dx\\\\
