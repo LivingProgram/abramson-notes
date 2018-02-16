@@ -273,3 +273,11 @@ $$\begin{align}
 &\implies \text{$\frac{1}{1+x^2}$ can be expressed as a geometric series}\\
 &\phantom{000000}\text{with 1st term 1, ratio $-x^2$, converging to $\frac{1}{1+x^2}$}\\\\
 \end{align}$$
+
+$$\begin{align}
+\text{Integrating }&\text{ previous result:}\\
+\int_0^a\frac{1}{1+x^2}dx&=\int_0^a\left(1-x^2+x^4-x^6+\ldots+(-1)^nx^{2n}+(-1)^{n+1}\frac{x^{2n+2}}{1+x^2}\right)dx\\
+&=\left(x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\ldots+(-1)^n\frac{x^{2n+1}}{2n+1}\right)\Big|_0^a+\int_0^a(-1)^{n+1}\frac{x^{2n+2}}{1+x^2}dx\\
+&=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)+(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
+\implies \tan^{-1}a&=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)+(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\\\
+\end{align}$$
