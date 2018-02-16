@@ -328,3 +328,7 @@ E_n(a)&=(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
   * To check answer, approximation should be within $$10^{-3}$$ of actual value of $$\tan^{-1}\left(\frac 1 2\right)$$:
   * $$\begin{align}\text{Approximated }\tan^{-1}\left(\frac 1 2\right) &= 0.46458\bar{3}\\\text{Actual }\tan^{-1}\left(\frac 1 2\right) &= 0.463647609\ldots\\\text{Difference between Actual and Approx.} &= 0.00093572433\ldots\\0.00093572433\ldots &< 10^{-3}\end{align}$$
   * Answer: $$0.46458\bar{3}$$
+* 2.) Approximate $$\pi$$
+  * Plugging $$a=1$$ into $$\tan^{-1}a$$ approximation formula:
+  * $$\tan^{-1}(a)=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)\\\tan^{-1}(1)=\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\\frac \pi 4 = \left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\\pi = 4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)$$
+  * Answer: Approximate $$\pi$$ by choosing an $$n$$ and plugging it into $$4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)$$
