@@ -231,3 +231,45 @@ $$\begin{align}
 &\pi\approx2\times\frac 2 1\times \frac 2 3 \times \frac 4 3 \times \frac 4 5 = 2.8\bar{4}\\
 &\pi\approx\ldots
 \end{align}$$
+
+# Approximating $$\tan^{-1}a$$
+We can approximate $$\tan^{-1}a\ \ (\forall\ |a|\leq 1)$$ to the necessary accuracy, $$z$$, by using the following steps:
+
+* Find $$n$$ such that
+
+$$\frac{a^{2n+3}}{2n+3}\leq z$$
+
+* Find approximation by plugging $$n$$ and $$a$$ into:
+
+$$a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}$$
+
+* Approximation should be within $$z$$ of actual value of $$\tan^{-1}a$$
+
+**Proof.**
+
+$$\begin{align}
+\tan^{-1}a&=\int_0^a\frac{1}{1+x^2}dx\\\\
+\text{Using long division}&\text{ to find $\frac{1}{1+x^2}$:}\\
+\end{align}$$
+
+$$\begin{align}
+\require{enclose}
+1-x^2+x^4-\ldots \\[-3pt]
+1+x^2\phantom{0} \enclose{longdiv}{1\phantom{00000000000000}}\kern-.2ex \\[-3pt]
+\underline{1+x^2}\phantom{0000000000} \\[-3pt]
+-x^2\phantom{0000000000} \\[-3pt]
+\underline{-x^2-x^4}\phantom{00000} \\[-3pt]
+x^4\phantom{00000} \\[-3pt]
+\underline{x^4+x^6} \\[-3pt]
+-x^6 \\[-3pt]
+\ldots \\[-3pt]\\
+\end{align}$$
+
+$$\begin{align}
+\frac{1}{1+x^2}&=1-\frac{x^2}{1+x^2}\\
+&=1-x^2+\frac{x^4}{1+x^2}\\
+&=1-x^2+x^4-\frac{x^6}{1+x^2}\\
+&=1-x^2+x^4-x^6+\ldots+(-1)^nx^{2n}+(-1)^{n+1}\frac{x^{2n+2}}{1+x^2}\\
+&\implies \text{$\frac{1}{1+x^2}$ can be expressed as a geometric series}\\
+&\phantom{000000}\text{with 1st term 1, ratio $-x^2$, converging to $\frac{1}{1+x^2}$}\\\\
+\end{align}$$
