@@ -140,4 +140,5 @@ $$\begin{align}
 \implies \pi &\approx\frac{2\times 2\times 4\times 4\times\ldots\times 2n\times 2n}{1\times 1\times 3\times 3\times \ldots\times (2n-1)\times(2n-1)}\times\frac{2n}{2n+1}\\
 \implies \sqrt{\pi}&\approx\frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\\
 \text{Let}\ k(n) &= \frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\\
+&\implies\lim_{n\to\infty}k(n)=\sqrt{\pi}
 \end{align}$$
