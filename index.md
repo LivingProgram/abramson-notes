@@ -153,3 +153,13 @@ g(n)=\int_0^\infty\frac{1}{(1+x^2)^n}dx&=\frac{2n-3}{2n-2}g(n-1)\\
 &=\frac{2n-3}{2n-2}\times\frac{2n-5}{2n-4}\times\ldots\times\frac 1 2 \times\frac{\pi}{2}&&\text{($\lim_{x\to\infty}\tan^{-1}x=\frac{\pi}{2}$)}\\
 &=\frac{1}{\sqrt{n}\times k(n)}\times\frac{2n}{2n-1}\times\frac{\pi}{2}&&\text{(plug in $k(n)$ to verify)}\\
 \end{align}$$
+
+$$\begin{align}
+&\text{Absolute min of $e^x-x-1$ is $(0,0)$}\\
+&\implies e^x-x-1\geq 0\\&\implies \forall x\ e^x\geq1+x\\
+&\implies e^{-x^2}\geq 1-x^2&&\text{(plug in $-x^2$ for $x$)}\\
+&\implies e^{x^2}\geq 1+x^2 &&\text{(plug in $x^2$ for $x$)}\\
+&\implies e^{-x^2}\leq\frac{1}{1+x^2}&&\text{(take inverse)}\\
+&\implies (1-x^2)\leq e^{-x^2}\leq\frac{1}{1+x^2}&&\text{(combine previous)}\\
+&\implies(1-x^2)^n\leq e^{-nx^2}\leq\frac{1}{(1+x^2)^n}\\
+\end{align}$$
