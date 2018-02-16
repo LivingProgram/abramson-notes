@@ -192,3 +192,24 @@ $$\begin{align}
 \implies \lim_{n\to\infty}&\int_0^\sqrt{n} e^{-x^2}dx = \frac{\sqrt{\pi}}{2}\\
 \implies &\int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2}
 \end{align}$$
+
+# Wallis's Applied to Coin Flip
+Probability when flipping $$2n$$ coins and getting $$n$$ heads and $$n$$ tails:
+
+$$=\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}$$
+
+**Proof.**
+
+$$\begin{align}
+&\text{Using Wallis's Theorem:}\\\\
+\frac \pi 2 &\approx \frac 2 1 \times \frac 2 3 \times \frac 4 3 \times \frac 4 5 \times \times\ldots\times\frac{2n}{2n-1}\times\frac{2n}{2n+1}\\
+\implies \pi &\approx\frac{2\times 2\times 4\times 4\times\ldots\times 2n\times 2n}{1\times 1\times 3\times 3\times \ldots\times (2n-1)\times(2n-1)}\times\frac{2n}{2n+1}\\
+\implies \sqrt{\pi}&\approx\frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\\
+\implies &\lim_{n\to\infty}\frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}=\sqrt{\pi}\\\\
+
+&\frac{2\times 4\times\ldots\times 2n}{2\times 4\times\ldots\times 2n}\times\left(\frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\right)\\
+&=\left(\frac{2^2\times 4^2\times\ldots\times 2n^2}{1\times 3\times \ldots\times (2n-1)\times2\times 4\times\ldots\times 2n}\times\frac{1}{\sqrt{n}}\right)\\
+&=\frac{2^{2n}(n!)^2}{(2n)!}\approx \sqrt{\pi}\times\sqrt{n}=\sqrt{\pi n}\\
+&\frac{(2n)!}{2^{2n}(n!)^2}\approx\frac{1}{\sqrt{\pi n}}\\
+&\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}
+\end{align}$$
