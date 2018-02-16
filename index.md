@@ -289,5 +289,15 @@ $$\begin{align}
 \implies \int_0^a\frac{x^{2n+2}}{1+x^2}dx&\leq\int_0^a x^{2n+2}dx\\
 \implies\int_0^a\frac{x^{2n+2}}{1+x^2}dx&\leq\frac{a^{2n+3}}{2n+3}\\
 \implies\left|(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\right|&\leq\frac{a^{2n+3}}{2n+3}\\
-\implies\left|E_n(a)\right|&\leq\frac{a^{2n+3}}{2n+3}\\\\
+\implies|E_n(a)|&\leq\frac{a^{2n+3}}{2n+3}\\\\
+\end{align}$$
+
+$$\begin{align}
+\text{Using this result:}&\\
+|a|\leq1&\implies\lim_{n\to\infty}|E_n(a)|\leq\lim_{n\to\infty}\frac{a^{2n+3}}{2n+3}\\
+&\implies\lim_{n\to\infty}|E_n(a)|\leq0\\
+&\implies\lim_{n\to\infty}|E_n(a)|=0\\
+|a|>1&\implies\lim_{n\to\infty}|E_n(a)|\leq\lim_{n\to\infty}\frac{a^{2n+3}}{2n+3}\\
+&\implies\lim_{n\to\infty}|E_n(a)|\leq\infty\\
+&\implies\lim_{n\to\infty}|E_n(a)|\ \ \text{diverges}\\\\
 \end{align}$$
