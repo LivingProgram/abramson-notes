@@ -301,3 +301,16 @@ $$\begin{align}
 &\implies\lim_{n\to\infty}|E_n(a)|\leq\infty\\
 &\implies\lim_{n\to\infty}|E_n(a)|\ \ \text{diverges}\\\\
 \end{align}$$
+
+$$\begin{align}
+\text{Apply results to $\tan^{-1}a$:}&\\
+E_n(a)&=(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
+\implies \tan^{-1}a &= \left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +E_n(a)\\
+\implies \lim_{n\to\infty}\tan^{-1}a &=\lim_{n\to\infty}\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +\lim_{n\to\infty}E_n(a)\\
+\implies \tan^{-1}a &=\lim_{n\to\infty}\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +\lim_{n\to\infty}|E_n(a)|\\
+|a|\leq1&\implies\lim_{n\to\infty}|E_n(a)|=0\\
+&\implies\tan^{-1}a =\lim_{n\to\infty}\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +0\\
+&\implies\tan^{-1}a\ \ \text{can be approximated to }\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)\\
+|a|>1&\implies\lim_{n\to\infty}|E_n(a)|\ \ \text{diverges}\\
+&\implies\tan^{-1}a \ \ \text{cannot be approximated}
+\end{align}$$
