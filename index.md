@@ -5,7 +5,10 @@
 $$\int \sin^{n}x dx=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx$$
 
 ## Proof.
-$$\begin{align}\text{Let }n\in\mathbb{Z}^{+},\ \text{Given }\int \sin^{n}x dx \\
+
+$$\text{Let }n\in\mathbb{Z}^{+},\ \text{Given }\int \sin^{n}x dx$$
+
+$$\begin{align}
 u&=\sin^{n-1}x\\
 du&=(n-1)\sin^{n-2}x\cos xdx\\
 dv&=\sin xdx\\
@@ -23,7 +26,10 @@ v&=-\cos x\\
 $$\prod_{n \mathop = 1}^\infty \frac {2 n} {2 n - 1} \cdot \frac {2 n} {2 n + 1} = \frac 2 1 \cdot \frac 2 3 \cdot \frac 4 3 \cdot \frac 4 5 \cdot \frac 6 5 \cdot \frac 6 7 \cdot \frac 8 7 \cdot \frac 8 9 \cdots = \frac \pi 2$$
 
 ## Proof.
-$$\begin{align}\text{Sine Reduction Formula: } \\
+
+$$\text{From Sine Reduction Formula: }$$
+
+$$\begin{align}
 \int \sin^{n}x dx&=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx\\
 \int_b^a \sin^{n}x dx&=\left(-\frac{1}{n}\sin^{n-1}x\cos x\right)\Big|_b^a+\left(\frac{n-1}{n}\right)\int_b^a\sin^{n-2}x dx\\
 \int_0^{\frac{\pi}{2}} \sin^{n}x dx&=\left(-\frac{1}{n}\sin^{n-1}x\cos x\right)\Big|_0^{\frac{\pi}{2}}+\left(\frac{n-1}{n}\right)\int_0^{\frac{\pi}{2}}\sin^{n-2}x dx \\
@@ -53,7 +59,9 @@ $$\begin{align}\int_0^{\frac{\pi}{2}}\sin^{2n}xdx&\geq\int_0^{\frac{\pi}{2}}\sin
 1&\geq I \geq \frac{2n+1}{2n+2}\\
 1&\geq I \geq 1-\frac{1}{2n+2}\\\\\end{align}$$
 
-$$\text{Plugging in for $I$:}\\1\geq \frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1 \times\frac 2 \pi \geq 1-\frac{1}{2n+2}$$
+$$\text{Plugging in for $I$:}$$
+
+$$1\geq \frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1 \times\frac 2 \pi \geq 1-\frac{1}{2n+2}$$
 
 
 $$\frac \pi 2 (1)\geq \frac \pi 2 \left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1 \times\frac 2 \pi \right)\geq \frac \pi 2 \left(1-\frac{1}{2n+2}\right)\\
@@ -61,7 +69,9 @@ $$\frac \pi 2 (1)\geq \frac \pi 2 \left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\tim
 \lim_{n\to\infty}\left(\frac \pi 2\right) \geq \lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) \geq \lim_{n\to\infty}\left(\frac \pi 2 \left(1-\frac{1}{2n+2}\right)\right)\\
 \frac \pi 2 \geq \lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) \geq \frac \pi 2\\\\$$
 
-$$\text{By Squeeze Theorem: }\lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) = \frac \pi 2\ \ \ \ \blacksquare$$
+$$\text{By Squeeze Theorem: }$$
+
+$$\lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) = \frac \pi 2\ \ \ \ \blacksquare$$
 
 # Factorial Function
 
@@ -104,8 +114,9 @@ $$\begin{align}
 
 ## Proof.
 
+$$\text{Calculate reduction formula:}$$
+
 $$\begin{align}
-\text{Calculate reduction formula:}&\\
 \int&(1-x^2)^ndx\\
 u&=(1-x^2)^n\\du&=n(1-x^2)^{n-1}(-2x)dx\\dv&=1dx\\v&=x\\
 \int(1-x^2)^ndx &= x(1-x^2)^n+2n\int x^2(1-x^2)^{n-1}dx\\
@@ -113,15 +124,20 @@ u&=(1-x^2)^n\\du&=n(1-x^2)^{n-1}(-2x)dx\\dv&=1dx\\v&=x\\
 \int(1-x^2)^ndx &= x(1-x^2)^n+2n\int(1-x^2)^{n-1}dx-2n\int(1-x^2)^ndx\\
 (2n+1)\int(1-x^2)^ndx&=x(1-x^2)^n+2n\int(1-x^2)^{n-1}dx\\
 \int(1-x^2)^ndx&=\frac{x(1-x^2)^n}{2n+1}+\frac{2n}{2n+1}\int(1-x^2)^{n-1}dx\\\\
-\text{Calculate }\ f(n)\ \text{: }&\\
+\end{align}$$
+
+$$\text{Calculate $f(n)$: }$$
+
+$$\begin{align}
 f(n)&=\int_0^1(1-x^2)^ndx\\
 &=\left(\frac{x(1-x^2)^n}{2n+1}\right)\Big|_0^1+\frac{2n}{2n+1}\int_0^1(1-x^2)^{n-1}dx\\
 &=0+\frac{2n}{2n+1}\int_0^1(1-x^2)^{n-1}dx\\
 &=\frac{2n}{2n+1}\int_0^1(1-x^2)^{n-1}dx\\
 f(n)&=\frac{2n}{2n+1}f(n-1)\\\\\end{align}$$
 
+$$\text{Calculate reduction formula:}$$
+
 $$\begin{align}
-\text{Calculate reduction formula:}&\\
 \int\frac{1}{(1+x^2)^n}&=\int\frac{1+x^2}{(1+x^2)^n}-\frac{x^2}{(1+x^2)^n}dx\\
 &=\int\frac{1}{(1+x^2)^{n-1}}dx-\int\frac{x^2}{(1+x^2)^n}dx\\
 \text{Solving for: }& \int\frac{x^2}{(1+x^2)^n}dx\\
@@ -130,7 +146,11 @@ u&=x\\du&=1dx\\dv&=\frac{x}{(1+x^2)^n}\\v&=\int\frac{x}{(1+x^2)^n}dx
 \int\frac{1}{(1+x^2)^n}=\int\frac{1}{(1+x^2)^{n-1}}dx&-\left(\frac{1}{2-2n}\left(\frac{x}{(1+x^2)^{n-1}}\right)-\frac{1}{2-2n}\int\frac{1}{(1+x^2)^{n-1}}dx\right)\\
 &=\frac{1}{2-2n}\left(\frac{x}{(1+x^2)^{n-1}}\right)+\left(1+\frac{1}{2-2n}\right)\int\frac{1}{(1+x^2)^{n-1}}dx\\
 &=\frac{1}{2-2n}\left(\frac{x}{(1+x^2)^{n-1}}\right)+\frac{2n-3}{2n-2}\int\frac{1}{(1+x^2)^{n-1}}dx\\\\
-\text{Calculate }\ g(n)\ \text{: }&\\
+\end{align}$$
+
+$$\text{Calculate $g(n)$: }$$
+
+$$\begin{align}
 g(n)&=\int_0^\infty\frac{1}{(1+x^2)^n}\\
 &=\left(\frac{1}{2-2n}\left(\frac{x}{(1+x^2)^{n-1}}\right)\right)\Big|_0^\infty+\frac{2n-3}{2n-2}\int_0^\infty\frac{1}{(1+x^2)^{n-1}}dx\\
 &=0 + \frac{2n-3}{2n-2}\int_0^\infty\frac{1}{(1+x^2)^{n-1}}dx\\
@@ -138,8 +158,9 @@ g(n)&=\int_0^\infty\frac{1}{(1+x^2)^n}\\
 g(n)&=\frac{2n-3}{2n-2}g(n-1)
 \end{align}$$
 
+$$\text{Using Wallis's Theorem:}$$
+
 $$\begin{align}
-\text{Using Wallis's Theorem:}&\\
 \frac \pi 2 &\approx \frac 2 1 \times \frac 2 3 \times \frac 4 3 \times \frac 4 5 \times \times\ldots\times\frac{2n}{2n-1}\times\frac{2n}{2n+1}\\
 \implies \pi &\approx\frac{2\times 2\times 4\times 4\times\ldots\times 2n\times 2n}{1\times 1\times 3\times 3\times \ldots\times (2n-1)\times(2n-1)}\times\frac{2n}{2n+1}\\
 \implies \sqrt{\pi}&\approx\frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\\
@@ -147,8 +168,9 @@ $$\begin{align}
 &\implies\lim_{n\to\infty}k(n)=\sqrt{\pi}
 \end{align}$$
 
+$$\text{Finding $f(n)$ and $g(n)$ in terms of $k(n)$:}$$
+
 $$\begin{align}
-\text{From before:}&\\
 f(n)=\int_0^1(1-x^2)^ndx&=\frac{2n}{2n+1}f(n-1)\\
 &=\frac{2n}{2n+1}\times\frac{2n-2}{2n-1}\times\ldots\times\frac 4 5 \times \frac 2 3\\
 &=\frac{1}{2n+1}\times\sqrt{n}\times k(n)&&\text{(plug in $k(n)$ to verify)}\\
@@ -168,8 +190,9 @@ $$\begin{align}
 &\implies(1-x^2)^n\leq e^{-nx^2}\leq\frac{1}{(1+x^2)^n}\\
 \end{align}$$
 
+$$\text{Proving some intermediate results:}$$
+
 $$\begin{align}
-\text{Proving some} &\text{ intermediate results:}\\
 &\int_0^1 e^{-nx^2}dx\\
 y &= x\sqrt{n},\ dy=\sqrt{n}dx\\
 \int_0^1 e^{-nx^2}dx&=\frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-y^2}dy&&\text{($x=1\implies y=\sqrt{n}$)}\\
@@ -181,8 +204,9 @@ y &= x\sqrt{n},\ dy=\sqrt{n}dx\\
 \frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx&\leq\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx&&\text{(area of $\int_0^\infty >$ area of $\int_0^\sqrt{n}$)}\\\\
 \end{align}$$
 
+$$\text{Using all previous results:}$$
+
 $$\begin{align}
-\text{Using all} &\text{ previous results:}\\
 (1-x^2)^n\leq &e^{-nx^2}\leq\frac{1}{(1+x^2)^n}\\
 \implies\int_0^1(1-x^2)^ndx\leq&\int_0^1 e^{-nx^2}dx = \frac{1}{\sqrt{n}}\int_0^\sqrt{n}e^{-x^2}dx\\
 &\leq\frac{1}{\sqrt{n}}\int_0^\infty e^{-x^2}dx=\int_0^\infty e^{-nx^2}dx\leq\int_0^\infty\frac{1}{(1+x^2)^n}dx\\
@@ -204,8 +228,9 @@ $$=\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}$$
 
 ## Proof.
 
+$$\text{Using Wallis's Theorem:}$$
+
 $$\begin{align}
-&\text{Using Wallis's Theorem:}\\\\
 \frac \pi 2 &\approx \frac 2 1 \times \frac 2 3 \times \frac 4 3 \times \frac 4 5 \times \times\ldots\times\frac{2n}{2n-1}\times\frac{2n}{2n+1}\\
 \implies \pi &\approx\frac{2\times 2\times 4\times 4\times\ldots\times 2n\times 2n}{1\times 1\times 3\times 3\times \ldots\times (2n-1)\times(2n-1)}\times\frac{2n}{2n+1}\\
 \implies \sqrt{\pi}&\approx\frac{2\times 4\times\ldots\times 2n}{1\times 3\times \ldots\times (2n-1)}\times\frac{1}{\sqrt{n}}\\
@@ -278,8 +303,9 @@ $$\begin{align}
 &\phantom{000000}\text{with 1st term 1, ratio $-x^2$, converging to $\frac{1}{1+x^2}$}\\\\
 \end{align}$$
 
+$$\text{Integrating previous result:}$$
+
 $$\begin{align}
-\text{Integrating }&\text{ previous result:}\\
 \int_0^a\frac{1}{1+x^2}dx&=\int_0^a\left(1-x^2+x^4-x^6+\ldots+(-1)^nx^{2n}+(-1)^{n+1}\frac{x^{2n+2}}{1+x^2}\right)dx\\
 &=\left(x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\ldots+(-1)^n\frac{x^{2n+1}}{2n+1}\right)\Big|_0^a+\int_0^a(-1)^{n+1}\frac{x^{2n+2}}{1+x^2}dx\\
 &=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)+(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
@@ -296,8 +322,9 @@ $$\begin{align}
 \implies|E_n(a)|&\leq\frac{a^{2n+3}}{2n+3}\\\\
 \end{align}$$
 
+$$\text{Taking limit of previous result:}$$
+
 $$\begin{align}
-\text{Using this result:}&\\
 |a|\leq1&\implies\lim_{n\to\infty}|E_n(a)|\leq\lim_{n\to\infty}\frac{a^{2n+3}}{2n+3}\\
 &\implies\lim_{n\to\infty}|E_n(a)|\leq0\\
 &\implies\lim_{n\to\infty}|E_n(a)|=0\\
@@ -306,8 +333,9 @@ $$\begin{align}
 &\implies\lim_{n\to\infty}|E_n(a)|\ \ \text{diverges}\\\\
 \end{align}$$
 
+$$\text{Apply results to $\tan^{-1}a$:}$$
+
 $$\begin{align}
-\text{Apply results to $\tan^{-1}a$:}&\\
 E_n(a)&=(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
 \implies \tan^{-1}a &= \left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +E_n(a)\\
 \implies \lim_{n\to\infty}\tan^{-1}a &=\lim_{n\to\infty}\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right) +\lim_{n\to\infty}E_n(a)\\
