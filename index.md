@@ -484,3 +484,12 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
     T_{(n,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots
     \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots$$
+* 2.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^x$$ at $$x=1$$
+  * $$f^{(k)}(x)=e^x\implies f^{(k)}(1)=e^1=e$$
+  * $$T_{(n,f,1)}(x)=\sum_{k=0}^n\frac{f^{(k)}(1)}{k!}(x-1)^k=\sum_{k=0}^n\frac{e}{k!}(x-1)^k$$
+  * Answer: $$T_{(n,f,1)}(x)=\sum_{k=0}^n\frac{e}{k!}(x-1)^k$$
+* 3.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^x$$ at $$x=0$$
+  * $$f^{(k)}(x)=e^x\implies f^{(k)}(0)=e^0=1$$
+  * $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k=\sum_{k=0}^n\frac{x^k}{k!}$$
+  * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{x^k}{k!}$$
+* 4.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=\frac{1}{x}$$ at $$x=1$$
