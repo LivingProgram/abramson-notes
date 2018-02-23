@@ -517,10 +517,12 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   \end{align}$$
   * $$
   T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
-  \text{Evaluating $k>0$ and $k=0$ separately:}
+  \text{Evaluating $k>0$ and $k=0$ separately:} \\
+  \text{by splitting the summation:}
   $$
   * $$\begin{align}
-  T_{(n,f,0)}(x) &= \frac{f^{(0)}(0)}{0!}(x-0)^0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  T_{(n,f,0)}(x) &= \sum_{k=0}^0\frac{f^{(k)}(0)}{k!}(x-0)^k + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  &= \frac{f^{(0)}(0)}{0!}(x-0)^0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
   &= 0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
   &= \sum_{k=1}^n\frac{(-1)^{k-1}(k-1)!}{k!}x^k \\
   &= \sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k
