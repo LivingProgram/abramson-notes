@@ -551,4 +551,32 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   &= \sum_{k=1}^n\frac{x^k}{(k-1)!}
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=1}^n\frac{x^k}{(k-1)!}$$
+* 7.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^{2x}$$ at $$x=0$$
+  * $$\begin{align}
+  f'(x) &= 2e^{2x} \\
+  f''(x) &= 4e^{2x} \\
+  f'''(x) &= 8e^{2x} \\
+  &\ldots \\
+  f^{(k)}(x) &= 2^ke^{2x} \\
+  f^{(k)}(0)&=2^k \\
+  \end{align}$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  &= \sum_{k=0}^n\frac{2^k}{k!}x^k \\
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{2^k}{k!}x^k$$
 * 8.) Generalize results from Problem 7
+  * Finding the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^{Cx}$$ at $$x=0$$ for some constant $$C$$:
+  * $$\begin{align}
+  f'(x) &= Ce^{Cx} \\
+  f''(x) &= C^2e^{Cx} \\
+  f'''(x) &= C^3e^{Cx} \\
+  &\ldots \\
+  f^{(k)}(x) &= C^ke^{Cx} \\
+  f^{(k)}(0)&=C^k \\
+  \end{align}$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  &= \sum_{k=0}^n\frac{C^k}{k!}x^k \\
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{C^k}{k!}x^k$$
