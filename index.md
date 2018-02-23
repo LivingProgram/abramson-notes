@@ -384,3 +384,25 @@ $$a_k=\frac{P^{(k)}(a)}{k!}$$
 Therefore the polynomial can be expressed as:
 
 $$P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
+
+### Proof.
+
+$$\text{WWTP: }a_k=\frac{P^{(k)}(a)}{k!} \text{ and } P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
+
+$$\text{Plugging in $x=0$ to $P(x)$:}$$
+
+$$\begin{align}
+P(x) &= a_0+a_1(x-a)+a_2(x-a)^2+\ldots+a_n(x-a)^n \\
+P(a) &= a_0
+\end{align}$$
+
+$$\text{Then use derivatives:}$$
+
+$$\begin{align}
+P'(x) &= a_1+2a_2(x-a)+3a_3(x-a)^2+\ldots+na_n(x-a)^{n-1} \\
+P'(a) &= a_1 \\
+P''(x) &= 2a_2+6a_3(x-a)+12a_4(x-a)^2+\ldots+n(n-1)a_n(x-a)^{n-2} \\
+P''(a) &= 2a_2 \\
+&\ldots \\
+P^{(k)}(x) &= k!a_k+\ldots &&\text{($k^{\text{th}}$ derivative)}
+\end{align}$$
