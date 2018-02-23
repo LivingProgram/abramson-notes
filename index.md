@@ -390,7 +390,9 @@ The constants can be calculated using:
 
 $$a_k=\frac{P^{(k)}(a)}{k!}$$
 
-Therefore the polynomial can be expressed as:
+where $$P^{(k)}(x)$$ is the function $$P(x)$$ after taking $$k$$ derivatives.
+
+And the polynomial can be expressed as:
 
 $$P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
 
