@@ -387,7 +387,7 @@ $$P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
 
 ### Proof.
 
-$$\text{WWTP: }a_k=\frac{P^{(k)}(a)}{k!} \text{ and } P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
+$$\text{WWTP: }a_k=\frac{P^{(k)}(a)}{k!}$$
 
 $$\text{Plugging in $x=0$ to $P(x)$:}$$
 
@@ -404,5 +404,24 @@ P'(a) &= a_1 \\
 P''(x) &= 2a_2+6a_3(x-a)+12a_4(x-a)^2+\ldots+n(n-1)a_n(x-a)^{n-2} \\
 P''(a) &= 2a_2 \\
 &\ldots \\
-P^{(k)}(x) &= k!a_k+\ldots &&\text{($k^{\text{th}}$ derivative)}
 \end{align}$$
+
+$$
+\text{After taking $k$ derivatives of $P(x)$,} \\
+\text{non-zero values of $P^{(k)}(x)$ start from $a_k(x-a)^k$:} \\
+$$
+
+$$P^{(k)}(x)=\left(\frac{d}{dx}\right)^k(a_k(x-a)^k+\ldots)$$
+
+$$\text{and k derivatives of $a_k(x-a)^k$ is $k!a_k$:}$$
+
+$$\begin{align}
+P^{(k)}(x) &= k!a_k+\ldots \\
+P^{(k)}(a) &= k!a_k \\
+a_k &= \frac{P^{(k)}(a)}{k!}\ \ \ \ \blacksquare
+\end{align}$$
+
+
+### Proof.
+
+$$\text{WWTP: }P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
