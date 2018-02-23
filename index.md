@@ -527,5 +527,26 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k$$
 * 6.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=xe^x$$ at $$x=0$$
-  *
+  * $$\begin{align}
+  & & f(0)&=0 \\
+  f'(x) &= e^x+xe^x & f'(0)&=1\\
+  f''(x) &= e^x+e^x+xe^x & f''(0)&=2\\
+  &\ldots & &\ldots \\
+  f^{(k)}(x) &= ke^x+xe^x & f^{(k)}(0)&=k\\
+  \end{align}$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  &= \sum_{k=0}^n\frac{k}{k!}x^k \\
+  \end{align}$$
+  * $$
+  \text{Evaluating $k>0$ and $k=0$ separately,} \\
+  \text{by splitting the summation:}
+  $$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \sum_{k=0}^0\frac{k}{k!}x^k + \sum_{k=1}^n\frac{k}{k!}x^k \\
+  &= \frac{0}{0!}x^0 + \sum_{k=1}^n\frac{k}{k!}x^k \\
+  &= 0 + \sum_{k=1}^n\frac{k}{k!}x^k \\
+  &= \sum_{k=1}^n\frac{x^k}{(k-1)!}
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x)=\sum_{k=1}^n\frac{x^k}{(k-1)!}$$
 * 8.) Generalize results from Problem 7
