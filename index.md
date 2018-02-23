@@ -360,3 +360,27 @@ E_n(a)&=(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
   * Plugging $$a=1$$ into $$\tan^{-1}a$$ approximation formula:
   * $$\tan^{-1}(a)=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)\\\tan^{-1}(1)=\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\\frac \pi 4 = \left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\\pi = 4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)$$
   * Answer: Approximate $$\pi$$ by choosing an $$n$$ and plugging it into $$4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)$$
+
+# "Polynomial Bases"
+## Introduction Problems
+* 1.) Convert 2018 to base 9
+  * $$\begin{align}2018\div9&=224\ R\ 2 \\224\div9&=24\ R\ 8 \\24\div9&=2\ R\ 6 \\\implies 2018 \text{ in base } 9 &= 2682\end{align}$$
+  * Answer: 2682
+* 2.) Convert $$x^3+x+1$$ to a polynomial in $$(x-2)$$
+  * The process is identical to converting numerical bases
+  * $$\begin{align}x^3+x+1&=11+(x-2)(x^2+2n+5) \\&=11+(x-2)(13+(x-2)(x+4)) \\&=11+(x-2)(13+(x-2)(6+1(x-2))) \\&=11+13(x-2)+6(x-2)^2+1(x-2)^3\end{align}$$
+  * Answer: $$11+13(x-2)+6(x-2)^2+1(x-2)^3$$
+
+## Main Content
+A polynomial $$P(x)$$ of degree $$n$$ can be written as a polynomial in $$(x-a)$$:
+
+$$\forall \text{ unique constants } a_0,a_1,\ldots,a_n\\
+P(x)=a_0+a_1(x-a)+a_2(x-a)^2+\ldots+a_n(x-a)^n$$
+
+The constants can be calculated using:
+
+$$a_k=\frac{P^{(k)}(a)}{k!}$$
+
+Therefore the polynomial can be expressed as:
+
+$$P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
