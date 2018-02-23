@@ -433,3 +433,9 @@ P(x) &= a_0+a_1(x-a)+a_2(x-a)^2+\ldots+a_n(x-a)^n \\
 &= \frac{P^{(0)}(a)}{0!}(x-a)^0+\frac{P^{(1)}(a)}{1!}(x-a)^1+\ldots+\frac{P^{(n)}(a)}{n!}(x-a)^n \\
 &= \sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k\ \ \ \ \blacksquare
 \end{align}$$
+
+## Applications
+* 1.) Express $$P(x)=x^3+x+1$$ in $$(x-2)$$
+  * $$\begin{align}& & P(2)&=11 \\P'(x)&=2x^2+1 & P'(2)&=13\\P''(x)&=6x & P''(2)&=12\\P'''(x)&=6 & P'''(2)&=6\\\end{align}$$
+  * $$P(x) = \sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k \\\text{Degree of $P(x)=n$ and $a=2$} \\\implies P(x) = \sum_{k=0}^3\frac{P^{(k)}(2)}{k!}(x-2)^k \\= \frac{P^{(0)}(2)}{0!}(x-2)^0+\frac{P^{(1)}(2)}{1!}(x-2)^1+\frac{P^{(2)}(2)}{2!}(x-2)^2+\frac{P^{(3)}(2)}{3!}(x-2)^3 \\= \frac{11}{1}(x-2)^0+\frac{13}{1}(x-2)^1+\frac{12}{2!}(x-2)^2+\frac{6}{3!}(x-2)^3 \\= 11+13(x-2)+6(x-2)^2+1(x-2)^3 \\$$
+  * Answer: $$11+13(x-2)+6(x-2)^2+1(x-2)^3$$
