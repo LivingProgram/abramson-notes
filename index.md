@@ -421,7 +421,15 @@ P^{(k)}(a) &= k!a_k \\
 a_k &= \frac{P^{(k)}(a)}{k!}\ \ \ \ \blacksquare
 \end{align}$$
 
-
 ### Proof.
 
 $$\text{WWTP: }P(x)=\sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k$$
+
+$$\text{Given by previous proof:}$$
+
+$$\begin{align}
+a_k &= \frac{P^{(k)}(a)}{k!} \\
+P(x) &= a_0+a_1(x-a)+a_2(x-a)^2+\ldots+a_n(x-a)^n \\
+&= \frac{P^{(0)}(a)}{0!}(x-a)^0+\frac{P^{(1)}(a)}{1!}(x-a)^1+\ldots+\frac{P^{(n)}(a)}{n!}(x-a)^n \\
+&= \sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k\ \ \ \ \blacksquare
+\end{align}$$
