@@ -1,10 +1,11 @@
 # Abramson Notes
 
 # Sine Reduction Formula
+## Main Content
 
 $$\int \sin^{n}x dx=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx$$
 
-## Proof.
+### Proof.
 
 $$\text{Let }n\in\mathbb{Z}^{+},\ \text{Given }\int \sin^{n}x dx$$
 
@@ -21,11 +22,13 @@ v&=-\cos x\\
 \int \sin^{n}x dx&=-\frac{1}{n}\sin^{n-1}x\cos x+\left(\frac{n-1}{n}\right)\int\sin^{n-2}x dx\ \ \ \ \blacksquare\end{align}$$
 
 # Wallis's Theorem
+
+## Main Content
 **Theorem:**
 
 $$\prod_{n \mathop = 1}^\infty \frac {2 n} {2 n - 1} \cdot \frac {2 n} {2 n + 1} = \frac 2 1 \cdot \frac 2 3 \cdot \frac 4 3 \cdot \frac 4 5 \cdot \frac 6 5 \cdot \frac 6 7 \cdot \frac 8 7 \cdot \frac 8 9 \cdots = \frac \pi 2$$
 
-## Proof.
+### Proof.
 
 $$\text{From Sine Reduction Formula: }$$
 
@@ -74,10 +77,11 @@ $$\text{By Squeeze Theorem: }$$
 $$\lim_{n\to\infty}\left(\frac{2n}{2n+1}\times\frac{2n}{2n-1}\times \ldots\times\frac 2 3 \times\frac 2 1\right) = \frac \pi 2\ \ \ \ \blacksquare$$
 
 # Factorial Function
+## Main Content
 
 $$f(t)=\int_{0}^{\infty}x^t e^{-x}dx=tf(t-1)$$
 
-## Proof.
+### Proof.
 
 $$\begin{align}
 \int x^t& e^{-x}dx\\
@@ -98,6 +102,7 @@ f(t)&=tf(t-1)\\\\
   * Answer: You can compute any fractional factorial as long as you can compute the integral from plugging in the fraction into the Factorial Function.
 
 # Gamma Function
+## Main Content
 
 $$\begin{align}
 \Gamma(t)&=\int_0^\infty x^{t-1}e^{-x}dx\\
@@ -106,13 +111,14 @@ $$\begin{align}
 \implies t\Gamma(t)&=\Gamma(t+1)\end{align}$$
 
 # Calculating Area Under Bell Curve
+## Main Content
 
 $$\begin{align}
 \text{Bell Curve: }& e^{-x^2}\\
 \text{Area Under Half: }& \int_0^\infty e^{-x^2}dx=\frac{\sqrt{\pi}}{2}
 \end{align}$$
 
-## Proof.
+### Proof.
 
 $$\text{Calculate reduction formula:}$$
 
@@ -222,11 +228,12 @@ $$\begin{align}
 \end{align}$$
 
 # Wallis's Applied to Coin Flip
+## Main Content
 Probability when flipping $$2n$$ coins and getting $$n$$ heads and $$n$$ tails:
 
 $$=\frac{ {2n}\choose{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}$$
 
-## Proof.
+### Proof.
 
 $$\text{Using Wallis's Theorem:}$$
 
@@ -244,6 +251,7 @@ $$\begin{align}
 \end{align}$$
 
 # Approximating $$\pi$$ Using Wallis's
+## Main Content
 According to Wallis's Theorem:
 
 $$\begin{align}
@@ -262,6 +270,7 @@ $$\begin{align}
 \end{align}$$
 
 # Approximating $$\tan^{-1}a$$
+## Main Content
 We can approximate $$\tan^{-1}a\ \ (\forall\ |a|\leq 1)$$ to the necessary accuracy, $$z$$, by using the following steps:
 
 * Find $$n$$ such that
@@ -274,7 +283,7 @@ $$a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}
 
 * To check answer, approximation should be within $$z$$ of actual value of $$\tan^{-1}a$$
 
-## Proof.
+### Proof.
 
 $$\begin{align}
 \tan^{-1}a&=\int_0^a\frac{1}{1+x^2}dx\\\\
