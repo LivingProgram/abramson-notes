@@ -494,5 +494,13 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{x^k}{k!}$$
 * 4.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=\frac{1}{x}$$ at $$x=1$$
   * $$\begin{align}
-
+  f(x) &= \frac{1}{x} = x^{-1} \\
+  f'(x) &= -x^{-2} \\
+  f''(x) &= 2x^{-3} \\
+  f'''(x) &= -6x^{-4} \\
+  f^{(k)}(x) &= (-1)^kk!x^{-k-1} \\
+  f^{(k)}(1) &= (-1)^kk!1^{-k-1}= (-1)^kk! \\
+  a_k &= \frac{f^{(k)}(1)}{k!}=(-1)^k \\
+  T_{(n,f,1)}(x) &= 1-(x-1)+(x-1)^2-(x-1)^3+\ldots+(-1)^n(x-1)^n
   \end{align}$$
+  * Answer: $$T_{(n,f,1)}(x) = 1-(x-1)+(x-1)^2-(x-1)^3+\ldots+(-1)^n(x-1)^n$$
