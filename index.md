@@ -513,10 +513,19 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   f''''(x) &= -6(1+x)^{-4} & f''''(0)&=-6\\
   f^{(5)}(x) &= 24(1+x)^{-5} & f^{(5)}(0)&=24\\
   &\ldots & &\ldots \\
-  f^{(k)}(x) &= (-1)^{k-1}(k-1)!(1+x)^{-k} & f^{(k)}(0)&=(-1)^{k-1}(k-1)!\\
+  f^{(k)}(x) &= (-1)^{k-1}(k-1)!(1+x)^{-k}\ \ (\forall k > 0) & f^{(k)}(0)&=(-1)^{k-1}(k-1)!\ \ (\forall k > 0)\\
   \end{align}$$
   * $$
-  T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k=\sum_{k=0}^n\frac{(-1)^{k-1}(k-1)!}{k!}x^k=\sum_{k=0}^n\frac{(-1)^{k-1}}{k}x^k
+  T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  \text{Evaluating $k>0$ and $k=0$ separately:}
   $$
-  * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{(-1)^{k-1}}{k}x^k$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \frac{f^{(0)}(0)}{0!}(x-0)^0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  &= 0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  &= \sum_{k=1}^n\frac{(-1)^{k-1}(k-1)!}{k!}x^k \\
+  &= \sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x)=\sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k$$
+* 6.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=xe^x$$ at $$x=0$$
+  *
 * 8.) Generalize results from Problem 7
