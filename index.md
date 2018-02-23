@@ -452,3 +452,15 @@ P(x) &= a_0+a_1(x-a)+a_2(x-a)^2+\ldots+a_n(x-a)^n \\
   * $$\begin{align}& & P(-3)&=81 \\P'(x)&=4x^3 & P'(-3)&=-108\\P''(x)&=12x^2 & P''(-3)&=108\\P'''(x)&=24x & P'''(-3)&=-72\\P''''(x)&=24 & P''''(-3)&=24\\\end{align}$$
   * $$P(x) = \frac{81}{0!}+\frac{-108}{1!}(x+3)+\frac{108}{2!}(x+3)^2+\frac{-72}{3!}(x+3)^3+\frac{24}{4!}(x+3)^4 \\= 81-108(x+3)+54(x+3)^2-12(x+3)^3+1(x+3)^4$$
   * Answer: $$81-108(x+3)+54(x+3)^2-12(x+3)^3+1(x+3)^4$$
+
+# Taylor Polynomials
+## Main Content
+**Definition:**
+
+A function $$f(x)$$ is $$\underline{\textbf{infinitely differentiable}}$$ if you can keep taking derivative after derivative of $$f(x)$$ and obtain functions that are defined
+
+**Definition:**
+
+Let $$f(x)$$ be infinitely differentiable at $$x=a$$, the $$\underline{n^{\text{th}} \textbf{ order Taylor Polynomial of } f(x) \textbf{ at } x=a}$$ is:
+
+$$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
