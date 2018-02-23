@@ -463,6 +463,24 @@ A function $$f(x)$$ is $$\underline{\textbf{infinitely differentiable}}$$ if you
 
 **Definition:**
 
-Let $$f(x)$$ be infinitely differentiable at $$x=a$$, the $$\underline{n^{\text{th}} \textbf{ order Taylor Polynomial of } f(x) \textbf{ at } x=a}$$ is:
+Let $$f(x)$$ be infinitely differentiable at $$x=a$$, the $$\underline{n^{\text{th}} \textbf{ order taylor polynomial of } f(x) \textbf{ at } x=a}$$ is:
 
 $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
+
+## Applications
+* 1.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=-\cos x$$ at $$x=0$$
+  * $$\begin{align}& & f(0)&=-1 \\f'(x)&=\sin x & f'(0)&=0\\f''(x)&=\cos x & f''(0)&=1\\f'''(x)&=-\sin x & f'''(0)&=0\\&\ldots & &\ldots\end{align}$$
+  * $$\text{Since the pattern repeats for more derivatives:}$$
+  * $$\begin{align}k\equiv 0\pmod 4 &\implies f^{(k)}(0)=-1 \\k\equiv 1\pmod 4 &\implies f^{(k)}(0)=0 \\k\equiv 2\pmod 4 &\implies f^{(k)}(0)=1 \\k\equiv 3\pmod 4 &\implies f^{(k)}(0)=0 \\\end{align}$$
+  * $$\text{Calculating $T_{(n,f,0)}(x)$ for sample $n$:}$$
+  * $$\begin{align}
+    T_{(0,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0=-1 \\
+    T_{(1,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0+\frac{f'(0)}{1!}(x-0)^1=-1+0 \\
+    T_{(2,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0+\frac{f'(0)}{1!}(x-0)^1+\frac{f''(0)}{2!}(x-0)^2=-1+0+\frac{x^2}{2!} \\
+    T_{(3,f,0)}(x) &= -1+0+\frac{x^2}{2!}+\frac{f'''(0)}{3!}(x-0)^3=-1+0+\frac{x^2}{2!}+0 \\
+    T_{(4,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!} \\
+    T_{(6,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!} \\
+    T_{(2n,f,0)}(x) &= \sum_{k=0}^n(-1)^{k+1}\frac{x^{2k}}{(2k)!} \\
+    T_{(n,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots
+    \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x) = -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots$$
