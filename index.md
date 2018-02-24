@@ -635,3 +635,15 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   * $$\text{Therefore we can conclude:}$$
   * $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x)$$
   * Answer: $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x)$$
+* 11.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=79e^x$$ at $$x=0$$
+  * $$\begin{align}
+  f'(x) &= 79e^x \\
+  f''(x) &= 79e^x \\
+  f^{(k)}(x) &= 79e^x \\
+  f^{(k)}(0) &= 79
+  \end{align}$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{79}{k!}x^k \\
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{79}{k!}x^k$$
