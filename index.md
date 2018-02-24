@@ -647,3 +647,16 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   &= \sum_{k=0}^n\frac{79}{k!}x^k \\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{79}{k!}x^k$$
+* 12.) Generalize results from Problem 11
+  * Finding the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=Ce^x$$ at $$x=0$$ for some constant $$C$$:
+  * $$\begin{align}
+  f'(x) &= Ce^x \\
+  f''(x) &= Ce^x \\
+  f^{(k)}(x) &= Ce^x \\
+  f^{(k)}(0) &= C
+  \end{align}$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{C}{k!}x^k \\
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{C}{k!}x^k$$
