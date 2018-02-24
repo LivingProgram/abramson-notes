@@ -580,3 +580,27 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   &= \sum_{k=0}^n\frac{C^k}{k!}x^k \\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{C^k}{k!}x^k$$
+* 9.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^x-\cos x$$ at $$x=0$$
+  * $$\begin{align}
+  & & f(0)&=1-1=0 \\
+  f'(x)&=e^x+\sin x & f'(0)&=1+0=1\\
+  f''(x)&=e^x+\cos x & f''(0)&=1+1=2\\
+  f'''(x)&=e^x-\sin x & f'''(0)&=1-0=1\\
+  &\ldots & &\ldots
+  \end{align}$$
+  * $$\text{Since the pattern repeats for more derivatives:}$$
+  * $$\begin{align}
+  k\equiv 0\pmod 4 &\implies f^{(k)}(0)=0 \\
+  k\equiv 1\pmod 4 &\implies f^{(k)}(0)=1 \\
+  k\equiv 2\pmod 4 &\implies f^{(k)}(0)=2 \\
+  k\equiv 3\pmod 4 &\implies f^{(k)}(0)=1 \\
+  \end{align}$$
+  * $$\text{Calculating $T_{(n,f,0)}(x)$ for sample $n$:}$$
+  * $$\begin{align}
+  T_{(0,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0=0 \\
+  T_{(1,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0+\frac{f'(0)}{1!}(x-0)^1=0+x \\
+  T_{(2,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0+\frac{f'(0)}{1!}(x-0)^1+\frac{f''(0)}{2!}(x-0)^2=0+x+\frac{2}{2!}x^2 \\
+  T_{(3,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{f'''(0)}{3!}(x-0)^3=0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3 \\
+  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots
+  \end{align}$$
+  * Answer: $$T_{(n,f,0)}(x) = 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots$$
