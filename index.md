@@ -604,3 +604,34 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots$$
+* 10.) Generalize results from Problem 8
+  * $$\text{Using results from Problem 8:}$$
+  * $$\begin{align}
+  f(x) &= e^x-\cos x \\
+  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots
+  \end{align}$$
+  * $$\text{Using results from Problem 1:}$$
+  * $$\begin{align}
+  g(x)&=-\cos x \\
+  T_{(n,g,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots
+  \end{align}$$
+  * $$\text{Using results from Problem 3:}$$
+  * $$\begin{align}
+  h(x)&=e^x \\
+  T_{(n,h,0)}(x)&=\sum_{k=0}^n\frac{x^k}{k!}
+  \end{align}$$
+  * $$\text{Combining results:}$$
+  * $$\begin{align}
+  f(x) &= e^x-\cos x \\
+  &= h(x)+g(x)
+  \end{align}$$
+  * $$\text{Rewrite $T_{(n,f,0)}(x)$:}$$
+  * $$\begin{align}
+  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots \\
+  &= \left(-1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots\right) + \left(1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots\right) \\
+  &= \left(-1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots\right) + \sum_{k=0}^n\frac{x^k}{k!} \\
+  &= T_{(n,g,0)}(x) + T_{(n,h,0)}(x)
+  \end{align}$$
+  * $$\text{Therefore we can conclude:}$$
+  * $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x)$$
+  * Answer: $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x)$$
