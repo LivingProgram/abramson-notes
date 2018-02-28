@@ -722,3 +722,11 @@ $$\begin{align}
 &= \lim_{x\to a} \frac{f^{(n)}(x)-f^{(n)}(a)}{n!} \\
 &= 0 \ \ \ \ \blacksquare\\\\
 \end{align}$$
+
+# Theorem
+## Main Content
+**Definition:**
+
+a function $$\underline{f(x)\textbf{ and } g(x) \textbf{ are equal up to order } n \textbf{ at } a}$$ if $$\lim_{x\to a} \frac{f(x)-g(x)}{(x-a)^n} = 0$$
+
+**Theorem:**
