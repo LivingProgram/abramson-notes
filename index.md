@@ -702,5 +702,9 @@ $$\begin{align}
 &= \lim_{x\to a} \frac{f^{(0)}(a)}{0!} (x-a)^0 + \lim_{x\to a} \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \\
 &= f(a) + \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} \lim_{x\to a} (x-a)^k \\
 &= f(a) + \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} \cdot 0 &&\text{(since $k\geq 1$)}\\
-&= f(a)
+&= f(a) \\\\
+\lim_{x\to a} \left(f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \right) &= \lim_{x\to a} f(x) - \lim_{x\to a} \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \\
+&= f(a)-f(a) \\
+&= 0 \\\\
+\lim_{x\to a} (x-a)^n &= 0 \\\\
 \end{align}$$
