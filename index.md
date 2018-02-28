@@ -660,3 +660,25 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   &= \sum_{k=0}^n\frac{C}{k!}x^k \\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{C}{k!}x^k$$
+
+# Theorem
+## Introduction
+
+$$
+\text{Let $f(x)=e^x$:} \\
+T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{x^k}{k!} \\
+\text{To find the following limits we apply L'Hôpital's rule (several times),} \\
+\text{because both the numerator and denominator $\to 0$ as $x\to0$:}
+$$
+
+$$\begin{align}
+\lim_{x\to0}\frac{e^x-T_{(0,f,0)}(x)}{x^0}&=\lim_{x\to0}\frac{e^x-1}{x^0}=0 \\
+\lim_{x\to0}\frac{e^x-T_{(1,f,0)}(x)}{x^1}&=\lim_{x\to0}\frac{e^x-(1+x)}{x}=0 \\
+\lim_{x\to0}\frac{e^x-T_{(2,f,0)}(x)}{x^2}&=\lim_{x\to0}\frac{e^x-(1+x+\frac{x^2}{2!})}{x^2}=0 \\
+\lim_{x\to0}\frac{e^x-T_{(3,f,0)}(x)}{x^3}&=\lim_{x\to0}\frac{e^x-(1+x+\frac{x^2}{2!}+\frac{x^3}{3!})}{x^3}=0 \\\\
+\end{align}$$
+
+$$
+\text{$\implies e^x-(1+x+\frac{x^2}{2!}+\frac{x^3}{3!})$ is very small compared to $x^3$ as $x\to0$} \\\\
+\text{This leads us to generalize to the following theorem...}
+$$
