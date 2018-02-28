@@ -686,4 +686,13 @@ $$
 ## Main Content
 **Theorem:**
 
-$$\lim_{x\to0}\frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n}=0$$
+$$\lim_{x\to a}\frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n}=0$$
+
+### Proof.
+
+$$
+T_{(n,f,a)}(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \\
+\lim_{x\to a}\frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n} = \lim_{x\to a} \frac{f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k}{(x-a)^n} \\\\
+$$
+
+$$\text{Take note of the following limits:}$$
