@@ -708,3 +708,10 @@ $$\begin{align}
 &= 0 \\\\
 \lim_{x\to a} (x-a)^n &= 0 \\\\
 \end{align}$$
+
+$$\text{Since both numerator and denominator $\to 0$, apply L'Hôpital's rule:}$$
+
+$$\begin{align}
+\lim_{x\to a} \frac{f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k}{(x-a)^n} &= \lim_{x\to a} \frac{\frac{d}{dx}\left( f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \right)}{\frac{d}{dx}\left( (x-a)^n \right)} \\
+&= \lim_{x\to a} \frac{f'(x) - \sum_{k=1}^n \frac{f^{(k)}(a)}{(k-1)!} (x-a)^{k-1}}{n(x-a)^{n-1}} \\
+\end{align}$$
