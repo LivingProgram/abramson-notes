@@ -696,3 +696,11 @@ T_{(n,f,a)}(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \\
 $$
 
 $$\text{Take note of the following limits:}$$
+
+$$\begin{align}
+\lim_{x\to a} \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x-a)^k &= \lim_{x\to a} \sum_{k=0}^0 \frac{f^{(k)}(a)}{k!} (x-a)^k + \lim_{x\to a} \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \\
+&= \lim_{x\to a} \frac{f^{(0)}(a)}{0!} (x-a)^0 + \lim_{x\to a} \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} (x-a)^k \\
+&= f(a) + \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} \lim_{x\to a} (x-a)^k \\
+&= f(a) + \sum_{k=1}^n \frac{f^{(k)}(a)}{k!} \cdot 0 &&\text{(since $k\geq 1$)}\\
+&= f(a)
+\end{align}$$
