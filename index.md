@@ -682,3 +682,8 @@ $$
 \text{$\implies e^x-(1+x+\frac{x^2}{2!}+\frac{x^3}{3!})$ is very small compared to $x^3$ as $x\to0$} \\\\
 \text{This leads us to generalize to the following theorem...}
 $$
+
+## Main Content
+**Theorem:**
+
+$$\lim_{x\to0}\frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n}=0$$
