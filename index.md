@@ -765,3 +765,10 @@ R(x) &= b_0 + \ldots + b_n(x-a)^n \\
 \lim_{x\to a} R(x) &= b_0 \\
 0 &= b_0 \\\\
 \end{align}$$
+
+$$\text{Using the fact $b_0=0$:}$$
+
+$$\begin{align}
+R(x) &= b_1(x-a) + \ldots + b_n(x-a)^n \\
+\frac{R(x)}{(x-a)} &= b_1 + \ldots + b_n(x-a)^{n-1}
+\end{align}$$
