@@ -730,3 +730,38 @@ $$\begin{align}
 a function $$\underline{f(x)\textbf{ and } g(x) \textbf{ are equal up to order } n \textbf{ at } a}$$ if $$\lim_{x\to a} \frac{f(x)-g(x)}{(x-a)^n} = 0$$
 
 **Theorem:**
+
+Let $$P$$ and $$Q$$ be two polynomials in $$(x-a)$$, of degree $$\leq n$$, and suppose that $$P$$ and $$Q$$ are equal up to order $$n$$ at $$a$$. Then $$P=Q$$.
+
+### Proof
+
+$$\text{Let $R=P-Q$:}$$
+
+$$\begin{align}
+deg(P)\leq n\ \land\ deg(Q)\leq n &\implies deg(R)\leq n \\
+&\implies R(x) = b_0 + \ldots + b_n(x-a)^n
+\end{align}$$
+
+$$\text{$P$ and $Q$ equal up to order $n$ at $a$:}$$
+
+$$\begin{align}
+&\implies \lim_{x\to a} \frac{P(x)-Q(x)}{(x-a)^n} = 0 \\
+&\implies \lim_{x\to a} \frac{R(x)}{(x-a)^n} = 0 \\\\
+\end{align}$$
+
+$$
+\text{WWTP: $R(x)=0\implies P-Q = 0 \implies P=Q$} \\\\
+\lim_{x\to a} \frac{R(x)}{(x-a)^n} = 0 \implies \forall\ 0 \leq i \leq n,\ \lim_{x\to a} \frac{R(x)}{(x-a)^i} = 0 \\\\
+\text{For $i=0$:} \\
+\lim_{x\to a} \frac{R(x)}{(x-a)^0} = 0 \\
+\lim_{x\to a} R(x) = 0 \\\\
+$$
+
+$$\text{Using $R(x)$ equation:}$$
+
+$$\begin{align}
+R(x) &= b_0 + \ldots + b_n(x-a)^n \\
+\lim_{x\to a} R(x) &= \lim_{x\to a} \left( b_0 + \ldots + b_n(x-a)^n \right) \\
+\lim_{x\to a} R(x) &= b_0 \\
+0 &= b_0 \\\\
+\end{align}$$
