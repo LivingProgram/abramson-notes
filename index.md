@@ -770,5 +770,26 @@ $$\text{Using the fact $b_0=0$:}$$
 
 $$\begin{align}
 R(x) &= b_1(x-a) + \ldots + b_n(x-a)^n \\
-\frac{R(x)}{(x-a)} &= b_1 + \ldots + b_n(x-a)^{n-1}
+\frac{R(x)}{(x-a)} &= b_1 + \ldots + b_n(x-a)^{n-1} \\\\
+\end{align}$$
+
+$$
+\text{For $i=1$:} \\
+\lim_{x\to a} \frac{R(x)}{(x-a)^1} = 0 \\\\
+$$
+
+$$\text{Using $R(x)$ equation:}$$
+
+$$\begin{align}
+\frac{R(x)}{(x-a)} &= b_1 + \ldots + b_n(x-a)^{n-1} \\
+\lim_{x\to a} \frac{R(x)}{(x-a)} &= \lim_{x\to a} \left( b_1 + \ldots + b_n(x-a)^{n-1} \right) \\
+0 &= b_1 \\\\
+\end{align}$$
+
+$$\text{After continuiing in this way, $n$ times later:}$$
+
+$$\begin{align}
+b_0 &= b_1 = \ldots = b_n = 0 \\
+\implies R(x) &= 0 + \ldots + 0(x-a)^n \\
+&= 0 \ \ \ \ \blacksquare\\\\
 \end{align}$$
