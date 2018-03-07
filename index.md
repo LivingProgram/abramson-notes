@@ -823,3 +823,26 @@ $$
 \text{By previous theorem:} \\
 \implies  T_{(n,f,a)}(x) = P(x) \ \ \ \ \blacksquare\\\\
 $$
+
+## Applications
+* 1.) Find the Taylor polynomial of $$f(x)=e^{(x^2)}$$
+  * $$\text{From previously derived Talyor polynomial of $e^x$:}$$
+  * $$\lim_{x\to 0} \frac{e^x - \left( 1+x+\frac{x^2}{2!}+\ldots+\frac{x^n}{n!} \right)}{x^n} = 0 $$
+  * $$\text{Since $x^2\to 0$ as $x\to 0$, plug in for $x^2$:}$$
+  * $$\begin{align}
+  &\implies \lim_{x\to 0} \frac{e^{(x^2)} - \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n}} = 0 \\
+  &\implies e^{(x^2)} \text{ is equal to } \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right) \text{ up to order } 2n \text{ at } 0 \\
+  &\implies T_{(2n,f,0)}(x) = 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!}
+  \end{align}$$
+  * Answer: $$T_{(2n,f,0)}(x) = 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!}$$
+* 2.) Find the Taylor polynomial of $$f(x)=xe^{(x^2)}$$
+  * $$\text{From previously derived Talyor polynomial of $e^{(x^2)}$:}$$
+  * $$\lim_{x\to 0} \frac{e^{(x^2)} - \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n}} = 0$$
+  * $$\text{Multiplying top and bottom by $x$:}$$
+  * $$\begin{align}
+  &\implies  \lim_{x\to 0} \frac{xe^{(x^2)} - x\left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n+1}} = 0 \\
+  &\implies  \lim_{x\to 0} \frac{xe^{(x^2)} - \left( x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!} \right)}{x^{2n+1}} = 0 \\
+  &\implies xe^{(x^2)} \text{ is equal to } \left( x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!} \right) \text{ up to order } 2n+1 \text{ at } 0 \\
+  &\implies T_{(2n+1,f,0)}(x) = x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!} \\\\
+  \end{align}$$
+  * Answer: $$T_{(2n+1,f,0)}(x) = x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!}$$
