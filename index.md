@@ -801,6 +801,7 @@ b_0 &= b_1 = \ldots = b_n = 0 \\
 Let $$f$$ be $$n$$-times differentiable at $$a$$, and suppose $$P$$ is a polynomial in $$(x-a)$$ of degree $$\leq n$$, which equals $$f$$ up to order $$n$$ at $$a$$. Then $$P=T_{(n,f,a)}$$.
 
 #### Proof.
+
 $$
 \text{By the previous theorem:} \\
 \lim_{x\to a} \frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n} = 0 \\\\
