@@ -873,3 +873,5 @@ $$
   &\implies T_{(2n+1,f,0)}(x) = x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!} \\\\
   \end{align}$$
   - Answer: $$T_{(2n+1,f,0)}(x) = x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!}$$
+- 3.) Generalize results from Problems 1 and 2
+  - Answer: To find Taylor polynomials of functions that are similar to $$e^x$$, utilize Taylor polynomial of $$e^x$$ and either plug in for $$x$$ values that approach 0, or multiply top and bottom of limit by chosen value. 
