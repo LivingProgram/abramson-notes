@@ -793,3 +793,32 @@ b_0 &= b_1 = \ldots = b_n = 0 \\
 \implies R(x) &= 0 + \ldots + 0(x-a)^n \\
 &= 0 \ \ \ \ \blacksquare\\\\
 \end{align}$$
+
+## Corollary
+### Main Content
+**Corollary:**
+
+Let $$f$$ be $$n$$-times differentiable at $$a$$, and suppose $$P$$ is a polynomial in $$(x-a)$$ of degree $$\leq n$$, which equals $$f$$ up to order $$n$$ at $$a$$. Then $$P=T_{(n,f,a)}$$.
+
+#### Proof.
+$$
+\text{By the previous theorem:} \\
+\lim_{x\to a} \frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n} = 0 \\\\
+$$
+
+$$
+\text{By assumption,} \\
+\text{$P$ is equal to $f$ up to order $n$ at $a$.}
+$$
+
+$$\begin{align}
+&\implies \lim_{x\to a} \frac{f(x)-P(x)}{(x-a)^n} = 0 \\
+&\implies \lim_{x\to a} \frac{f(x)-P(x)}{(x-a)^n} = \lim_{x\to a} \frac{f(x)-T_{(n,f,a)}(x)}{(x-a)^n} \\
+&\implies \lim_{x\to a} \frac{T_{(n,f,a)}(x)-P(x)}{(x-a)^n} = 0 \\
+&\implies T_{(n,f,a)}(x) \text{ and } P(x) \text{ are equal up to order } n \text{ at } a \\\\
+\end{align}$$
+
+$$
+\text{By previous theorem:} \\
+\implies  T_{(n,f,a)}(x) = P(x) \ \ \ \ \blacksquare\\\\
+$$
