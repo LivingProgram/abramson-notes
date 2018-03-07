@@ -96,7 +96,7 @@ f(t)&=tf(t-1)\\\\
 
 ## Applications
 * 1.) Find $$\left(\frac{1}{2}\right)!$$
-  * Use Factorial Function
+  * $$\text{Use Factorial Function}$$
   * Answer: $$\int_0^\infty \sqrt{x}e^{-x}dx$$
 * 2.) Can you compute fractional factorials?
   * Answer: You can compute any fractional factorial as long as you can compute the integral from plugging in the fraction into the Factorial Function.
@@ -358,16 +358,33 @@ E_n(a)&=(-1)^{n+1}\int_0^a\frac{x^{2n+2}}{1+x^2}dx\\
 
 ## Applications
 * 1.) $$\tan^{-1}\left(\frac 1 2\right)$$ approximated to $$10^{-3}$$
-  * Find $$n$$ such that:
-  * $$\begin{align}\frac{\left(\frac 1 2\right)^{2n+3}}{2n+3}&\leq 10^{-3}\\n&=2\end{align}$$
-  * Find approximation by plugging $$n=2$$ and $$a=\frac 1 2$$ into:
-  * $$a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\\=\frac 1 2 -\frac{\left(\frac 1 2 \right)^3}{3}+\frac{\left(\frac 1 2 \right)^5}{5}\\=0.46458\bar{3}$$
-  * To check answer, approximation should be within $$10^{-3}$$ of actual value of $$\tan^{-1}\left(\frac 1 2\right)$$:
-  * $$\begin{align}\text{Approximated }\tan^{-1}\left(\frac 1 2\right) &= 0.46458\bar{3}\\\text{Actual }\tan^{-1}\left(\frac 1 2\right) &= 0.463647609\ldots\\\text{Difference between Actual and Approx.} &= 0.00093572433\ldots\\0.00093572433\ldots &< 10^{-3}\end{align}$$
+  * $$\text{Find $n$ such that:}$$
+  * $$\begin{align}
+  \frac{\left(\frac 1 2\right)^{2n+3}}{2n+3}&\leq 10^{-3}\\
+  n&=2\\\\
+  \end{align}$$
+  * $$\text{Find approximation by plugging $n=2$ and $a=\frac 1 2$ into:}$$
+  * $$
+  a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\\
+  =\frac 1 2 -\frac{\left(\frac 1 2 \right)^3}{3}+\frac{\left(\frac 1 2 \right)^5}{5}\\
+  =0.46458\bar{3} \\\\
+  $$
+  * $$\text{To check answer, approximation should be within $10^{-3}$ of actual value of $\tan^{-1}\left(\frac 1 2\right)$:}$$
+  * $$\begin{align}
+  \text{Approximated }\tan^{-1}\left(\frac 1 2\right) &= 0.46458\bar{3} \\
+  \text{Actual }\tan^{-1}\left(\frac 1 2\right) &= 0.463647609\ldots \\
+  \text{Difference between Actual and Approx.} &= 0.00093572433\ldots \\
+  0.00093572433\ldots &< 10^{-3} \\\\
+  \end{align}$$
   * Answer: $$0.46458\bar{3}$$
 * 2.) Approximate $$\pi$$
-  * Plugging $$a=1$$ into $$\tan^{-1}a$$ approximation formula:
-  * $$\tan^{-1}(a)=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)\\\tan^{-1}(1)=\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\\frac \pi 4 = \left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\\pi = 4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)$$
+  * $$\text{Plugging $a=1$ into $\tan^{-1}a$ approximation formula:}$$
+  * $$
+  \tan^{-1}(a)=\left(a-\frac{a^3}{3}+\frac{a^5}{5}-\frac{a^7}{7}+\ldots+(-1)^n\frac{a^{2n+1}}{2n+1}\right)\\
+  \tan^{-1}(1)=\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\
+  \frac \pi 4 = \left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)\\
+  \pi = 4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right) \\\\
+  $$
   * Answer: Approximate $$\pi$$ by choosing an $$n$$ and plugging it into $$4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\ldots+(-1)^n\frac{1}{2n+1}\right)$$
 
 # "Polynomial Bases"
@@ -447,12 +464,12 @@ P(x) &= a_0+a_1(x-a)+a_2(x-a)^2+\ldots+a_n(x-a)^n \\
 
 ## Applications
 * 1.) Express $$P(x)=x^3+x+1$$ in $$(x-2)$$
-  * $$\begin{align}& & P(2)&=11 \\P'(x)&=2x^2+1 & P'(2)&=13\\P''(x)&=6x & P''(2)&=12\\P'''(x)&=6 & P'''(2)&=6\\\end{align}$$
-  * $$P(x) = \sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k \\\text{Degree of $P(x)=n$ and $a=2$} \\\implies P(x) = \sum_{k=0}^3\frac{P^{(k)}(2)}{k!}(x-2)^k \\= \frac{P^{(0)}(2)}{0!}(x-2)^0+\frac{P^{(1)}(2)}{1!}(x-2)^1+\frac{P^{(2)}(2)}{2!}(x-2)^2+\frac{P^{(3)}(2)}{3!}(x-2)^3 \\= \frac{11}{1}(x-2)^0+\frac{13}{1}(x-2)^1+\frac{12}{2!}(x-2)^2+\frac{6}{3!}(x-2)^3 \\= 11+13(x-2)+6(x-2)^2+1(x-2)^3 \\$$
+  * $$\begin{align}& & P(2)&=11 \\P'(x)&=2x^2+1 & P'(2)&=13\\P''(x)&=6x & P''(2)&=12\\P'''(x)&=6 & P'''(2)&=6\\\\\end{align}$$
+  * $$P(x) = \sum_{k=0}^n\frac{P^{(k)}(a)}{k!}(x-a)^k \\\\\text{Degree of $P(x)=n$ and $a=2$} \\\implies P(x) = \sum_{k=0}^3\frac{P^{(k)}(2)}{k!}(x-2)^k \\= \frac{P^{(0)}(2)}{0!}(x-2)^0+\frac{P^{(1)}(2)}{1!}(x-2)^1+\frac{P^{(2)}(2)}{2!}(x-2)^2+\frac{P^{(3)}(2)}{3!}(x-2)^3 \\= \frac{11}{1}(x-2)^0+\frac{13}{1}(x-2)^1+\frac{12}{2!}(x-2)^2+\frac{6}{3!}(x-2)^3 \\= 11+13(x-2)+6(x-2)^2+1(x-2)^3 \\\\$$
   * Answer: $$11+13(x-2)+6(x-2)^2+1(x-2)^3$$
 * 2.) Express $$P(x)=x^4$$ in $$(x+3)$$
-  * $$\begin{align}& & P(-3)&=81 \\P'(x)&=4x^3 & P'(-3)&=-108\\P''(x)&=12x^2 & P''(-3)&=108\\P'''(x)&=24x & P'''(-3)&=-72\\P''''(x)&=24 & P''''(-3)&=24\\\end{align}$$
-  * $$P(x) = \frac{81}{0!}+\frac{-108}{1!}(x+3)+\frac{108}{2!}(x+3)^2+\frac{-72}{3!}(x+3)^3+\frac{24}{4!}(x+3)^4 \\= 81-108(x+3)+54(x+3)^2-12(x+3)^3+1(x+3)^4$$
+  * $$\begin{align}& & P(-3)&=81 \\P'(x)&=4x^3 & P'(-3)&=-108\\P''(x)&=12x^2 & P''(-3)&=108\\P'''(x)&=24x & P'''(-3)&=-72\\P''''(x)&=24 & P''''(-3)&=24\\\\\end{align}$$
+  * $$P(x) = \frac{81}{0!}+\frac{-108}{1!}(x+3)+\frac{108}{2!}(x+3)^2+\frac{-72}{3!}(x+3)^3+\frac{24}{4!}(x+3)^4 \\= 81-108(x+3)+54(x+3)^2-12(x+3)^3+1(x+3)^4\\\\$$
   * Answer: $$81-108(x+3)+54(x+3)^2-12(x+3)^3+1(x+3)^4$$
 
 # Taylor Polynomials
@@ -469,9 +486,9 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
 
 ## Applications
 * 1.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=-\cos x$$ at $$x=0$$
-  * $$\begin{align}& & f(0)&=-1 \\f'(x)&=\sin x & f'(0)&=0\\f''(x)&=\cos x & f''(0)&=1\\f'''(x)&=-\sin x & f'''(0)&=0\\&\ldots & &\ldots\end{align}$$
+  * $$\begin{align}& & f(0)&=-1 \\f'(x)&=\sin x & f'(0)&=0\\f''(x)&=\cos x & f''(0)&=1\\f'''(x)&=-\sin x & f'''(0)&=0\\&\ldots & &\ldots \\\\\end{align}$$
   * $$\text{Since the pattern repeats for more derivatives:}$$
-  * $$\begin{align}k\equiv 0\pmod 4 &\implies f^{(k)}(0)=-1 \\k\equiv 1\pmod 4 &\implies f^{(k)}(0)=0 \\k\equiv 2\pmod 4 &\implies f^{(k)}(0)=1 \\k\equiv 3\pmod 4 &\implies f^{(k)}(0)=0 \\\end{align}$$
+  * $$\begin{align}k\equiv 0\pmod 4 &\implies f^{(k)}(0)=-1 \\k\equiv 1\pmod 4 &\implies f^{(k)}(0)=0 \\k\equiv 2\pmod 4 &\implies f^{(k)}(0)=1 \\k\equiv 3\pmod 4 &\implies f^{(k)}(0)=0 \\\\\end{align}$$
   * $$\text{Calculating $T_{(n,f,0)}(x)$ for sample $n$:}$$
   * $$\begin{align}
   T_{(0,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0=-1 \\
@@ -481,16 +498,16 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   T_{(4,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!} \\
   T_{(6,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!} \\
   T_{(2n,f,0)}(x) &= \sum_{k=0}^n(-1)^{k+1}\frac{x^{2k}}{(2k)!} \\
-  T_{(n,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots
+  T_{(n,f,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots$$
 * 2.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^x$$ at $$x=1$$
   * $$f^{(k)}(x)=e^x\implies f^{(k)}(1)=e^1=e$$
-  * $$T_{(n,f,1)}(x)=\sum_{k=0}^n\frac{f^{(k)}(1)}{k!}(x-1)^k=\sum_{k=0}^n\frac{e}{k!}(x-1)^k$$
+  * $$T_{(n,f,1)}(x)=\sum_{k=0}^n\frac{f^{(k)}(1)}{k!}(x-1)^k=\sum_{k=0}^n\frac{e}{k!}(x-1)^k \\\\$$
   * Answer: $$T_{(n,f,1)}(x)=\sum_{k=0}^n\frac{e}{k!}(x-1)^k$$
 * 3.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^x$$ at $$x=0$$
   * $$f^{(k)}(x)=e^x\implies f^{(k)}(0)=e^0=1$$
-  * $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k=\sum_{k=0}^n\frac{x^k}{k!}$$
+  * $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k=\sum_{k=0}^n\frac{x^k}{k!} \\\\$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{x^k}{k!}$$
 * 4.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=\frac{1}{x}$$ at $$x=1$$
   * $$\begin{align}
@@ -501,7 +518,7 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   f^{(k)}(x) &= (-1)^kk!x^{-k-1} \\
   f^{(k)}(1) &= (-1)^kk!1^{-k-1}= (-1)^kk! \\
   a_k &= \frac{f^{(k)}(1)}{k!}=(-1)^k \\
-  T_{(n,f,1)}(x) &= 1-(x-1)+(x-1)^2-(x-1)^3+\ldots+(-1)^n(x-1)^n
+  T_{(n,f,1)}(x) &= 1-(x-1)+(x-1)^2-(x-1)^3+\ldots+(-1)^n(x-1)^n \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,1)}(x) = 1-(x-1)+(x-1)^2-(x-1)^3+\ldots+(-1)^n(x-1)^n$$
 * 5.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=\log(1+x)$$ at $$x=0$$
@@ -513,10 +530,10 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   f''''(x) &= -6(1+x)^{-4} & f''''(0)&=-6\\
   f^{(5)}(x) &= 24(1+x)^{-5} & f^{(5)}(0)&=24\\
   &\ldots & &\ldots \\
-  f^{(k)}(x) &= (-1)^{k-1}(k-1)!(1+x)^{-k}\ \ (\forall k > 0) & f^{(k)}(0)&=(-1)^{k-1}(k-1)!\ \ (\forall k > 0)\\
+  f^{(k)}(x) &= (-1)^{k-1}(k-1)!(1+x)^{-k}\ \ (\forall k > 0) & f^{(k)}(0)&=(-1)^{k-1}(k-1)!\ \ (\forall k > 0)\\\\
   \end{align}$$
   * $$
-  T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
+  T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\\\
   \text{Evaluating $k>0$ and $k=0$ separately:} \\
   \text{by splitting the summation:}
   $$
@@ -525,7 +542,7 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   &= \frac{f^{(0)}(0)}{0!}(x-0)^0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
   &= 0 + \sum_{k=1}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
   &= \sum_{k=1}^n\frac{(-1)^{k-1}(k-1)!}{k!}x^k \\
-  &= \sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k
+  &= \sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=1}^n\frac{(-1)^{k-1}}{k}x^k$$
 * 6.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=xe^x$$ at $$x=0$$
@@ -534,11 +551,11 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   f'(x) &= e^x+xe^x & f'(0)&=1\\
   f''(x) &= e^x+e^x+xe^x & f''(0)&=2\\
   &\ldots & &\ldots \\
-  f^{(k)}(x) &= ke^x+xe^x & f^{(k)}(0)&=k\\
+  f^{(k)}(x) &= ke^x+xe^x & f^{(k)}(0)&=k\\\\
   \end{align}$$
   * $$\begin{align}
   T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
-  &= \sum_{k=0}^n\frac{k}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{k}{k!}x^k \\\\
   \end{align}$$
   * $$
   \text{Evaluating $k>0$ and $k=0$ separately,} \\
@@ -548,7 +565,7 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   T_{(n,f,0)}(x) &= \sum_{k=0}^0\frac{k}{k!}x^k + \sum_{k=1}^n\frac{k}{k!}x^k \\
   &= \frac{0}{0!}x^0 + \sum_{k=1}^n\frac{k}{k!}x^k \\
   &= 0 + \sum_{k=1}^n\frac{k}{k!}x^k \\
-  &= \sum_{k=1}^n\frac{x^k}{(k-1)!}
+  &= \sum_{k=1}^n\frac{x^k}{(k-1)!} \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=1}^n\frac{x^k}{(k-1)!}$$
 * 7.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^{2x}$$ at $$x=0$$
@@ -558,26 +575,29 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   f'''(x) &= 8e^{2x} \\
   &\ldots \\
   f^{(k)}(x) &= 2^ke^{2x} \\
-  f^{(k)}(0)&=2^k \\
+  f^{(k)}(0)&=2^k \\\\
   \end{align}$$
   * $$\begin{align}
   T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
-  &= \sum_{k=0}^n\frac{2^k}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{2^k}{k!}x^k \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{2^k}{k!}x^k$$
 * 8.) Generalize results from Problem 7
-  * Finding the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^{Cx}$$ at $$x=0$$ for some constant $$C$$:
+  * $$
+  \text{Finding the $n^{\text{th}}$ order taylor polynomial of $f(x)=e^{Cx}$,} \\
+  \text{at $x=0$ for some constant $C$:}
+  $$
   * $$\begin{align}
   f'(x) &= Ce^{Cx} \\
   f''(x) &= C^2e^{Cx} \\
   f'''(x) &= C^3e^{Cx} \\
   &\ldots \\
   f^{(k)}(x) &= C^ke^{Cx} \\
-  f^{(k)}(0)&=C^k \\
+  f^{(k)}(0)&=C^k \\\\
   \end{align}$$
   * $$\begin{align}
   T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(x-0)^k \\
-  &= \sum_{k=0}^n\frac{C^k}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{C^k}{k!}x^k \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x)=\sum_{k=0}^n\frac{C^k}{k!}x^k$$
 * 9.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=e^x-\cos x$$ at $$x=0$$
@@ -586,14 +606,14 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   f'(x)&=e^x+\sin x & f'(0)&=1+0=1\\
   f''(x)&=e^x+\cos x & f''(0)&=1+1=2\\
   f'''(x)&=e^x-\sin x & f'''(0)&=1-0=1\\
-  &\ldots & &\ldots
+  &\ldots & &\ldots \\\\
   \end{align}$$
   * $$\text{Since the pattern repeats for more derivatives:}$$
   * $$\begin{align}
   k\equiv 0\pmod 4 &\implies f^{(k)}(0)=0 \\
   k\equiv 1\pmod 4 &\implies f^{(k)}(0)=1 \\
   k\equiv 2\pmod 4 &\implies f^{(k)}(0)=2 \\
-  k\equiv 3\pmod 4 &\implies f^{(k)}(0)=1 \\
+  k\equiv 3\pmod 4 &\implies f^{(k)}(0)=1 \\\\
   \end{align}$$
   * $$\text{Calculating $T_{(n,f,0)}(x)$ for sample $n$:}$$
   * $$\begin{align}
@@ -601,63 +621,66 @@ $$T_{(n,f,a)}(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$$
   T_{(1,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0+\frac{f'(0)}{1!}(x-0)^1=0+x \\
   T_{(2,f,0)}(x) &= \frac{f(0)}{0!}(x-0)^0+\frac{f'(0)}{1!}(x-0)^1+\frac{f''(0)}{2!}(x-0)^2=0+x+\frac{2}{2!}x^2 \\
   T_{(3,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{f'''(0)}{3!}(x-0)^3=0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3 \\
-  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots
+  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots$$
 * 10.) Generalize results from Problem 8
   * $$\text{Using results from Problem 8:}$$
   * $$\begin{align}
   f(x) &= e^x-\cos x \\
-  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots
+  T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots \\\\
   \end{align}$$
   * $$\text{Using results from Problem 1:}$$
   * $$\begin{align}
   g(x)&=-\cos x \\
-  T_{(n,g,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots
+  T_{(n,g,0)}(x) &= -1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots \\\\
   \end{align}$$
   * $$\text{Using results from Problem 3:}$$
   * $$\begin{align}
   h(x)&=e^x \\
-  T_{(n,h,0)}(x)&=\sum_{k=0}^n\frac{x^k}{k!}
+  T_{(n,h,0)}(x)&=\sum_{k=0}^n\frac{x^k}{k!} \\\\
   \end{align}$$
   * $$\text{Combining results:}$$
   * $$\begin{align}
   f(x) &= e^x-\cos x \\
-  &= h(x)+g(x)
+  &= h(x)+g(x) \\\\
   \end{align}$$
   * $$\text{Rewrite $T_{(n,f,0)}(x)$:}$$
   * $$\begin{align}
   T_{(n,f,0)}(x) &= 0+x+\frac{2}{2!}x^2+\frac{1}{3!}x^3+\ldots \\
   &= \left(-1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots\right) + \left(1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots\right) \\
   &= \left(-1+0+\frac{x^2}{2!}+0-\frac{x^4}{4!}+\frac{x^6}{6!}-\ldots\right) + \sum_{k=0}^n\frac{x^k}{k!} \\
-  &= T_{(n,g,0)}(x) + T_{(n,h,0)}(x)
+  &= T_{(n,g,0)}(x) + T_{(n,h,0)}(x) \\\\
   \end{align}$$
   * $$\text{Therefore we can conclude:}$$
-  * $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x)$$
+  * $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x) \\\\$$
   * Answer: $$f(x)=g(x)+h(x)\implies T_{(n,f,0)}(x) = T_{(n,g,0)}(x) + T_{(n,h,0)}(x)$$
 * 11.) Find the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=79e^x$$ at $$x=0$$
   * $$\begin{align}
   f'(x) &= 79e^x \\
   f''(x) &= 79e^x \\
   f^{(k)}(x) &= 79e^x \\
-  f^{(k)}(0) &= 79
+  f^{(k)}(0) &= 79 \\\\
   \end{align}$$
   * $$\begin{align}
   T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k \\
-  &= \sum_{k=0}^n\frac{79}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{79}{k!}x^k \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{79}{k!}x^k$$
 * 12.) Generalize results from Problem 11
-  * Finding the $$n^{\text{th}}$$ order taylor polynomial of $$f(x)=Ce^x$$ at $$x=0$$ for some constant $$C$$:
+  * $$
+  \text{Finding the $n^{\text{th}}$ order taylor polynomial of $f(x)=Ce^x$,} \\
+  \text{at $x=0$ for some constant $C$:}
+  $$
   * $$\begin{align}
   f'(x) &= Ce^x \\
   f''(x) &= Ce^x \\
   f^{(k)}(x) &= Ce^x \\
-  f^{(k)}(0) &= C
+  f^{(k)}(0) &= C \\\\
   \end{align}$$
   * $$\begin{align}
   T_{(n,f,0)}(x) &= \sum_{k=0}^n\frac{f^{(k)}(0)}{k!}x^k \\
-  &= \sum_{k=0}^n\frac{C}{k!}x^k \\
+  &= \sum_{k=0}^n\frac{C}{k!}x^k \\\\
   \end{align}$$
   * Answer: $$T_{(n,f,0)}(x) = \sum_{k=0}^n\frac{C}{k!}x^k$$
 
@@ -826,18 +849,22 @@ $$
 
 ## Applications
 * 1.) Find the Taylor polynomial of $$f(x)=e^{(x^2)}$$
-  * $$\text{From previously derived Talyor polynomial of $e^x$:}$$
-  * $$\lim_{x\to 0} \frac{e^x - \left( 1+x+\frac{x^2}{2!}+\ldots+\frac{x^n}{n!} \right)}{x^n} = 0 $$
+  * $$
+  \text{From previously derived Talyor polynomial of $e^x$:} \\
+  \lim_{x\to 0} \frac{e^x - \left( 1+x+\frac{x^2}{2!}+\ldots+\frac{x^n}{n!} \right)}{x^n} = 0 \\\\
+  $$
   * $$\text{Since $x^2\to 0$ as $x\to 0$, plug in for $x^2$:}$$
   * $$\begin{align}
   &\implies \lim_{x\to 0} \frac{e^{(x^2)} - \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n}} = 0 \\
   &\implies e^{(x^2)} \text{ is equal to } \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right) \text{ up to order } 2n \text{ at } 0 \\
-  &\implies T_{(2n,f,0)}(x) = 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!}
+  &\implies T_{(2n,f,0)}(x) = 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \\\\
   \end{align}$$
   * Answer: $$T_{(2n,f,0)}(x) = 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!}$$
 * 2.) Find the Taylor polynomial of $$f(x)=xe^{(x^2)}$$
-  * $$\text{From previously derived Talyor polynomial of $e^{(x^2)}$:}$$
-  * $$\lim_{x\to 0} \frac{e^{(x^2)} - \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n}} = 0$$
+  * $$
+  \text{From previously derived Talyor polynomial of $e^{(x^2)}$:} \\
+  \lim_{x\to 0} \frac{e^{(x^2)} - \left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n}} = 0 \\\\
+  $$
   * $$\text{Multiplying top and bottom by $x$:}$$
   * $$\begin{align}
   &\implies  \lim_{x\to 0} \frac{xe^{(x^2)} - x\left( 1+x^2+\frac{x^4}{2!}+\ldots+\frac{x^{2n}}{n!} \right)}{x^{2n+1}} = 0 \\
