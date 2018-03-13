@@ -880,7 +880,7 @@ $$
 ## Main Content
 **Definition:**
 
-If $$f$$ is a function for which $$T_{(n,f,a)}$$ exists, we define the $$\underline{\textbf{ remainder term }} R_{(n,f,a)}$$ by
+If $$f$$ is a function for which $$T_{(n,f,a)}$$ exists, we define the $$\underline{\textbf{remainder term}}\ R_{(n,f,a)}$$ by
 
 $$\begin{align}
 f(x) &= T_{(n,f,a)} + R_{(n,f,a)} \\
@@ -895,8 +895,16 @@ $$R_{(n,f,a)} = \int_a^x \frac{f^{(n+1)}(t)}{n!} (x-t)^n dt$$
 
 $$\text{Refer to rough notes page 3, Spivak textbook pages 422-423 for proof.}$$
 
-**Definition:**
+**Theorem:**
 
-The $$\underline{\textbf{Lagrange form of the remainder}}$$ is
+Suppose that $$f',\ldots,f^{(n+1)}$$ are defined on $$[a,x]$$, and that $$R_{(n,f,a)}$$ is defined by
 
-$$R_{(n,f,a)} = \frac{f^{(n+1)}(t)}{(n+1)!} (x-a)^{n+1}$$
+$$f(x) = f(a) + f'(a)(x-a) + \ldots + \frac{f^{(n)}(a)}{n!}(x-a)^n + R_{(n,f,a)}$$
+
+Then the $$\underline{\textbf{Lagrange form of the remainder}}$$ is
+
+$$R_{(n,f,a)} = \frac{f^{(n+1)}(t)}{(n+1)!} (x-a)^{n+1}\ \text{for some $t$ in $(a,x)$}$$
+
+### Proof.
+
+$$\text{Refer to rough notes page 3, Spivak textbook pages 422-424 for proof.}$$
