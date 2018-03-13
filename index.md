@@ -908,3 +908,19 @@ $$R_{(n,f,a)} = \frac{f^{(n+1)}(t)}{(n+1)!} (x-a)^{n+1}\ \text{for some $t$ in $
 ### Proof.
 
 $$\text{Refer to rough notes page 3, Spivak textbook pages 422-424 for proof.}$$
+
+**Theorem:**
+
+$$e$$ is irrational.
+
+### Proof.
+
+$$\text{Refer to rough notes page 4, Spivak textbook page 429 for proof.}$$
+
+### Applications
+- 1.) Apply Lagrange remainder to find formulas for $$\sin x, \cos x, e^x$$
+  - $$\text{Refer to Spivak textbook page 424 for answer.}$$
+- 2.) Approximate $$\sin(2)$$ with an error of less than $$10^{-4}$$
+  - $$\text{Refer to Spivak textbook page 427 for answer.}$$
+- 3.) Approximate $$\int_0^{0.1}e^{(x^2)}dx$$ with an error of less than $$10^{-4}$$
+  - $$\text{Refer to rough notes page 4 for answer.}$$
