@@ -874,4 +874,29 @@ $$
   \end{align}$$
   - Answer: $$T_{(2n+1,f,0)}(x) = x+x^3+\frac{x^5}{2!}+\ldots+\frac{x^{2n+1}}{n!}$$
 - 3.) Generalize results from Problems 1 and 2
-  - Answer: To find Taylor polynomials of functions that are similar to $$e^x$$, utilize Taylor polynomial of $$e^x$$ and either plug in for $$x$$ values that approach 0, or multiply top and bottom of limit by chosen value. 
+  - Answer: To find Taylor polynomials of functions that are similar to $$e^x$$, utilize Taylor polynomial of $$e^x$$ and either plug in for $$x$$ values that approach 0, or multiply top and bottom of limit by chosen value.
+
+# Remainder Term
+## Main Content
+**Definition:**
+
+If $$f$$ is a function for which $$T_{(n,f,a)}$$ exists, we define the $$\underline{\textbf{ remainder term }} R_{(n,f,a)}$$ by
+
+$$\begin{align}
+f(x) &= T_{(n,f,a)} + R_{(n,f,a)} \\
+&= f(a) + f'(a)(x-a) + \ldots + \frac{f^{(n)}(a)}{n!}(x-a)^n + R_{(n,f,a)} \\
+\end{align}$$
+
+**Theorem:**
+
+$$R_{(n,f,a)} = \int_a^x \frac{f^{(n+1)}(t)}{n!} (x-t)^n dt$$
+
+### Proof.
+
+$$\text{Refer to rough notes page 3, Spivak textbook pages 422-423 for proof.}$$
+
+**Definition:**
+
+The $$\underline{\textbf{Lagrange form of the remainder}}$$ is
+
+$$R_{(n,f,a)} = \frac{f^{(n+1)}(t)}{(n+1)!} (x-a)^{n+1}$$
