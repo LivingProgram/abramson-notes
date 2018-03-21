@@ -27,5 +27,13 @@ $$
 3. $$f_n(x) \text{ differentiable } \nRightarrow \lim_{n\to\infty} f_n(x) \text{ differentiable }$$
 
 $$
-  \text{Some counter-examples:}
+  \text{Some counter-examples:} \\\\
+  \text{Counter-example for continuity:} \\
+  0 \leq x \leq 1,\ f_n(x) = x^n \\
+  \implies f_n(x) \text{ continuous } \\
+  \lim_{n\to\infty} f_n(x) = f(x) = \begin{cases}
+    0, & \text{ if } 0 \leq x < 1 \\
+    1, & \text{ if } x = 1
+  \end{cases} \\
+  \implies \lim_{n\to\infty} f_n(x) \text{ not continuous }
 $$
