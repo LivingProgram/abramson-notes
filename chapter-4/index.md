@@ -49,3 +49,20 @@ $$
   \lim_{n\to\infty} f_n(x) = \left|x\right| \\
   \implies \lim_{n\to\infty} f_n(x) \text{ not differentiable } \\\\
 $$
+
+## Definitions
+
+Let $$\{f_n(x)\}$$ be a sequence of functions defined on the set $$A$$ (domain), and let $$f(x)$$ be a function which is also defined $$\forall\ x\in A$$. Then $$f(x)$$ is called the $$\underline{\textbf{uniform limit of } \{f_n(x)\} \textbf{ on } A}$$ if:
+
+$$
+  \forall\ \epsilon > 0, \exists N, \text{ s.t. } \forall\ x\in A, n>N \implies \left|f(x) - f_n(x)\right| < \epsilon
+$$
+
+We also say that $$\underline{\{f_n(x)\} \textbf{ converges uniformly to } f \textbf{ on } A}$$ or $$\underline{f_n(x) \textbf{ approaches } f(x) \textbf{ uniformly on } A}$$.
+
+$$\underline{\{f_n(x)\} \textbf{ converges pointwise to } f \textbf{ on } A}$$ if:
+
+$$
+  \forall\ x, f(x) = \lim_{n\to\infty} f_n(x) \\
+  \forall\ \epsilon > 0, \forall\ x\in A, \exists N, \text{ s.t. }  n>N \implies \left|f(x) - f_n(x)\right| < \epsilon
+$$
