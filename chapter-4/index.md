@@ -43,4 +43,9 @@ $$
   \lim_{n\to\infty} f_n(x) = f(x) = 0 \\
   \implies \int_0^1 \lim_{n\to\infty} f_n(x) = 0 \\
   \implies \lim_{n\to\infty} \int_0^1 f_n(x) \neq \int_0^1 \lim_{n\to\infty} f_n(x) \\\\
+  \text{Counter-example for differentiability:} \\
+  x\in [-1,1],\ f_n(x) = \sqrt{x^2+\frac 1 n} \\
+  \implies f_n(x) \text{ differentiable } \\
+  \lim_{n\to\infty} f_n(x) = \left|x\right| \\
+  \implies \lim_{n\to\infty} f_n(x) \text{ not differentiable } \\\\
 $$
