@@ -66,3 +66,15 @@ $$
   \forall\ x, f(x) = \lim_{n\to\infty} f_n(x) \\
   \forall\ \epsilon > 0, \forall\ x\in A, \exists N, \text{ s.t. }  n>N \implies \left|f(x) - f_n(x)\right| < \epsilon
 $$
+
+Note) $$\text{uniform convergence }\implies\text{ pointwise convergence }$$, but $$\text{ pointwise convergence }\nRightarrow\text{ uniform convergence }$$ because we cannot necessarily find $$N$$ that works $$\forall\ x$$
+
+Note) $$\text{uniform convergence }\implies \text{ after } n>N$$, all functions will be between $$f(x)-\epsilon$$ and $$f(x)+\epsilon$$
+
+## Applications 1
+- 1.) If $$f_n(x) = \frac x n \text{ on } [0,1]$$, what does $$\{f_n(x)\}$$ approach uniformly?
+  - $$
+      \lim_{n\to\infty} f_n(x) = 0 \\
+      \implies \{f_n(x)\} \text{ approaches } f(x) = 0 \text{ uniformly on } [0,1]
+    $$
+  - Answer: $$\{f_n(x)\} \text{ approaches } f(x) = 0 \text{ uniformly on } [0,1]$$
