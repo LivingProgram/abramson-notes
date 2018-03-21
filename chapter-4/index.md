@@ -35,5 +35,12 @@ $$
     0, & \text{ if } 0 \leq x < 1 \\
     1, & \text{ if } x = 1
   \end{cases} \\
-  \implies \lim_{n\to\infty} f_n(x) \text{ not continuous }
+  \implies \lim_{n\to\infty} f_n(x) \text{ not continuous } \\\\
+  \text{Counter-example for integrals:} \\
+  0 \leq x \leq 1, \\
+  f_n(x) \text{ defined as line connecting $(\frac{1}{2n},2n)$ to $(\frac 1 n, 0)$ to $(1,0)$} \\
+  \implies \int_0^1 f_n(x) = \frac 1 2 \cdot \frac 1 n \cdot 2n = 1 \\
+  \lim_{n\to\infty} f_n(x) = f(x) = 0 \\
+  \implies \int_0^1 \lim_{n\to\infty} f_n(x) = 0 \\
+  \implies \lim_{n\to\infty} \int_0^1 f_n(x) \neq \int_0^1 \lim_{n\to\infty} f_n(x) \\\\
 $$
