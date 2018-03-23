@@ -105,3 +105,41 @@ Note) $$\text{uniform convergence }\implies \text{ after } n>N$$, all functions 
       &\implies x^n < \epsilon \\
       &\implies |x^n| < \epsilon &&(x\geq0) \ \ \ \ \blacksquare\\\\
     \end{align}$$
+
+## Theorem 1
+
+$$\begin{align}
+  &(\{f_n(x)\} \text{ integrable on } [a,b]) \\
+  &\land(f(x) \text{ integrable on } [a,b]) \\
+  &\land(\{f_n(x)\} \text{ converges uniformly to } f(x) \text{ on } [a,b]) \\
+  &\implies \int_a^b f(x)dx = \lim_{n\to\infty} \int_a^b f_n(x)dx
+\end{align}$$
+
+### Proof.
+Refer to spivak pg 504, rough notes pg 8.
+
+## Theorem 2
+
+$$\begin{align}
+  &(\{f_n(x)\} \text{ converges uniformly to } f(x) \text{ on } [a,b]) \\
+  &\land(\forall\ n, f_n(x) \text{ continuous on } [a,b]) \\
+  &\implies f(x) \text{ continuous on } [a,b]
+\end{align}$$
+
+### Proof.
+Refer to spivak pg 503, rough notes pg 8.
+
+## Theorem 3
+
+$$\begin{align}
+  &(\forall\ n, f_n(x) \text{ differentiable on } [a,b]) \\
+  &\land(\forall\ n, f_n(x) \text{ has integrable derivatives } f_n'(x)) \\
+  &\land(\{f_n(x)\} \text{ converges pointwise to } f(x) \text{ on } [a,b]) \\
+  &\land(g(x) \text{ continuous }) \\
+  &\land(\{f_n'(x)\} \text{ converges uniformly to } g(x) \text{ on } [a,b]) \\
+  &\implies (f(x) \text{ differentiable on } [a,b]) \\
+  &\phantom{00000}\land (f'(x) = \lim_{n\to\infty} f_n'(x))
+\end{align}$$
+
+### Proof.
+Refer to spivak pg 505.
