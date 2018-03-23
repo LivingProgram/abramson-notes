@@ -78,3 +78,30 @@ Note) $$\text{uniform convergence }\implies \text{ after } n>N$$, all functions 
       \implies \{f_n(x)\} \text{ approaches } f(x) = 0 \text{ uniformly on } [0,1]
     $$
   - Answer: $$\{f_n(x)\} \text{ approaches } f(x) = 0 \text{ uniformly on } [0,1]$$
+- 2.) Let $$0<a<1$$, Prove $$\{x^n\}$$ approaches $$0$$ uniformly on the interval $$[0,a]$$.
+  - $$\begin{align}
+      \text{WWTP: } \forall\ \epsilon > 0, \exists N, \text{ s.t. } \forall\ x\in [0,a], n>N &\implies \left|f(x) - f_n(x)\right| < \epsilon \\
+      &\implies |0 - f_n(x)| < \epsilon \\
+      &\implies |x^n| < \epsilon \\\\
+    \end{align}$$
+  - $$
+      \text{We need to find N large enough that } a^N < \epsilon \\
+      \text{Performing preliminary "scratch-work":}
+    $$
+  - $$\begin{align}
+      0<a<1 &\implies \log_a \text{ is a decreasing function } \\
+      &\implies \log_a a^N > \log_a \epsilon \\
+      &\implies N > \log_a \epsilon \\\\
+    \end{align}$$
+  - $$\text{Choose $N$ s.t. $N>\log_a \epsilon$:}$$
+  - $$\begin{align}
+      &\implies \log_a a^N > \log_a \epsilon \\
+      &\implies a^N < \epsilon \\\\
+    \end{align}$$
+  - $$\text{Assume $n>N$:}$$
+  - $$\begin{align}
+      &\implies a^n < a^N < \epsilon \\
+      &\implies x^n \leq a^n < a^N < \epsilon &&(\forall\ x \in [0,a], x\leq a) \\
+      &\implies x^n < \epsilon \\
+      &\implies |x^n| < \epsilon &&(x\geq0) \ \ \ \ \blacksquare\\\\
+    \end{align}$$
