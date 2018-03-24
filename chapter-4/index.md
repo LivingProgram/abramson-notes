@@ -204,7 +204,7 @@ $$\begin{align}
 ### Proof.
 Refer to spivak pg 512, rough notes pg 9.
 
-## Theorem
+## Theorem 5
 
 $$\begin{align}
   &(f(x)=\sum_{n=0}^\infty a_nx^n) \\
