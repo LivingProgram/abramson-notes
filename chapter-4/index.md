@@ -189,3 +189,27 @@ $$\begin{align}
 
 ### Proof.
 Refer to spivak pg 508, rough notes pg 9.
+
+## Theorem 4
+
+$$\begin{align}
+  &(f(x_0)=\sum_{n=0}^\infty a_nx_0^n \text{ converges }) \\
+  &\land(\exists\ a \in (0,|x_0|)) \\
+  &\implies(f(x)=\sum_{n=0}^\infty a_nx^n \text{ converges uniformly (and absolutely) on } [-a,a]) \\
+  &\phantom{00000}\land(g(x)=\sum_{n=0}^\infty na_nx^{n-1} \text{ converges uniformly (and absolutely) on } [-a,a]) \\
+  &\phantom{00000}\land(f \text{ differentiable }) \\
+  &\phantom{00000}\land(\forall\ |x| < |x_0|, f'(x)=\sum_{n=1}^\infty na_nx^{n-1})
+\end{align}$$
+
+### Proof.
+Refer to spivak pg 512, rough notes pg 9.
+
+## Theorem
+
+$$\begin{align}
+  &(f(x)=\sum_{n=0}^\infty a_nx^n) \\
+  &\land(\exists\ R \geq 0 \text{ or } R = \infty) \\
+  &1.)\land(\forall\ |x| < R) \implies f(x) \text{ converges absolutely } \\
+  &2.)\land(\forall\ |x| > R) \implies f(x) \text{ diverges} \\\\
+  &R \text{ is called the } \underline{\textbf{radius of convergence}}
+\end{align}$$
