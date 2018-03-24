@@ -146,3 +146,20 @@ Refer to spivak pg 505.
 
 ## Definition
 The series $$\sum_{n=1}^\infty f_n(x)$$ $$\underline{\textbf{converges uniformly}}$$ (more formally : the sequence $$\{f_n\}$$ is $$\underline{\textbf{uniformly summable}}$$) $$\underline{\textbf{to } f \textbf{ on } A}$$, if the sequence of partial sums $$\{f_1,f_1+f_2,\ldots\}$$ converges uniformly to $$f$$ on $$A$$.
+
+## Corollary
+
+$$(\sum_{n=1}^\infty f_n(x) \text{ converges uniformly to } f(x) \text{ on } [a,b])$$
+
+$$\begin{align}
+     1.) &\land(\forall\ n, f_n(x) \text{ continuous } on [a,b]) \\
+     &\implies f(x) \text{ continuous on } [a,b]\\\\
+     2.) &\land(f(x) \text{ integrable on } [a,b] ) \\
+     &\land(f_n(x) \text{ integrable on } [a,b] ) \\
+     &\implies \int_a^b f(x)dx = \sum_{n=1}^\infty \int_a^b f_n(x)dx\\\\
+     3.)&\land(\sum_{n=1}^\infty f_n(x) \text{ converges pointwise to } f(x) \text{ on } [a,b]) \\
+     &\land(\forall\ n, f_n(x) \text{ has integrable derivative } f_n'(x)) \\
+     &\land(\sum_{n=1}^\infty f_n'(x) \text{ converges uniformly to } g(x) \text{ on } [a,b]) \\
+     &\land(g(x) \text{ continuous } ) \\
+     &\implies \forall\ x \in [a,b], f'(x) = \sum_{n=1}^\infty f_n'(x)
+\end{align}$$
