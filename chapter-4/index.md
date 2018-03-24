@@ -143,3 +143,6 @@ $$\begin{align}
 
 ### Proof.
 Refer to spivak pg 505.
+
+## Definition
+The series $$\sum_{n=1}^\infty f_n(x)$$ $$\underline{\textbf{converges uniformly}}$$ (more formally : the sequence $$\{f_n\}$$ is $$\underline{\textbf{uniformly summable}}$$) $$\underline{\textbf{to } f \textbf{ on } A}$$, if the sequence of partial sums $$\{f_1,f_1+f_2,\ldots\}$$ converges uniformly to $$f$$ on $$A$$.
