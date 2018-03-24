@@ -163,3 +163,15 @@ $$\begin{align}
      &\land(g(x) \text{ continuous } ) \\
      &\implies \forall\ x \in [a,b], f'(x) = \sum_{n=1}^\infty f_n'(x)
 \end{align}$$
+
+## Definitions
+A $$\underline{\textbf{power series}}$$ has the form:
+
+$$
+  \sum_{n=0}^\infty b_n(x-a)^n \\
+  (\forall\ n, b_n \text{ is a constant})
+$$
+
+The $$\underline{\textbf{Taylor Series}}$$ for $$f(x)$$ at $$x=a$$ is:
+
+$$\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$$
