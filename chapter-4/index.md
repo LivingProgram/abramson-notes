@@ -175,3 +175,17 @@ $$
 The $$\underline{\textbf{Taylor Series}}$$ for $$f(x)$$ at $$x=a$$ is:
 
 $$\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$$
+
+## Weierstrass M-Test Theorem
+
+$$\begin{align}
+  &(\forall\ f_n(x) \in \{f_n(x)\}, f_n(x) \text{ defined on } A) \\
+  &\land(\forall\ x \in A, \exists\ \{M_n\} \text{ s.t. } \forall\ n, |f_n(x)| \leq M_n, M_n \text{ is a constant }) \\
+  &\land (\sum_{n=1}^\infty M_n \text{ converges }) \\
+  &\implies (\forall x \in A, \sum_{n=1}^\infty f_n(x) \text{ converges absolutely})\\
+  &\phantom{00000}\land (\forall x \in A, \sum_{n=1}^\infty f_n(x) \text{ converges }) \\
+  &\phantom{00000}\land (\sum_{n=1}^\infty f_n(x) \text{ converges uniformly to } f(x)=\sum_{n=1}^\infty f_n(x) \text{ on } A)
+\end{align}$$
+
+### Proof.
+Refer to spivak pg 508, rough notes pg 9.
