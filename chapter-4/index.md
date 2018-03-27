@@ -204,12 +204,14 @@ $$\begin{align}
 ### Proof.
 Refer to spivak pg 512, rough notes pg 9.
 
-## Theorem 5
+## Definitions
 
 $$\begin{align}
+  &\exists\ R \text{ (called the } \underline{\textbf{radius of convergence}} \text{) s.t.}\\
   &(f(x)=\sum_{n=0}^\infty a_nx^n) \\
   &\land(\exists\ R \geq 0 \text{ or } R = \infty) \\
   &1.)\land(\forall\ |x| < R) \implies f(x) \text{ converges absolutely } \\
   &2.)\land(\forall\ |x| > R) \implies f(x) \text{ diverges} \\\\
-  &R \text{ is called the } \underline{\textbf{radius of convergence}}
 \end{align}$$
+
+The interval on which $$f(x)$$ converges absolutely is called the $$\underline{\textbf{interval of convergence}}$$.
