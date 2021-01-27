@@ -1,4 +1,11 @@
 # [Abramson Notes](https://livingprogram.github.io/abramson-notes/)
+This website contains the digital version of my notes for Dr. Abramson's math classes covering various math topics. All of the mathematical expressions are written in latex. 
+
+# Table of Contents
+1. [Approximation By Polynomial Functions](https://livingprogram.github.io/abramson-notes/chapter-1)
+2. [Infinite Sequences](https://livingprogram.github.io/abramson-notes/chapter-2)
+3. [Infinite Series](https://livingprogram.github.io/abramson-notes/chapter-3)
+4. [Uniform Convergence and Power Series](https://livingprogram.github.io/abramson-notes/chapter-4)
 
 ### Previewing the theme locally
 
